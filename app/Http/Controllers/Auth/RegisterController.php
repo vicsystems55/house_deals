@@ -9,6 +9,9 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeToHouseDeals;
+
 class RegisterController extends Controller
 {
     /*
@@ -62,15 +65,30 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(array $datax)
     {
 
         $regCode = "HD" .rand(11000,99999);
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
+
+
+        $user =  User::create([
+            'name' => $datax['name'],
+            'email' => $datax['email'],
             'user_code' => $regCode,
-            'password' => Hash::make($data['password']),
+            'password' => Hash::make($datax['password']),
         ]);
+
+
+
+        $data = [
+            'name' => $user->name,
+        ];
+
+        $mailed = Mail::to($user->email)
+        ->send(new WelcomeToHouseDeals($data));
+
+
+
+        return $user;
     }
 }
