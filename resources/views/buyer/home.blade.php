@@ -5,6 +5,13 @@
 <div class="page-content">
     <div class="container-fluid">
 
+        <form action="{{route('become_partner')}}" method="post" class="text-center mt-3">
+            @csrf
+            <div class="form-group">
+                <button class="btn btn-warning">Switch to Partner</button>
+            </div>
+        </form>
+
         <!-- start page title -->
         <div class="row align-items-center">
             <div class="col-sm-6">

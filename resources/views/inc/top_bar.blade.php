@@ -108,15 +108,35 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="{{config('app.url')}}avatars/avatar.png"
+                    <img class="rounded-circle header-profile-user" src="{{config('app.url')}}avatars/default.png"
                         alt="Header Avatar">
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                     <!-- item-->
-                    <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle font-size-17 align-middle mr-1"></i> Profile</a>
+
+                    @if(Auth::user()->role == 'buyer')
+                    <a class="dropdown-item" href="{{route('buyer.profile')}}">
+                        <i class="mdi mdi-account-circle font-size-17 align-middle mr-1"></i> Profile
+                    </a>
+                    @elseif(Auth::user()->role == 'partner') 
+                    <a class="dropdown-item" href="{{route('partner.profile')}}">
+                        <i class="mdi mdi-account-circle font-size-17 align-middle mr-1"></i> Profile
+                    </a>
+
+                    @elseif(Auth::user()->role == 'admin') 
+
+                    <a class="dropdown-item" href="{{route('admin.profile')}}">
+                        <i class="mdi mdi-account-circle font-size-17 align-middle mr-1"></i> Profile
+                    </a>
+
+                    @endif
+
+
+                 
+                    
                     <a class="dropdown-item" href="#"><i class="mdi mdi-wallet font-size-17 align-middle mr-1"></i> My Wallet</a>
                     <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings font-size-17 align-middle mr-1"></i> Settings</a>
-                    <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline font-size-17 align-middle mr-1"></i> Lock screen</a>
+                    {{-- <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline font-size-17 align-middle mr-1"></i> Lock screen</a> --}}
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item text-danger" href="{{route('logout')}}"><i class="bx bx-power-off font-size-17 align-middle mr-1 text-danger"></i> Logout</a>
                 </div>

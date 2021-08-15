@@ -84,9 +84,17 @@ class RegisterController extends Controller
             'name' => $user->name,
         ];
 
-        $mailed = Mail::to($user->email)
-        ->send(new WelcomeToHouseDeals($data));
+        try {
+            //code...
 
+            $mailed = Mail::to($user->email)
+            ->send(new WelcomeToHouseDeals($data));
+    
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
+     
 
 
         return $user;

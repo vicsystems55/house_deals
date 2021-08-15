@@ -37,7 +37,18 @@ class CreateUserProfilesTable extends Migration
             $table->string('sort_code')->nullable();
             $table->string('bank_code')->nullable();
 
+            $table->string('managing_director_name')->nullable();
+            $table->string('business_name')->nullable();
+            $table->string('cac_no')->nullable();
+            $table->string('business_address')->nullable();
+            $table->string('business_website')->nullable();
+            $table->string('business_email')->nullable();
+            $table->string('contact_person')->nullable();
+            $table->string('business_logo')->nullable();
+
             $table->string('status')->default('active');
+
+            $table->boolean('admin_verified')->default(0);
 
             
             $table->foreign('user_id')->references('id')->on('users');

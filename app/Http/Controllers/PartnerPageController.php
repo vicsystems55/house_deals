@@ -32,9 +32,14 @@ class PartnerPageController extends Controller
 
     public function notifications()
     {
+        $user_id = Auth::user()->id;
+
+        $notifications = Notification::where('user_id', $user_id)->latest()->get();
         
         
-        return view('partner.notifications');
+        return view('partner.notifications',[
+            'notifications' => $notifications
+        ]);
     }
 
     public function listings()
@@ -49,5 +54,12 @@ class PartnerPageController extends Controller
         
         
         return view('partner.listing');
+    }
+
+    public function create_listing()
+    {
+        
+        
+        return view('partner.create_listing');
     }
 }

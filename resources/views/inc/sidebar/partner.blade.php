@@ -31,11 +31,17 @@
                 </li>
 
                 <li>
-                    <a href="{{route('partner.listings')}}" class=" waves-effect">
-                        <i class="ti-calendar"></i>
-                        <span class="badge badge-pill badge-primary float-right">0</span>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ti-email"></i>
                         <span>Listings</span>
                     </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('partner.create_listing')}}">Create Listing</a></li>
+                        <li><a href="{{route('partner.listings')}}">All Listings</a></li>
+                        <li><a href="">Published</a></li>
+                        <li><a href="">Submitted</a></li>
+                        <li><a href="">Disapproved</a></li>
+                    </ul>
                 </li>
 
                 <li>

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use App\UserProfile;
+use App\CompanyProfile;
 
 class UserProfileController extends Controller
 {
@@ -61,4 +64,41 @@ class UserProfileController extends Controller
 
 
     }
+
+    public function profile_incomplete()
+    {
+        
+        
+        return view('profile_incomplete');
+    }
+
+    public function update_profile(Request $request)
+    {
+        # code...
+
+        $request->validate([
+            'name' => 'required',
+            'managing_director_name' => 'required',
+            'business_name' => 'required',
+            'cac_no' => 'required',
+            'business_address' => 'required',
+            'business_website' => 'required',
+            'business_email' => 'required',
+            'contact_person' => 'required',
+           
+            // 'amount' => 'required|numeric|min:99700|between:0,99.99',
+            // 'number_of_accounts' => 'required|numeric|min:1|max:15',
+            // 'file' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            
+        ]);
+
+
+
+
+        return back()->with('update_profile_msg', 'Profile Update successful!!');
+
+
+    }
+
+    
 }

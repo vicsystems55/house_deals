@@ -22,7 +22,17 @@ Auth::routes();
 
 Route::get('/choose', 'ChooseRoleController@index')->name('choose_role');
 
+Route::post('/become_partner', 'ChooseRoleController@become_partner')->name('become_partner');
+
+Route::post('/become_buyer', 'ChooseRoleController@become_buyer')->name('become_buyer');
+
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+
+Route::get('/profile_incomplete', 'UserProfileController@profile_incomplete')->name('profile_incomplete');
+
+Route::post('/update_profile', 'UserProfileController@update_profile')->name('update_profile');
+
+
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
@@ -68,6 +78,8 @@ Route::group(['middleware' => ['partner'], 'prefix' => 'partner'], function(){
     Route::get('/listings', 'PartnerPageController@listings')->name('partner.listings');
 
     Route::get('/listing', 'PartnerPageController@listing')->name('partner.listing');
+
+    Route::get('/create_listing', 'PartnerPageController@create_listing')->name('partner.create_listing');
     
 });
 
