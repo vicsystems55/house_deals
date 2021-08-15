@@ -77,7 +77,7 @@ class UserProfileController extends Controller
         # code...
 
         $request->validate([
-            'name' => 'required',
+            // 'name' => 'required',
             'managing_director_name' => 'required',
             'business_name' => 'required',
             'cac_no' => 'required',
@@ -91,6 +91,21 @@ class UserProfileController extends Controller
             // 'file' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             
         ]);
+
+        
+
+        $profile = UserProfile::create([
+            'managing_director_name' => $request->managing_director_name,
+            'business_name' => $request->business_name,
+            'cac_no' => $request->cac_no,
+            'business_address' => $request->business_address,
+            'business_website' => $request->business_website,
+            'business_email' => $request->business_email,
+            'contact_person' => $request->contact_person,
+        ]);
+
+
+
 
 
 

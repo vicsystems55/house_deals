@@ -29,12 +29,12 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
                         <div class="card overflow-hidden">
-                            <div class="bg-primary">
+                            <div class="d-none bg-primary">
                                 <div class="text-primary text-center p-4">
                                     <h5 class="text-white font-size-20">Locked</h5>
-                                    <p class="text-white-50">Hello Smith, enter your password to unlock the screen!</p>
+                                    <p class="text-white-50">Hello, your login session has expired.</p>
                                     <a href="index.html" class="logo logo-admin">
-                                        <img src="assets/images/logo-sm.png" height="24" alt="logo">
+                                        <img src="assets/images/logo-sm.pn" height="24" alt="logo">
                                     </a>
                                 </div>
                             </div>
@@ -45,17 +45,16 @@
 
                                         <div class="pt-3 text-center">
                                             <img src="assets/images/users/user-.jpg" class="rounded-circle img-thumbnail avatar-lg" alt="thumbnail">
-                                            <h6 class="font-size-16 mt-3">Robert Smith</h6>
+                                            <h6 class="font-size-20 mt-3">Hello, your login session has expired.</h6>
                                         </div>
 
-                                        <div class="form-group">
-                                            <label for="userpassword">Password</label>
-                                            <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
-                                        </div>
+                                 
 
-                                        <div class="form-group row mb-0">
+                                    
+
+                                        <div class="form-group row mb-0 mt-5">
                                             <div class="col-12 text-right">
-                                                <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Unlock</button>
+                                                <a href="{{route('login')}}" class="btn btn-primary btn-block waves-effect waves-light" type="submit">Back to Login</a>
                                             </div>
                                         </div>
     

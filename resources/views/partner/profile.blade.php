@@ -34,17 +34,17 @@
                             @csrf
 
                         <div class="form-group text-center">
-                            <img id="avatar" style="height: 90px; width: 90px; object-fit: cover; border-radius: 20px;" class="shadow rounded-circle" src="{{config('app.url')}}avatars/default.png" >
+                            <img id="previewImg2" style="height: 90px; width: 90px; object-fit: cover; border-radius: 20px;" class="shadow rounded-circle" src="{{config('app.url')}}avatars/default.png" >
 
                         </div> 
 
                       <div class="col-sm-5 mx-auto">
                         <div class="custom-file mb-5 mt-3 mx-auto">
-                            <input onchange="previewFile4(this.id);" type="file" name="avatar" class="custom-file-input" id="customFile">
+                            <input onchange="previewFile3(this.id);" type="file" name="avatar" class="custom-file-input" id="customFile">
                             <label class="custom-file-label" for="customFile">Upload Avatar</label>
                             @error('avatar')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
+                            <span class="textdanger text-muted" role="alert">
+                                <span>{{ $message }}</span>
                             </span>
                             @enderror
                         </div>
@@ -60,56 +60,56 @@
                             <div class="col-md-6 ">
 
                                 <div class="form-group ">
-                                    <input type="text" class="form-control" name="managing_director_name" placeholder="Enter name of Business Owner or Managing Director">
+                                    <input type="text" class="form-control" name="managing_director_name" value="{{$profile_data->managing_director_name??''}}" placeholder="Enter name of Business Owner or Managing Director">
                                     
                                     @error('managing_director_name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                    <span class="text-danger text-mted" role="alert">
+                                        <span>{{ $message }}</span>
                                     </span>
                                 @enderror
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="business_name" placeholder="Enter Business Name">
+                                    <input type="text" class="form-control" name="business_name" value="{{$profile_data->business_name??''}}" placeholder="Enter Business Name">
                                     @error('business_name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                    <span class="text-dangertext-muted" role="alert">
+                                        <span>{{ $message }}</span>
                                     </span>
                                     @enderror
                                 </div>
                                 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="cac_no" placeholder="Enter Business CAC No. (RC / PLC)">
+                                    <input type="text" class="form-control" name="cac_no" value="{{$profile_data->cac_no??''}}" placeholder="Enter Business CAC No. (RC / PLC)">
                                     @error('cac_no')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                    <span class="text-danger " role="alert">
+                                        <span>{{ $message }}</span>
                                     </span>
                                     @enderror
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="business_address" placeholder="Enter Business Address">
+                                    <input type="text" class="form-control" name="business_address"  value="{{$profile_data->business_address??''}}" placeholder="Enter Business Address">
                                     @error('business_address')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                    <span class="text-danger " role="alert">
+                                        <span>{{ $message }}</span>
                                     </span>
                                     @enderror
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="business_website" placeholder="Enter Business Website">
+                                    <input type="text" class="form-control" name="business_website" value="{{$profile_data->business_website??''}}" placeholder="Enter Business Website">
                                     @error('business_website')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                    <span class="text-danger " role="alert">
+                                        <span>{{ $message }}</span>
                                     </span>
                                     @enderror
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="business_email" placeholder="Enter Business Alternative Email Address">
+                                    <input type="text" class="form-control" name="business_email"  placeholder="Enter Business Alternative Email Address">
                                     @error('business_email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                    <span class="text-danger " role="alert">
+                                        <span>{{ $message }}</span>
                                     </span>
                                     @enderror
                                 </div>
@@ -117,8 +117,8 @@
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="contact_person" placeholder="Enter Company Management Email Address (Contact Person)">
                                     @error('contact_person')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                    <span class="text-danger " role="alert">
+                                        <span>{{ $message }}</span>
                                     </span>
                                     @enderror
                                 </div>
@@ -139,11 +139,11 @@
                                 <div class="col-sm-6 col-md-10">
 
                                     <div class="custom-file mb-5 mt-3 ">
-                                        <input onchange="previewFile4(this.id);" type="file" name="utility_bill" class="custom-file-input" id="customFile">
+                                        <input onchange="previewFile4(this.id);" type="file" name="utility_bill" class="custom-file-input" id="customFile2">
                                         <label class="custom-file-label" for="customFile">Company Utility Bill</label>
                                         @error('utility_bill')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                        <span class="text-dange text-muted" role="alert">
+                                            <span>{{ $message }}</span>
                                         </span>
                                         @enderror
                                     </div>
@@ -190,6 +190,27 @@
             
                 // $('#' + previewer).css('background-image', 'url("' + reader.result + '")');
                 $("#previewImg").attr("src", reader.result);
+                
+                // $("#bg-img").css("background-image", "url(" + reader.result + ")");
+            }
+
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function previewFile3(chooser){
+        console.log('hello');
+
+        var file = $('#' + chooser).get(0).files[0];
+
+        if(file){
+            var reader = new FileReader();
+
+            reader.onload = function(){
+                var previewer = chooser +'_preview';
+            
+                // $('#' + previewer).css('background-image', 'url("' + reader.result + '")');
+                $("#previewImg2").attr("src", reader.result);
                 
                 // $("#bg-img").css("background-image", "url(" + reader.result + ")");
             }

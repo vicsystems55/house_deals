@@ -12,6 +12,8 @@ use App\Listing;
 
 use App\User;
 
+use App\UserProfile;
+
 class PartnerPageController extends Controller
 {
     //
@@ -25,9 +27,13 @@ class PartnerPageController extends Controller
 
     public function profile()
     {
+
+        $profile = UserProfile::where('user_id', Auth::user()->id)->first();
         
         
-        return view('partner.profile');
+        return view('partner.profile',[
+            'profile_data' => $profile
+        ]);
     }
 
     public function notifications()
