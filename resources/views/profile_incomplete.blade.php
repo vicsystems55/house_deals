@@ -20,7 +20,7 @@
 
 
             <div class="c text-center">
-                <a href="" class="btn btn-success btn-lg shadow">Update Profile</a>
+                <a href="{{route('partner.profile')}}" class="btn btn-success btn-lg shadow">Update Profile</a>
             </div>
 
 

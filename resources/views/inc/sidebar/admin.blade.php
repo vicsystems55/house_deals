@@ -32,9 +32,9 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{route('admin.listings')}}">All Listings</a></li>
-                        <li><a href="email-inbox.html">Published</a></li>
-                        <li><a href="email-read.html">Submitted</a></li>
-                        <li><a href="email-compose.html">Disapproved</a></li>
+                        <li><a href="">Published</a></li>
+                        <li><a href="">Submitted</a></li>
+                        <li><a href="">Disapproved</a></li>
                     </ul>
                 </li>
 

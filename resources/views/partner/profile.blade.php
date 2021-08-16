@@ -35,9 +35,15 @@
                         <p class="alert alert-info">{{ Session::get('update_profile_msg') }}</p>
                         @endif
 
-                        @if($profile_data->submitted == 1 )
-                        <p class="alert alert-info">Profile Submitted Awaiting Admin Verification  <a href="{{route('edit_profile')}}" class="btn btn-sm btn-primary">Edit</a></p>
+                        @if($profile_data) 
+
+                            @if($profile_data->submitted == 1 )
+                            <p class="alert alert-info">Profile Submitted Awaiting Admin Verification  <a href="{{route('edit_profile')}}" class="btn btn-sm btn-primary">Edit</a></p>
+                            @endif
+
                         @endif
+
+                       
 
 
                         <form action="{{route('update_profile')}}" method="post" enctype="multipart/form-data">
@@ -165,11 +171,23 @@
                             </div>
                         </div>
 
-
+                        @if ($profile_data)
 
                         <div class="form-group col-md-6 mx-auto">
                             <button type="sumbit" class="btn btn-primary btn-block btn-lg"  {{$profile_data->submitted ==0?'':'disabled'}}>Submit</button>
                         </div>
+                            
+                        @else
+
+                        <div class="form-group col-md-6 mx-auto">
+                            <button type="sumbit" class="btn btn-primary btn-block btn-lg" >Submit</button>
+                        </div>
+                            
+                        @endif
+
+
+
+                       
 
                      
                           

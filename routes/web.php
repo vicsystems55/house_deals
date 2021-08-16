@@ -32,6 +32,11 @@ Route::get('/profile_incomplete', 'UserProfileController@profile_incomplete')->n
 
 Route::post('/update_profile', 'UserProfileController@update_profile')->name('update_profile');
 
+Route::post('/admin_verify', 'UserProfileController@admin_verify')->name('admin_verify')->middleware('admin');
+
+Route::post('/disapprove_profile', 'UserProfileController@disapprove_profile')->name('disapprove_profile')->middleware('admin');
+
+
 Route::get('/edit_profile', 'UserProfileController@edit_profile')->name('edit_profile');
 
 
@@ -77,11 +82,11 @@ Route::group(['middleware' => ['partner'], 'prefix' => 'partner'], function(){
 
     Route::get('/notifications', 'PartnerPageController@notifications')->name('partner.notifications');
 
-    Route::get('/listings', 'PartnerPageController@listings')->name('partner.listings');
+    Route::get('/listings', 'PartnerPageController@listings')->name('partner.listings')->middleware('profile_update');
 
-    Route::get('/listing', 'PartnerPageController@listing')->name('partner.listing');
+    Route::get('/listing', 'PartnerPageController@listing')->name('partner.listing')->middleware('profile_update');
 
-    Route::get('/create_listing', 'PartnerPageController@create_listing')->name('partner.create_listing');
+    Route::get('/create_listing', 'PartnerPageController@create_listing')->name('partner.create_listing')->middleware('profile_update');
     
 });
 
@@ -94,7 +99,7 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function(){
 
     Route::get('/members', 'AdminPageController@members')->name('admin.members');
 
-    Route::get('/member', 'AdminPageController@member')->name('admin.member');
+    Route::get('/member/{user_code}', 'AdminPageController@member')->name('admin.member');
 
     Route::get('/listings', 'AdminPageController@listings')->name('admin.listings');
 

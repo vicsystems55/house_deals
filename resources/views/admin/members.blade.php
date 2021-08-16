@@ -35,6 +35,7 @@
                                         <th scope="col">Name</th>
                                         <th scope="col">Date</th>
                                         <th scope="col">Status</th>
+                                        <th></th>
                                        
                                     </tr>
                                 </thead>
@@ -51,10 +52,18 @@
                                         </td>
                                         <td>{{Carbon\Carbon::parse($member->created_at)->format('d M, Y')}}</td>
                                    
-                                        <td><span class="badge badge-success">Delivered</span></td>
+                                        <td><span class="badge badge-success">pending</span></td>
                                         <td>
                                             <div>
-                                                <a href="#" class="btn btn-primary btn-sm">view profile</a>
+                                                @if($member->user_profiles)
+                                                <a href="{{route('admin.member', $member->user_code)}}" class="btn btn-primary btn-sm">view profile</a>
+                                                @else 
+
+                                                <a href="" class="btn btn-danger btn-sm disabled" >Unverified</a>
+
+                                                @endif
+
+                        
                                             </div>
                                         </td>
                                     </tr>

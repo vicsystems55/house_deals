@@ -159,5 +159,28 @@ class UserProfileController extends Controller
         return back();
     }
 
+    public function admin_verify(Request $request)
+    {
+        # code...
+
+        $user_profile = UserProfile::find($request->user_profile_id)->update([
+            'admin_verified' => 1
+        ]);
+
+        return back()->with('admin_verify_msg', 'Profile Verified');
+    }
+
+    public function disapprove_profile(Request $request)
+    {
+        # code...
+
+        $user_profile = UserProfile::find($request->user_profile_id)->update([
+            'admin_verified' => 0,
+            'submitted' => 0
+        ]);
+
+        return back()->with('admin_verify_msg', 'Profile Disapproved');
+    }
+
     
 }

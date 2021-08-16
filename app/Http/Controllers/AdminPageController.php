@@ -12,6 +12,8 @@ use App\Listing;
 
 use App\User;
 
+use App\UserProfile;
+
 class AdminPageController extends Controller
 {
     //
@@ -27,18 +29,27 @@ class AdminPageController extends Controller
     {
         # code...
 
-        $members = User::latest()->where('role', '!=', 'admin')->get();
+        $members = User::with('user_profiles')->latest()->where('role', '!=', 'admin')->get();
+
+    
 
         return view('admin.members',[
             'members' => $members
         ]);
     }
 
-    public function member()
+    public function member($user_code)
     {
         # code...
+        $user = User::where('user_code', $user_code)->first();
 
-        return view('admin.member');
+        $member_data = UserProfile::with('users')->with('company_profiles')->where('user_id', $user->id)->first();
+
+        // dd($member_data);
+
+        return view('admin.member',[
+            'member' => $member_data
+        ]);
     }
 
     public function listings()
