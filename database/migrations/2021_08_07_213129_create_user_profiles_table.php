@@ -50,6 +50,8 @@ class CreateUserProfilesTable extends Migration
 
             $table->boolean('admin_verified')->default(0);
 
+            $table->boolean('submitted')->default(0);
+
             
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

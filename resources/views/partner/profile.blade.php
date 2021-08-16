@@ -30,11 +30,21 @@
                 <div class="card">
                     <div class="card-body">
 
+
+                        @if(Session::has('update_profile_msg'))
+                        <p class="alert alert-info">{{ Session::get('update_profile_msg') }}</p>
+                        @endif
+
+                        @if($profile_data->submitted == 1 )
+                        <p class="alert alert-info">Profile Submitted Awaiting Admin Verification  <a href="{{route('edit_profile')}}" class="btn btn-sm btn-primary">Edit</a></p>
+                        @endif
+
+
                         <form action="{{route('update_profile')}}" method="post" enctype="multipart/form-data">
                             @csrf
 
                         <div class="form-group text-center">
-                            <img id="previewImg2" style="height: 90px; width: 90px; object-fit: cover; border-radius: 20px;" class="shadow rounded-circle" src="{{config('app.url')}}avatars/default.png" >
+                            <img id="previewImg2" style="height: 90px; width: 90px; object-fit: cover; border-radius: 20px;" class="shadow rounded-circle" src="{{config('app.url')}}avatars/{{$profile_data->users->avatar??'default.png'}}" >
 
                         </div> 
 
@@ -43,7 +53,7 @@
                             <input onchange="previewFile3(this.id);" type="file" name="avatar" class="custom-file-input" id="customFile">
                             <label class="custom-file-label" for="customFile">Upload Avatar</label>
                             @error('avatar')
-                            <span class="textdanger text-muted" role="alert">
+                            <span class="text-danger" role="alert">
                                 <span>{{ $message }}</span>
                             </span>
                             @enderror
@@ -70,7 +80,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="business_name" value="{{$profile_data->business_name??''}}" placeholder="Enter Business Name">
+                                    <input type="text" class="form-control" name="business_name" value="{{$profile_data->business_name??old('business_name')}}" placeholder="Enter Business Name">
                                     @error('business_name')
                                     <span class="text-dangertext-muted" role="alert">
                                         <span>{{ $message }}</span>
@@ -79,7 +89,7 @@
                                 </div>
                                 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="cac_no" value="{{$profile_data->cac_no??''}}" placeholder="Enter Business CAC No. (RC / PLC)">
+                                    <input type="text" class="form-control" name="cac_no" value="{{$profile_data->cac_no??old('cac_no')}}" placeholder="Enter Business CAC No. (RC / PLC)">
                                     @error('cac_no')
                                     <span class="text-danger " role="alert">
                                         <span>{{ $message }}</span>
@@ -88,7 +98,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="business_address"  value="{{$profile_data->business_address??''}}" placeholder="Enter Business Address">
+                                    <input type="text" class="form-control" name="business_address"  value="{{$profile_data->business_address??old('business_address')}}" placeholder="Enter Business Address">
                                     @error('business_address')
                                     <span class="text-danger " role="alert">
                                         <span>{{ $message }}</span>
@@ -97,7 +107,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="business_website" value="{{$profile_data->business_website??''}}" placeholder="Enter Business Website">
+                                    <input type="text" class="form-control" name="business_website" value="{{$profile_data->business_website??old('business_website')}}" placeholder="Enter Business Website">
                                     @error('business_website')
                                     <span class="text-danger " role="alert">
                                         <span>{{ $message }}</span>
@@ -106,7 +116,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="business_email"  placeholder="Enter Business Alternative Email Address">
+                                    <input type="text" class="form-control" name="business_email" value="{{$profile_data->business_email??old('business_email')}}"  placeholder="Enter Business Alternative Email Address">
                                     @error('business_email')
                                     <span class="text-danger " role="alert">
                                         <span>{{ $message }}</span>
@@ -115,7 +125,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="contact_person" placeholder="Enter Company Management Email Address (Contact Person)">
+                                    <input type="text" class="form-control" name="contact_person" value="{{$profile_data->business_email??old('contact_person')}}"  placeholder="Enter Company Management Email Address (Contact Person)">
                                     @error('contact_person')
                                     <span class="text-danger " role="alert">
                                         <span>{{ $message }}</span>
@@ -132,7 +142,7 @@
                               
 
                                 <div class="form-group">
-                                    <img id="previewImg" style="height: 230px; width: 230px; object-fit: cover; border-radius: 20px;" class="shadow" src="{{config('app.url')}}company_uploads/default.jpg" >
+                                    <img id="previewImg" style="height: 230px; width: 230px; object-fit: cover; border-radius: 20px;" class="shadow" src="{{config('app.url')}}company_uploads/{{$profile_data->company_profiles[0]->doc_path??'default.jpg'}}" >
 
                                 </div> 
 
@@ -142,7 +152,7 @@
                                         <input onchange="previewFile4(this.id);" type="file" name="utility_bill" class="custom-file-input" id="customFile2">
                                         <label class="custom-file-label" for="customFile">Company Utility Bill</label>
                                         @error('utility_bill')
-                                        <span class="text-dange text-muted" role="alert">
+                                        <span class="text-danger" role="alert">
                                             <span>{{ $message }}</span>
                                         </span>
                                         @enderror
@@ -155,8 +165,10 @@
                             </div>
                         </div>
 
+
+
                         <div class="form-group col-md-6 mx-auto">
-                            <button type="sumbit" class="btn btn-primary btn-block btn-lg">Submit</button>
+                            <button type="sumbit" class="btn btn-primary btn-block btn-lg"  {{$profile_data->submitted ==0?'':'disabled'}}>Submit</button>
                         </div>
 
                      

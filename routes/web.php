@@ -32,6 +32,8 @@ Route::get('/profile_incomplete', 'UserProfileController@profile_incomplete')->n
 
 Route::post('/update_profile', 'UserProfileController@update_profile')->name('update_profile');
 
+Route::get('/edit_profile', 'UserProfileController@edit_profile')->name('edit_profile');
+
 
 
 // Route::get('/home', 'HomeController@index')->name('home');

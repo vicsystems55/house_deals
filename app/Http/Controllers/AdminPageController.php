@@ -27,7 +27,11 @@ class AdminPageController extends Controller
     {
         # code...
 
-        return view('admin.members');
+        $members = User::latest()->where('role', '!=', 'admin')->get();
+
+        return view('admin.members',[
+            'members' => $members
+        ]);
     }
 
     public function member()

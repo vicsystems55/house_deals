@@ -5,12 +5,7 @@
 <div class="page-content">
     <div class="container-fluid">
 
-        <form action="{{route('become_buyer')}}" method="post" class="text-center mt-3">
-            @csrf
-            <div class="form-group">
-                <button class="btn btn-success">Switch to Buyer</button>
-            </div>
-        </form>
+
 
         <!-- start page title -->
         <div class="row align-items-center">
@@ -18,7 +13,7 @@
                 <div class="page-title-box">
                     <h4 class="font-size-18">Hi, {{Auth::user()->name}}</h4>
                     <ol class="breadcrumb mb-0">
-                        <li class="breadcrumb-item active">Welcome to House Deals Dashboard</li>
+                        <li class="breadcrumb-item active">You have elevated priviledges</li>
                     </ol>
                 </div>
             </div>

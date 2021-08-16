@@ -123,12 +123,6 @@
                         <i class="mdi mdi-account-circle font-size-17 align-middle mr-1"></i> Profile
                     </a>
 
-                    @elseif(Auth::user()->role == 'admin') 
-
-                    <a class="dropdown-item" href="{{route('admin.profile')}}">
-                        <i class="mdi mdi-account-circle font-size-17 align-middle mr-1"></i> Profile
-                    </a>
-
                     @endif
 
 

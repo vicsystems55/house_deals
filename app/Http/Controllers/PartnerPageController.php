@@ -28,7 +28,9 @@ class PartnerPageController extends Controller
     public function profile()
     {
 
-        $profile = UserProfile::where('user_id', Auth::user()->id)->first();
+        $profile = UserProfile::with('users')->with('company_profiles')->where('user_id', Auth::user()->id)->first();
+
+        // dd($profile);
         
         
         return view('partner.profile',[

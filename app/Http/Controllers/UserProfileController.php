@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\UserProfile;
 use App\CompanyProfile;
+use App\User;
 
 class UserProfileController extends Controller
 {
@@ -78,12 +79,14 @@ class UserProfileController extends Controller
 
         $request->validate([
             // 'name' => 'required',
+            'avatar' => 'required',
+            'utility_bill' => 'required',
             'managing_director_name' => 'required',
             'business_name' => 'required',
             'cac_no' => 'required',
             'business_address' => 'required',
-            'business_website' => 'required',
-            'business_email' => 'required',
+            'business_website' => 'required|url',
+            'business_email' => 'required|email',
             'contact_person' => 'required',
            
             // 'amount' => 'required|numeric|min:99700|between:0,99.99',
@@ -92,9 +95,31 @@ class UserProfileController extends Controller
             
         ]);
 
-        
+        $avatar = $request->file('avatar');
 
-        $profile = UserProfile::create([
+        $utility_bill = $request->file('utility_bill');
+
+        $new_avatar = rand().".".$avatar->getClientOriginalExtension();
+
+        $new_utility_bill = rand().".".$utility_bill->getClientOriginalExtension();
+
+        $file1 = $avatar->move(public_path('avatars'), $new_avatar);
+
+        $file2 = $utility_bill->move(public_path('company_uploads'), $new_utility_bill);
+
+
+        $user_id = Auth::user()->id;
+
+        $avatar = User::find($user_id)->update([
+            'avatar' => $new_avatar
+        ]);
+
+
+
+        $profile = UserProfile::updateOrCreate([
+            'user_id' =>$user_id
+        ],[
+            'user_id' => $user_id,
             'managing_director_name' => $request->managing_director_name,
             'business_name' => $request->business_name,
             'cac_no' => $request->cac_no,
@@ -102,6 +127,14 @@ class UserProfileController extends Controller
             'business_website' => $request->business_website,
             'business_email' => $request->business_email,
             'contact_person' => $request->contact_person,
+            'submitted' => 1
+        ]);
+
+        $company_profile = CompanyProfile::updateOrCreate([
+            'user_profile_id' => $profile->id
+        ],[
+            'user_profile_id' => $profile->id,
+            'doc_path' => $new_utility_bill
         ]);
 
 
@@ -113,6 +146,17 @@ class UserProfileController extends Controller
         return back()->with('update_profile_msg', 'Profile Update successful!!');
 
 
+    }
+
+    public function edit_profile()
+    {
+        # code...
+
+        $profile = UserProfile::where('user_id', Auth::user()->id)->update([
+            'submitted' => 0 
+        ]);
+
+        return back();
     }
 
     
