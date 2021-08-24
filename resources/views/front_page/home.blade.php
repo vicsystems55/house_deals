@@ -1,1218 +1,991 @@
-<!doctype html>
-<html lang="en">
+@extends('layouts.tolips')
 
-    <head>
-        <meta charset="utf-8" />
-        <title>House Dealer</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesbrand" name="author" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+@section('content')
 
-        <link href="assets/libs/chartist/chartist.min.css" rel="stylesheet">
+<div class="page-wrapper">
 
-        <!-- Bootstrap Css -->
-        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
-        <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+   @include('front_page.inc.header')
 
-    </head>
+    <!-- Banner Section One Start -->
+    <section class="banner-one">
+        <div class="banner-bg-slide"
+            data-options='{ "delay": 5000, "slides": [ { "src": "{{config('app.url')}}tolips/assets/images/main-slider/slider-1-1.jpg" }, { "src": "{{config('app.url')}}tolips/assets/images/main-slider/slider-1-2.jpg" } ], "transition": "fade", "timer": false, "align": "top", "animation": [ "kenburnsUp", "kenburnsDown", "kenburnsLeft", "kenburnsRight" ] }'>
+        </div><!-- /.banner-bg-slide -->
+        <div class="container">
+            <div class="content-box">
+                <div class="top-title">
+                    <h2>Find Your Future <br> Dream Home</h2>
+                </div>
 
-    <body data-sidebar="dark">
-
-        <!-- Begin page -->
-        <div id="layout-wrapper">
-
-            <header id="page-topbar">
-                <div class="navbar-header">
-                    <div class="d-flex">
-                        <!-- LOGO -->
-                        <div class="navbar-brand-box">
-                            <a href="index.html" class="logo logo-dark">
-                                <span class="logo-sm">
-                                    <img src="assets/images/logo.svg" alt="" height="22">
-                                </span>
-                                <span class="logo-lg">
-                                    <img src="assets/images/logo-dark.png" alt="" height="17">
-                                </span>
-                            </a>
-
-                            <a href="index.html" class="logo logo-light">
-                                <span class="logo-sm">
-                                    <img src="assets/images/logo-sm.png" alt="" height="22">
-                                </span>
-                                <span class="logo-lg">
-                                    <img src="assets/images/logo-light.png" alt="" height="18">
-                                </span>
-                            </a>
-                        </div>
-
-                        <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
-                            <i class="mdi mdi-menu"></i>
-                        </button>
-
-                        <div class="d-none d-sm-block">
-                            <div class="dropdown pt-3 d-inline-block">
-                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Create <i class="mdi mdi-chevron-down"></i>
-                                    </a>
-
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="d-flex">
-                          <!-- App Search-->
-                          <form class="app-search d-none d-lg-block">
-                            <div class="position-relative">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="fa fa-search"></span>
-                            </div>
-                        </form>
-
-                        <div class="dropdown d-inline-block d-lg-none ml-2">
-                            <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="mdi mdi-magnify"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
-                                aria-labelledby="page-header-search-dropdown">
-                    
-                                <form class="p-3">
-                                    <div class="form-group m-0">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div class="dropdown d-none d-md-block ml-2">
-                            <button type="button" class="btn header-item waves-effect"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="mr-2" src="assets/images/flags/us_flag.jpg" alt="Header Language" height="16"> English <span class="mdi mdi-chevron-down"></span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                    
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/germany_flag.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle"> German </span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/italy_flag.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle"> Italian </span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/french_flag.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle"> French </span>
-                                </a>
-
-                                <!-- item-->
-                                <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/spain_flag.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle"> Spanish </span>
-                                </a>
-
-                                 <!-- item-->
-                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                                    <img src="assets/images/flags/russia_flag.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle"> Russian </span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown d-none d-lg-inline-block">
-                            <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
-                                <i class="mdi mdi-fullscreen"></i>
-                            </button>
-                        </div>
-
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="mdi mdi-bell-outline"></i>
-                                <span class="badge badge-danger badge-pill">3</span>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
-                                aria-labelledby="page-header-notifications-dropdown">
-                                <div class="p-3">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h5 class="m-0 font-size-16"> Notifications (258) </h5>
-                                        </div>
+                <div class="product-tab-box tabs-box">
+                    <ul class="tab-btns tab-buttons clearfix list-unstyled">
+                        <li data-tab="#desc" class="tab-btn active-btn"><span>Buy</span></li>
+                        <li data-tab="#addi__info" class="tab-btn"><span>Sale</span></li>
+                        <li data-tab="#review" class="tab-btn"><span>Rent</span></li>
+                    </ul>
+                    <div class="tabs-content">
+                        <div class="tab active-tab" id="desc">
+                            <form class="banner_one_search_form" action="/listing-1.html">
+                                <div class="banner_one_search_form_input_box">
+                                    <input type="text" placeholder="Search for city, property, agent and more...">
+                                    <button type="submit" class="thm-btn banner_one_search_btn">Search
+                                        Property</button>
+                                    <div class="banner_one_search_icon">
+                                        <a href="#"><span class="icon-magnifying-glass"></span></a>
                                     </div>
                                 </div>
-                                <div data-simplebar style="max-height: 230px;">
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="media">
-                                            <div class="avatar-xs mr-3">
-                                                <span class="avatar-title bg-success rounded-circle font-size-16">
-                                                    <i class="mdi mdi-cart-outline"></i>
-                                                </span>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mt-0 mb-1">Your order is placed</h6>
-                                                <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">Dummy text of the printing and typesetting industry.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                        
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="media">
-                                            <div class="avatar-xs mr-3">
-                                                <span class="avatar-title bg-warning rounded-circle font-size-16">
-                                                    <i class="mdi mdi-message-text-outline"></i>
-                                                </span>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mt-0 mb-1">New Message received</h6>
-                                                <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">You have 87 unread messages</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
+                            </form>
+                        </div>
 
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="media">
-                                            <div class="avatar-xs mr-3">
-                                                <span class="avatar-title bg-info rounded-circle font-size-16">
-                                                    <i class="mdi mdi-glass-cocktail"></i>
-                                                </span>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mt-0 mb-1">Your item is shipped</h6>
-                                                <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">It is a long established fact that a reader will</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="media">
-                                            <div class="avatar-xs mr-3">
-                                                <span class="avatar-title bg-primary rounded-circle font-size-16">
-                                                    <i class="mdi mdi-cart-outline"></i>
-                                                </span>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mt-0 mb-1">Your order is placed</h6>
-                                                <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">Dummy text of the printing and typesetting industry.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <a href="" class="text-reset notification-item">
-                                        <div class="media">
-                                            <div class="avatar-xs mr-3">
-                                                <span class="avatar-title bg-danger rounded-circle font-size-16">
-                                                    <i class="mdi mdi-message-text-outline"></i>
-                                                </span>
-                                            </div>
-                                            <div class="media-body">
-                                                <h6 class="mt-0 mb-1">New Message received</h6>
-                                                <div class="font-size-12 text-muted">
-                                                    <p class="mb-1">You have 87 unread messages</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
+                        <div class="tab" id="addi__info">
+                            <form class="banner_one_search_form" action="/listing-1.html">
+                                <div class="banner_one_search_form_input_box">
+                                    <input type="text" placeholder="Search for city, property, agent and more...">
+                                    <button type="submit" class="thm-btn banner_one_search_btn">Search
+                                        Property</button>
+                                    <div class="banner_one_search_icon">
+                                        <a href="#"><span class="icon-magnifying-glass"></span></a>
+                                    </div>
                                 </div>
-                                <div class="p-2 border-top">
-                                    <a class="btn btn-sm btn-link font-size-14 btn-block text-center" href="javascript:void(0)">
-                                        View all
-                                    </a>
+                            </form>
+                        </div>
+
+                        <div class="tab" id="review">
+                            <form class="banner_one_search_form" action="/listing-1.html">
+                                <div class="banner_one_search_form_input_box">
+                                    <input type="text" placeholder="Search for city, property, agent and more...">
+                                    <button type="submit" class="thm-btn banner_one_search_btn">Search
+                                        Property</button>
+                                    <div class="banner_one_search_icon">
+                                        <a href="#"><span class="icon-magnifying-glass"></span></a>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
-
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <img class="rounded-circle header-profile-user" src="assets/images/users/user-4.jpg"
-                                    alt="Header Avatar">
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <!-- item-->
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle font-size-17 align-middle mr-1"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-wallet font-size-17 align-middle mr-1"></i> My Wallet</a>
-                                <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="mdi mdi-settings font-size-17 align-middle mr-1"></i> Settings</a>
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline font-size-17 align-middle mr-1"></i> Lock screen</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-danger" href="#"><i class="bx bx-power-off font-size-17 align-middle mr-1 text-danger"></i> Logout</a>
-                            </div>
-                        </div>
-
-                        <div class="dropdown d-inline-block">
-                            <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                                <i class="mdi mdi-settings-outline"></i>
-                            </button>
-                        </div>
-            
                     </div>
                 </div>
-            </header>
+                <div class="banner_one_bottom_icon_text">
+                    <div class="banner_one_bottom_icon">
+                        <span class="icon-building"></span>
+                    </div>
+                    <div class="banner_one_bottom_text">
+                        <p>Smart Real Estate Services All our the World</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner Section One End -->
 
-            <!-- ========== Left Sidebar Start ========== -->
-            <div class="vertical-menu">
+    <!--Explore One Start-->
+    <section class="explore_one">
+        <div class="container">
+            <div class="block-title text-left">
+                <h4>Find Your Properties</h4>
+                <h2>Explore the Cities</h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="explore_one_inner_content">
+                        <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 4, "autoplay": { "delay": 5000 }, "pagination": {
+                "el": "#testimonials-one-pagination",
+                "type": "bullets",
+                "clickable": true
+            },
+            "navigation": {
+                "nextEl": ".explore_one_prev",
+                "prevEl": ".explore_one_next",
+                "clickable": true
+            },
+            "breakpoints": {
+                "0": {
+                    "spaceBetween": 30,
+                    "slidesPerView": 1
+                },
+                "425": {
+                    "spaceBetween": 30,
+                    "slidesPerView": 1
+                },
+                "575": {
+                    "spaceBetween": 30,
+                    "slidesPerView": 1
+                },
+                "767": {
+                    "spaceBetween": 30,
+                    "slidesPerView": 1
+                },
+                "991": {
+                    "spaceBetween": 20,
+                    "slidesPerView": 3
+                },
+                "1289": {
+                    "spaceBetween": 30,
+                    "slidesPerView": 4
+                },
+                "1440": {
+                    "spaceBetween": 30,
+                    "slidesPerView": 5
+                }
+            }}'>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="explore_one_single">
+                                        <div class="explore_one_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/explore_one_img-1.jpg" alt="">
+                                            <div class="explore_one_text">
+                                                <p><a href="listing-1.html">London / England</a></p>
+                                            </div>
+                                            <div class="explore_one_btn">
+                                                <a href="#">2 Properties</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="explore_one_single">
+                                        <div class="explore_one_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/explore_one_img-2.jpg" alt="">
+                                            <div class="explore_one_text">
+                                                <p><a href="listing-1.html">Paris / France</a></p>
+                                            </div>
+                                            <div class="explore_one_btn">
+                                                <a href="#">2 Properties</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="explore_one_single">
+                                        <div class="explore_one_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/explore_one_img-3.jpg" alt="">
+                                            <div class="explore_one_text">
+                                                <p><a href="listing-1.html">New York / USA</a></p>
+                                            </div>
+                                            <div class="explore_one_btn">
+                                                <a href="#">2 Properties</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="explore_one_single">
+                                        <div class="explore_one_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/explore_one_img-4.jpg" alt="">
+                                            <div class="explore_one_text">
+                                                <p><a href="listing-1.html">Rome / Turkey</a></p>
+                                            </div>
+                                            <div class="explore_one_btn">
+                                                <a href="#">2 Properties</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="explore_one_single">
+                                        <div class="explore_one_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/explore_one_img-5.jpg" alt="">
+                                            <div class="explore_one_text">
+                                                <p><a href="listing-1.html">Dubai / Dubai</a></p>
+                                            </div>
+                                            <div class="explore_one_btn">
+                                                <a href="#">2 Properties</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="explore_one_single">
+                                        <div class="explore_one_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/explore_one_img-1.jpg" alt="">
+                                            <div class="explore_one_text">
+                                                <p><a href="listing-1.html">London / England</a></p>
+                                            </div>
+                                            <div class="explore_one_btn">
+                                                <a href="#">2 Properties</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="explore_one_single">
+                                        <div class="explore_one_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/explore_one_img-2.jpg" alt="">
+                                            <div class="explore_one_text">
+                                                <p><a href="listing-1.html">Paris / France</a></p>
+                                            </div>
+                                            <div class="explore_one_btn">
+                                                <a href="#">2 Properties</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="explore_one_single">
+                                        <div class="explore_one_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/explore_one_img-3.jpg" alt="">
+                                            <div class="explore_one_text">
+                                                <p><a href="listing-1.html">New York / USA</a></p>
+                                            </div>
+                                            <div class="explore_one_btn">
+                                                <a href="#">2 Properties</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="explore_one_single">
+                                        <div class="explore_one_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/explore_one_img-4.jpg" alt="">
+                                            <div class="explore_one_text">
+                                                <p><a href="listing-1.html">Rome / Turkey</a></p>
+                                            </div>
+                                            <div class="explore_one_btn">
+                                                <a href="#">2 Properties</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="explore_one_single">
+                                        <div class="explore_one_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/explore_one_img-5.jpg" alt="">
+                                            <div class="explore_one_text">
+                                                <p><a href="listing-1.html">Dubai / Dubai</a></p>
+                                            </div>
+                                            <div class="explore_one_btn">
+                                                <a href="#">2 Properties</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explore_one_nav">
+                            <div class="explore_one_next"><span class="icon-right-arrow"></span></div>
+                            <div class="explore_one_prev"><span class="icon-right-arrow"></span> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Explore One End-->
 
-                <div data-simplebar class="h-100">
+    <!--Why Choose One Start-->
+    <section class="why_choose_one jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+        style="background-image: url({{config('app.url')}}tolips/assets/images/backgrounds/why_choose_one_bg.jpg)">
+        <div class="container">
+            <div class="why_choose_one_title">
+                <h2>Why Choose Us</h2>
+            </div>
+            <div class="why_choose_one_shape_one"
+                style="background-image: url({{config('app.url')}}tolips/assets/images/shapes/why_choose_one_shape_1.png)"></div>
+            <div class="row">
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <!--Why Choose One Single-->
+                    <div class="why_choose_one_single wow fadeInUp">
+                        <div class="why_choose_one_icon">
+                            <span class="icon-town"></span>
+                        </div>
+                        <h3>Find Your <br> Dream Home</h3>
+                        <p>There many variation of <br> pasages of lorem sum<br> available.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <!--Why Choose One Single-->
+                    <div class="why_choose_one_single wow fadeInUp" data-wow-delay="100ms">
+                        <div class="why_choose_one_icon">
+                            <span class="icon-agent"></span>
+                        </div>
+                        <h3>Experienced <br> Agents</h3>
+                        <p>There many variation of <br> pasages of lorem sum<br> available.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <!--Why Choose One Single-->
+                    <div class="why_choose_one_single wow fadeInUp" data-wow-delay="200ms">
+                        <div class="why_choose_one_icon">
+                            <span class="icon-{{config('app.url')}}tolips/assets"></span>
+                        </div>
+                        <h3>Buy or Rent <br> Homes</h3>
+                        <p>There many variation of <br> pasages of lorem sum<br> available.</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6 col-md-6">
+                    <!--Why Choose One Single-->
+                    <div class="why_choose_one_single wow fadeInUp" data-wow-delay="300ms">
+                        <div class="why_choose_one_icon">
+                            <span class="icon-rent"></span>
+                        </div>
+                        <h3>List Your <br> Own Property</h3>
+                        <p>There many variation of <br> pasages of lorem sum<br> available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Why Choose One End-->
 
-                    <!--- Sidemenu -->
-                    <div id="sidebar-menu">
-                        <!-- Left Menu Start -->
-                        <ul class="metismenu list-unstyled" id="side-menu">
-                            <li class="menu-title">Main</li>
+    <!--Latest Properties Start-->
+    <section class="latest_properties">
+        <div class="container">
+            <div class="block-title text-center">
+                <h4>Browse Hot Offers</h4>
+                <h2>Latest Properties</h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="thm-swiper__slider swiper-container thm-swiper__slider-pause-hover"
+                        data-swiper-options='{"spaceBetween": 100, "slidesPerView": 4, "autoplay": { "delay": 5000 }, "pagination": {
+                            "el": "#latest_properties_pagination",
+                            "type": "bullets",
+                            "clickable": true
+                        },
+                        "navigation": {
+                            "nextEl": ".latest_properties_next",
+                            "prevEl": ".latest_properties_prev",
+                            "clickable": true
+                        },
+                        "breakpoints": {
+                            "0": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 1
+                            },
+                            "425": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 1
+                            },
+                            "575": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 1
+                            },
+                            "767": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 2
+                            },
+                            "991": {
+                                "spaceBetween": 20,
+                                "slidesPerView": 2
+                            },
+                            "1289": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 3
+                            },
+                            "1440": {
+                                "spaceBetween": 30,
+                                "slidesPerView": 3
+                            }
+                        }}'>
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="latest_properties_single">
+                                    <div class="latest_properties_img_carousel owl-theme owl-carousel">
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_1.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
 
+                                                <a href="#" class="sale_btn">For Sale</a>
+                                            </div>
+                                        </div>
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_2.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+
+                                                <a href="#" class="sale_btn">For Sale</a>
+                                            </div>
+                                        </div>
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_3.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+
+                                                <a href="#" class="sale_btn">For Sale</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="latest_properties_content">
+                                        <div class="latest_properties_top_content">
+                                            <h4><a href="listing-details.html">Interior Appartment</a></h4>
+                                            <p>80 Broklyn Street, New York. USA</p>
+                                            <h3>$86.7600 <span>Sqft</span></h3>
+                                        </div>
+                                        <div class="latest_properties_bottom_content">
+                                            <ul class="list-unstyled">
+                                                <li><span class="icon-bed"></span>4</li>
+                                                <li><span class="icon-shower"></span>2</li>
+                                                <li><span class="icon-square-measument"></span>500 sqft</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="latest_properties_single">
+                                    <div class="latest_properties_img_carousel owl-theme owl-carousel">
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_2.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+                                                <a href="#" class="featured_btn">Featured</a>
+                                                <a href="#" class="sale_btn">For Rent</a>
+                                            </div>
+                                        </div>
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_3.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+                                                <a href="#" class="featured_btn">Featured</a>
+                                                <a href="#" class="sale_btn">For Rent</a>
+                                            </div>
+                                        </div>
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_1.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+                                                <a href="#" class="featured_btn">Featured</a>
+                                                <a href="#" class="sale_btn">For Rent</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="latest_properties_content">
+                                        <div class="latest_properties_top_content">
+                                            <h4><a href="listing-details.html">Monall Design House</a></h4>
+                                            <p>80 Broklyn Street, New York. USA</p>
+                                            <h3>$140.0000 <span>Sqft</span></h3>
+                                        </div>
+                                        <div class="latest_properties_bottom_content">
+                                            <ul class="list-unstyled">
+                                                <li><span class="icon-bed"></span>4</li>
+                                                <li><span class="icon-shower"></span>2</li>
+                                                <li><span class="icon-square-measument"></span>500 sqft</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="latest_properties_single">
+                                    <div class="latest_properties_img_carousel owl-theme owl-carousel">
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_3.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+
+                                                <a href="#" class="sale_btn">For Sale</a>
+                                            </div>
+                                        </div>
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_1.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+
+                                                <a href="#" class="sale_btn">For Sale</a>
+                                            </div>
+                                        </div>
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_2.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+
+                                                <a href="#" class="sale_btn">For Sale</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="latest_properties_content">
+                                        <div class="latest_properties_top_content">
+                                            <h4><a href="listing-details.html">Luxury Appartment</a></h4>
+                                            <p>80 Broklyn Street, New York. USA</p>
+                                            <h3>$900 <span>Monthly</span></h3>
+                                        </div>
+                                        <div class="latest_properties_bottom_content">
+                                            <ul class="list-unstyled">
+                                                <li><span class="icon-bed"></span>4</li>
+                                                <li><span class="icon-shower"></span>2</li>
+                                                <li><span class="icon-square-measument"></span>500 sqft</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="latest_properties_single">
+                                    <div class="latest_properties_img_carousel owl-theme owl-carousel">
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_1.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+                                                <a href="#" class="featured_btn">Featured</a>
+                                                <a href="#" class="sale_btn">For Rent</a>
+                                            </div>
+                                        </div>
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_2.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+                                                <a href="#" class="featured_btn">Featured</a>
+                                                <a href="#" class="sale_btn">For Rent</a>
+                                            </div>
+                                        </div>
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_3.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+                                                <a href="#" class="featured_btn">Featured</a>
+                                                <a href="#" class="sale_btn">For Rent</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="latest_properties_content">
+                                        <div class="latest_properties_top_content">
+                                            <h4><a href="listing-details.html">Interior Appartment</a></h4>
+                                            <p>80 Broklyn Street, New York. USA</p>
+                                            <h3>$86.7600 <span>Sqft</span></h3>
+                                        </div>
+                                        <div class="latest_properties_bottom_content">
+                                            <ul class="list-unstyled">
+                                                <li><span class="icon-bed"></span>4</li>
+                                                <li><span class="icon-shower"></span>2</li>
+                                                <li><span class="icon-square-measument"></span>500 sqft</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="latest_properties_single">
+                                    <div class="latest_properties_img_carousel owl-theme owl-carousel">
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_2.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+                                                <a href="#" class="featured_btn">Featured</a>
+                                                <a href="#" class="sale_btn">For Rent</a>
+                                            </div>
+                                        </div>
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_3.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+                                                <a href="#" class="featured_btn">Featured</a>
+                                                <a href="#" class="sale_btn">For Rent</a>
+                                            </div>
+                                        </div>
+                                        <div class="latest_properties_img">
+                                            <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_1.jpg" alt="">
+                                            <div class="latest_properties_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="featured_and_sale_btn">
+                                                <a href="#" class="featured_btn">Featured</a>
+                                                <a href="#" class="sale_btn">For Rent</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="latest_properties_content">
+                                        <div class="latest_properties_top_content">
+                                            <h4><a href="listing-details.html">Monall Design House</a></h4>
+                                            <p>80 Broklyn Street, New York. USA</p>
+                                            <h3>$140.0000 <span>Sqft</span></h3>
+                                        </div>
+                                        <div class="latest_properties_bottom_content">
+                                            <ul class="list-unstyled">
+                                                <li><span class="icon-bed"></span>4</li>
+                                                <li><span class="icon-shower"></span>2</li>
+                                                <li><span class="icon-square-measument"></span>500 sqft</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination" id="latest_properties_pagination"></div>
+        </div>
+    </section>
+    <!--Latest Properties End-->
+
+    <!--Providing One Start-->
+    <section class="providing_one jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
+        style="background-image: url({{config('app.url')}}tolips/assets/images/backgrounds/providing_one_bg.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5">
+                    <div class="providing_one_left">
+                        <div class="block-title text-left">
+                            <h4>What Are You Looking</h4>
+                            <h2>Providing the <br> Best Real Estate Services</h2>
+                        </div>
+                        <div class="providing_one_btn">
+                            <a href="listing-1.html" class="thm-btn">Search Property</a>
+                        </div>
+                        <div class="providing_one_shaape_one">
+                            <img src="{{config('app.url')}}tolips/assets/images/shapes/providing_one_shape_1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7">
+                    <div class="providing_one_four_boxes clearfix">
+                        <ul class="list-unstyled">
                             <li>
-                                <a href="index.html" class="waves-effect">
-                                    <i class="ti-home"></i><span class="badge badge-pill badge-primary float-right">2</span>
-                                    <span>Dashboard</span>
-                                </a>
+                                <div class="providing_one_four_boxes_iocn">
+                                    <span class="icon-home"></span>
+                                </div>
+                                <div class="providing_one_four_boxes_text">
+                                    <p>Modern<br>Villas</p>
+                                </div>
                             </li>
-
                             <li>
-                                <a href="calendar.html" class=" waves-effect">
-                                    <i class="ti-calendar"></i>
-                                    <span>Calendar</span>
-                                </a>
+                                <div class="providing_one_four_boxes_iocn">
+                                    <span class="icon-house"></span>
+                                </div>
+                                <div class="providing_one_four_boxes_text">
+                                    <p>Furnished<br>Homes</p>
+                                </div>
                             </li>
-
                             <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="ti-email"></i>
-                                    <span>Email</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="email-inbox.html">Inbox</a></li>
-                                    <li><a href="email-read.html">Email Read</a></li>
-                                    <li><a href="email-compose.html">Email Compose</a></li>
-                                </ul>
+                                <div class="providing_one_four_boxes_iocn">
+                                    <span class="icon-condominium"></span>
+                                </div>
+                                <div class="providing_one_four_boxes_text">
+                                    <p>Sweet<br>Apartment</p>
+                                </div>
                             </li>
-
-                            <li class="menu-title">Components</li>
-
                             <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="ti-package"></i>
-                                    <span>UI Elements</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="ui-alerts.html">Alerts</a></li>
-                                    <li><a href="ui-buttons.html">Buttons</a></li>
-                                    <li><a href="ui-cards.html">Cards</a></li>
-                                    <li><a href="ui-carousel.html">Carousel</a></li>
-                                    <li><a href="ui-dropdowns.html">Dropdowns</a></li>
-                                    <li><a href="ui-grid.html">Grid</a></li>
-                                    <li><a href="ui-images.html">Images</a></li>
-                                    <li><a href="ui-lightbox.html">Lightbox</a></li>
-                                    <li><a href="ui-modals.html">Modals</a></li>
-                                    <li><a href="ui-rangeslider.html">Range Slider</a></li>
-                                    <li><a href="ui-session-timeout.html">Session Timeout</a></li>
-                                    <li><a href="ui-progressbars.html">Progress Bars</a></li>
-                                    <li><a href="ui-sweet-alert.html">Sweet-Alert</a></li>
-                                    <li><a href="ui-tabs-accordions.html">Tabs &amp; Accordions</a></li>
-                                    <li><a href="ui-typography.html">Typography</a></li>
-                                    <li><a href="ui-video.html">Video</a></li>
-                                    <li><a href="ui-general.html">General</a></li>
-                                    <li><a href="ui-colors.html">Colors</a></li>
-                                    <li><a href="ui-rating.html">Rating</a></li>
-                                </ul>
+                                <div class="providing_one_four_boxes_iocn">
+                                    <span class="icon-buildings"></span>
+                                </div>
+                                <div class="providing_one_four_boxes_text">
+                                    <p>Commercial<br>Building</p>
+                                </div>
                             </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="waves-effect">
-                                    <i class="ti-receipt"></i>
-                                    <span class="badge badge-pill badge-success float-right">6</span>
-                                    <span>Forms</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="form-elements.html">Form Elements</a></li>
-                                    <li><a href="form-validation.html">Form Validation</a></li>
-                                    <li><a href="form-advanced.html">Form Advanced</a></li>
-                                    <li><a href="form-editors.html">Form Editors</a></li>
-                                    <li><a href="form-uploads.html">Form File Upload</a></li>
-                                    <li><a href="form-xeditable.html">Form Xeditable</a></li>
-                                    <li><a href="form-repeater.html">Form Repeater</a></li>
-                                    <li><a href="form-wizard.html">Form Wizard</a></li>
-                                    <li><a href="form-mask.html">Form Mask</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="ti-pie-chart"></i>
-                                    <span>Charts</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="charts-morris.html">Morris Chart</a></li>
-                                    <li><a href="charts-chartist.html">Chartist Chart</a></li>
-                                    <li><a href="charts-chartjs.html">Chartjs Chart</a></li>
-                                    <li><a href="charts-flot.html">Flot Chart</a></li>
-                                    <li><a href="charts-knob.html">Jquery Knob Chart</a></li>
-                                    <li><a href="charts-sparkline.html">Sparkline Chart</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="ti-view-grid"></i>
-                                    <span>Tables</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="tables-basic.html">Basic Tables</a></li>
-                                    <li><a href="tables-datatable.html">Data Table</a></li>
-                                    <li><a href="tables-responsive.html">Responsive Table</a></li>
-                                    <li><a href="tables-editable.html">Editable Table</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="ti-face-smile"></i>
-                                    <span>Icons</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="icons-material.html">Material Design</a></li>
-                                    <li><a href="icons-fontawesome.html">Font Awesome</a></li>
-                                    <li><a href="icons-ion.html">Ion Icons</a></li>
-                                    <li><a href="icons-themify.html">Themify Icons</a></li>
-                                    <li><a href="icons-dripicons.html">Dripicons</a></li>
-                                    <li><a href="icons-typicons.html">Typicons Icons</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="waves-effect">
-                                    <i class="ti-location-pin"></i>
-                                    <span class="badge badge-pill badge-danger float-right">2</span>
-                                    <span>Maps</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="maps-google.html"> Google Map</a></li>
-                                    <li><a href="maps-vector.html"> Vector Map</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="menu-title">Extras</li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="ti-layout"></i>
-                                    <span> Layouts </span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="layouts-horizontal.html">Horizontal</a></li>
-                                    <li><a href="layouts-compact-sidebar.html">Compact Sidebar</a></li>
-                                    <li><a href="layouts-icon-sidebar.html">Icon Sidebar</a></li>
-                                    <li><a href="layouts-boxed.html">Boxed Layout</a></li>
-                                </ul>
-                            </li>
-
-
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="ti-archive"></i>
-                                    <span> Authentication </span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="pages-login.html">Login 1</a></li>
-                                    <li><a href="pages-login-2.html">Login 2</a></li>
-                                    <li><a href="pages-register.html">Register 1</a></li>
-                                    <li><a href="pages-register-2.html">Register 2</a></li>
-                                    <li><a href="pages-recoverpw.html">Recover Password 1</a></li>
-                                    <li><a href="pages-recoverpw-2.html">Recover Password 2</a></li>
-                                    <li><a href="pages-lock-screen.html">Lock Screen 1</a></li>
-                                    <li><a href="pages-lock-screen-2.html">Lock Screen 2</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="ti-support"></i>
-                                    <span>  Extra Pages  </span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="pages-timeline.html">Timeline</a></li>
-                                    <li><a href="pages-invoice.html">Invoice</a></li>
-                                    <li><a href="pages-directory.html">Directory</a></li>
-                                    <li><a href="pages-blank.html">Blank Page</a></li>
-                                    <li><a href="pages-404.html">Error 404</a></li>
-                                    <li><a href="pages-500.html">Error 500</a></li>
-                                    <li><a href="pages-pricing.html">Pricing</a></li>
-                                    <li><a href="pages-gallery.html">Gallery</a></li>
-                                    <li><a href="pages-maintenance.html">Maintenance</a></li>
-                                    <li><a href="pages-comingsoon.html">Coming Soon</a></li>
-                                    <li><a href="pages-faq.html">FAQs</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="ti-bookmark-alt"></i>
-                                    <span>  Email Templates  </span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="email-template-basic.html">Basic Action Email</a></li>
-                                    <li><a href="email-template-Alert.html">Alert Email</a></li>
-                                    <li><a href="email-template-Billing.html">Billing Email</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="ti-more"></i>
-                                    <span>Multi Level</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="true">
-                                    <li><a href="javascript: void(0);">Level 1.1</a></li>
-                                    <li><a href="javascript: void(0);" class="has-arrow">Level 1.2</a>
-                                        <ul class="sub-menu" aria-expanded="true">
-                                            <li><a href="javascript: void(0);">Level 2.1</a></li>
-                                            <li><a href="javascript: void(0);">Level 2.2</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-
                         </ul>
                     </div>
-                    <!-- Sidebar -->
                 </div>
             </div>
-            <!-- Left Sidebar End -->
-
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            <div class="main-content">
-
-                <div class="page-content">
-                    <div class="container-fluid">
-
-                        <!-- start page title -->
-                        <div class="row align-items-center">
-                            <div class="col-sm-6">
-                                <div class="page-title-box">
-                                    <h4 class="font-size-18">Dashboard</h4>
-                                    <ol class="breadcrumb mb-0">
-                                        <li class="breadcrumb-item active">Welcome to Veltrix Dashboard</li>
-                                    </ol>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6">
-                                <div class="float-right d-none d-md-block">
-                                    <div class="dropdown">
-                                        <button class="btn btn-primary dropdown-toggle waves-effect waves-light"
-                                            type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="mdi mdi-settings mr-2"></i> Settings
-                                        </button>
-                                        <div class="dropdown-menu dropdown-menu-right">
-                                            <a class="dropdown-item" href="#">Action</a>
-                                            <a class="dropdown-item" href="#">Another action</a>
-                                            <a class="dropdown-item" href="#">Something else here</a>
-                                            <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="#">Separated link</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end page title -->
-
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mini-stat bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <div class="float-left mini-stat-img mr-4">
-                                                <img src="assets/images/services-icon/01.png" alt="">
-                                            </div>
-                                            <h5 class="font-size-16 text-uppercase mt-0 text-white-50">Orders</h5>
-                                            <h4 class="font-weight-medium font-size-24">1,685 <i
-                                                    class="mdi mdi-arrow-up text-success ml-2"></i></h4>
-                                            <div class="mini-stat-label bg-success">
-                                                <p class="mb-0">+ 12%</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <div class="float-right">
-                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
-                                            </div>
-
-                                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mini-stat bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <div class="float-left mini-stat-img mr-4">
-                                                <img src="assets/images/services-icon/02.png" alt="">
-                                            </div>
-                                            <h5 class="font-size-16 text-uppercase mt-0 text-white-50">Revenue</h5>
-                                            <h4 class="font-weight-medium font-size-24">52,368 <i
-                                                    class="mdi mdi-arrow-down text-danger ml-2"></i></h4>
-                                            <div class="mini-stat-label bg-danger">
-                                                <p class="mb-0">- 28%</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <div class="float-right">
-                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
-                                            </div>
-
-                                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mini-stat bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <div class="float-left mini-stat-img mr-4">
-                                                <img src="assets/images/services-icon/03.png" alt="">
-                                            </div>
-                                            <h5 class="font-size-16 text-uppercase mt-0 text-white-50">Average Price</h5>
-                                            <h4 class="font-weight-medium font-size-24">15.8 <i
-                                                    class="mdi mdi-arrow-up text-success ml-2"></i></h4>
-                                            <div class="mini-stat-label bg-info">
-                                                <p class="mb-0"> 00%</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <div class="float-right">
-                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
-                                            </div>
-
-                                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mini-stat bg-primary text-white">
-                                    <div class="card-body">
-                                        <div class="mb-4">
-                                            <div class="float-left mini-stat-img mr-4">
-                                                <img src="assets/images/services-icon/04.png" alt="">
-                                            </div>
-                                            <h5 class="font-size-16 text-uppercase mt-0 text-white-50">Product Sold</h5>
-                                            <h4 class="font-weight-medium font-size-24">2436 <i
-                                                    class="mdi mdi-arrow-up text-success ml-2"></i></h4>
-                                            <div class="mini-stat-label bg-warning">
-                                                <p class="mb-0">+ 84%</p>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2">
-                                            <div class="float-right">
-                                                <a href="#" class="text-white-50"><i class="mdi mdi-arrow-right h5"></i></a>
-                                            </div>
-
-                                            <p class="text-white-50 mb-0 mt-1">Since last month</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-xl-9">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-4">Monthly Earning</h4>
-                                        <div class="row">
-                                            <div class="col-lg-7">
-                                                <div>
-                                                    <div id="chart-with-area" class="ct-chart earning ct-golden-section">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-5">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="text-center">
-                                                            <p class="text-muted mb-4">This month</p>
-                                                            <h3>$34,252</h3>
-                                                            <p class="text-muted mb-5">It will be as simple as in fact it
-                                                                will be occidental.</p>
-                                                            <span class="peity-donut"
-                                                                data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
-                                                                data-width="72" data-height="72">4/5</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="text-center">
-                                                            <p class="text-muted mb-4">Last month</p>
-                                                            <h3>$36,253</h3>
-                                                            <p class="text-muted mb-5">It will be as simple as in fact it
-                                                                will be occidental.</p>
-                                                            <span class="peity-donut"
-                                                                data-peity='{ "fill": ["#02a499", "#f2f2f2"], "innerRadius": 28, "radius": 32 }'
-                                                                data-width="72" data-height="72">3/5</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- end row -->
-                                    </div>
-                                </div>
-                                <!-- end card -->
-                            </div>
-
-                            <div class="col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div>
-                                            <h4 class="card-title mb-4">Sales Analytics</h4>
-                                        </div>
-                                        <div class="wid-peity mb-4">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div>
-                                                        <p class="text-muted">Online</p>
-                                                        <h5 class="mb-4">1,542</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-4">
-                                                        <span class="peity-line" data-width="100%"
-                                                            data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
-                                                            data-height="60">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="wid-peity mb-4">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div>
-                                                        <p class="text-muted">Offline</p>
-                                                        <h5 class="mb-4">6,451</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-4">
-                                                        <span class="peity-line" data-width="100%"
-                                                            data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
-                                                            data-height="60">6,2,8,4,-3,8,1,-3,6,-5,9,2,-8,1,4,8,9,8,2,1</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div>
-                                                        <p class="text-muted">Marketing</p>
-                                                        <h5>84,574</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mb-4">
-                                                        <span class="peity-line" data-width="100%"
-                                                            data-peity='{ "fill": ["rgba(2, 164, 153,0.3)"],"stroke": ["rgba(2, 164, 153,0.8)"]}'
-                                                            data-height="60">6,2,8,4,3,8,1,3,6,5,9,2,8,1,4,8,9,8,2,1</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-xl-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-4">Sales Report</h4>
-
-                                        <div class="cleafix">
-                                            <p class="float-left"><i class="mdi mdi-calendar mr-1 text-primary"></i> Jan 01
-                                                - Jan 31</p>
-                                            <h5 class="font-18 text-right">$4230</h5>
-                                        </div>
-
-                                        <div id="ct-donut" class="ct-chart wid"></div>
-
-                                        <div class="mt-4">
-                                            <table class="table mb-0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td><span class="badge badge-primary">Desk</span></td>
-                                                        <td>Desktop</td>
-                                                        <td class="text-right">54.5%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="badge badge-success">Mob</span></td>
-                                                        <td>Mobile</td>
-                                                        <td class="text-right">28.0%</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="badge badge-warning">Tab</span></td>
-                                                        <td>Tablets</td>
-                                                        <td class="text-right">17.5%</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-xl-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-4">Activity</h4>
-                                        <ol class="activity-feed">
-                                            <li class="feed-item">
-                                                <div class="feed-item-list">
-                                                    <span class="date">Jan 22</span>
-                                                    <span class="activity-text">Responded to need “Volunteer
-                                                        Activities”</span>
-                                                </div>
-                                            </li>
-                                            <li class="feed-item">
-                                                <div class="feed-item-list">
-                                                    <span class="date">Jan 20</span>
-                                                    <span class="activity-text">At vero eos et accusamus et iusto odio
-                                                        dignissimos ducimus qui deleniti atque...<a href="#"
-                                                            class="text-success">Read more</a></span>
-                                                </div>
-                                            </li>
-                                            <li class="feed-item">
-                                                <div class="feed-item-list">
-                                                    <span class="date">Jan 19</span>
-                                                    <span class="activity-text">Joined the group “Boardsmanship
-                                                        Forum”</span>
-                                                </div>
-                                            </li>
-                                            <li class="feed-item">
-                                                <div class="feed-item-list">
-                                                    <span class="date">Jan 17</span>
-                                                    <span class="activity-text">Responded to need “In-Kind
-                                                        Opportunity”</span>
-                                                </div>
-                                            </li>
-                                            <li class="feed-item">
-                                                <div class="feed-item-list">
-                                                    <span class="date">Jan 16</span>
-                                                    <span class="activity-text">Sed ut perspiciatis unde omnis iste natus
-                                                        error sit rem.</span>
-                                                </div>
-                                            </li>
-                                        </ol>
-                                        <div class="text-center">
-                                            <a href="#" class="btn btn-primary">Load More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-xl-5">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="card text-center">
-                                            <div class="card-body">
-                                                <div class="py-4">
-                                                    <i
-                                                        class="ion ion-ios-checkmark-circle-outline display-4 text-success"></i>
-
-                                                    <h5 class="text-primary mt-4">Order Successful</h5>
-                                                    <p class="text-muted">Thanks you so much for your order.</p>
-                                                    <div class="mt-4">
-                                                        <a href="" class="btn btn-primary btn-sm">Chack Status</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card bg-primary">
-                                            <div class="card-body">
-                                                <div class="text-center text-white py-4">
-                                                    <h5 class="mt-0 mb-4 text-white-50 font-size-16">Top Product Sale</h5>
-                                                    <h1>1452</h1>
-                                                    <p class="font-size-14 pt-1">Computer</p>
-                                                    <p class="text-white-50 mb-0">At solmen va esser necessi far uniform
-                                                        myth... <a href="#" class="text-white">View more</a></p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h4 class="card-title mb-4">Client Reviews</h4>
-                                                <p class="text-muted mb-3 pb-4">" Everyone realizes why a new common
-                                                    language would be desirable one could refuse to pay expensive
-                                                    translators it would be necessary. "</p>
-                                                <div class="float-right mt-2">
-                                                    <a href="#" class="text-primary">
-                                                        <i class="mdi mdi-arrow-right h5"></i>
-                                                    </a>
-                                                </div>
-                                                <h6 class="mb-0"><img src="assets/images/users/user-3.jpg" alt=""
-                                                        class="avatar-sm rounded-circle mr-2"> James Athey</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-xl-8">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-4">Latest Trasaction</h4>
-                                        <div class="table-responsive">
-                                            <table class="table table-hover table-centered table-nowrap mb-0">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">(#) Id</th>
-                                                        <th scope="col">Name</th>
-                                                        <th scope="col">Date</th>
-                                                        <th scope="col">Amount</th>
-                                                        <th scope="col" colspan="2">Status</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">#14256</th>
-                                                        <td>
-                                                            <div>
-                                                                <img src="assets/images/users/user-2.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle mr-2"> Philip Smead
-                                                            </div>
-                                                        </td>
-                                                        <td>15/1/2018</td>
-                                                        <td>$94</td>
-                                                        <td><span class="badge badge-success">Delivered</span></td>
-                                                        <td>
-                                                            <div>
-                                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">#14257</th>
-                                                        <td>
-                                                            <div>
-                                                                <img src="assets/images/users/user-3.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle mr-2"> Brent Shipley
-                                                            </div>
-                                                        </td>
-                                                        <td>16/1/2019</td>
-                                                        <td>$112</td>
-                                                        <td><span class="badge badge-warning">Pending</span></td>
-                                                        <td>
-                                                            <div>
-                                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">#14258</th>
-                                                        <td>
-                                                            <div>
-                                                                <img src="assets/images/users/user-4.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle mr-2"> Robert Sitton
-                                                            </div>
-                                                        </td>
-                                                        <td>17/1/2019</td>
-                                                        <td>$116</td>
-                                                        <td><span class="badge badge-success">Delivered</span></td>
-                                                        <td>
-                                                            <div>
-                                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">#14259</th>
-                                                        <td>
-                                                            <div>
-                                                                <img src="assets/images/users/user-5.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle mr-2"> Alberto Jackson
-                                                            </div>
-                                                        </td>
-                                                        <td>18/1/2019</td>
-                                                        <td>$109</td>
-                                                        <td><span class="badge badge-danger">Cancel</span></td>
-                                                        <td>
-                                                            <div>
-                                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">#14260</th>
-                                                        <td>
-                                                            <div>
-                                                                <img src="assets/images/users/user-6.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle mr-2"> David Sanchez
-                                                            </div>
-                                                        </td>
-                                                        <td>19/1/2019</td>
-                                                        <td>$120</td>
-                                                        <td><span class="badge badge-success">Delivered</span></td>
-                                                        <td>
-                                                            <div>
-                                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">#14261</th>
-                                                        <td>
-                                                            <div>
-                                                                <img src="assets/images/users/user-2.jpg" alt=""
-                                                                    class="avatar-xs rounded-circle mr-2"> Philip Smead
-                                                            </div>
-                                                        </td>
-                                                        <td>15/1/2018</td>
-                                                        <td>$94</td>
-                                                        <td><span class="badge badge-warning">Pending</span></td>
-                                                        <td>
-                                                            <div>
-                                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-4">Chat</h4>
-                                        <div class="chat-conversation">
-                                            <ul class="conversation-list" data-simplebar style="max-height: 367px;">
-                                                <li class="clearfix">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/user-2.jpg"
-                                                            class="avatar-xs rounded-circle" alt="male">
-                                                        <span class="time">10:00</span>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <span class="user-name">John Deo</span>
-                                                            <p>
-                                                                Hello!
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/user-3.jpg"
-                                                            class="avatar-xs rounded-circle" alt="Female">
-                                                        <span class="time">10:01</span>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <span class="user-name">Smith</span>
-                                                            <p>
-                                                                Hi, How are you? What about our next meeting?
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/user-2.jpg"
-                                                            class="avatar-xs rounded-circle" alt="male">
-                                                        <span class="time">10:04</span>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <span class="user-name">John Deo</span>
-                                                            <p>
-                                                                Yeah everything is fine
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/user-3.jpg"
-                                                            class="avatar-xs rounded-circle" alt="male">
-                                                        <span class="time">10:05</span>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <span class="user-name">Smith</span>
-                                                            <p>
-                                                                Wow that's great
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="clearfix odd">
-                                                    <div class="chat-avatar">
-                                                        <img src="assets/images/users/user-3.jpg"
-                                                            class="avatar-xs rounded-circle" alt="male">
-                                                        <span class="time">10:08</span>
-                                                    </div>
-                                                    <div class="conversation-text">
-                                                        <div class="ctext-wrap">
-                                                            <span class="user-name mb-2">Smith</span>
-
-                                                            <img src="assets/images/small/img-1.jpg" alt="" height="48"
-                                                                class="rounded mr-2">
-                                                            <img src="assets/images/small/img-2.jpg" alt="" height="48"
-                                                                class="rounded">
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                            <div class="row">
-                                                <div class="col-sm-9 col-8 chat-inputbar">
-                                                    <input type="text" class="form-control chat-input"
-                                                        placeholder="Enter your text">
-                                                </div>
-                                                <div class="col-sm-3 col-4 chat-send">
-                                                    <button type="submit" class="btn btn-success btn-block">Send</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- end row -->
-
-
-
-                    </div> <!-- container-fluid -->
-                </div>
-                <!-- End Page-content -->
-
-
-                
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12">
-                                © <script>document.write(new Date().getFullYear())</script> Veltrix<span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand.</span>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-
-            </div>
-            <!-- end main content-->
-
         </div>
-        <!-- END layout-wrapper -->
+    </section>
+    <!--Providing One End-->
 
-        <!-- Right Sidebar -->
-        {{-- <div class="right-bar">
-            <div data-simplebar class="h-100">
-                <div class="rightbar-title px-3 py-4">
-                    <a href="javascript:void(0);" class="right-bar-toggle float-right">
-                        <i class="mdi mdi-close noti-icon"></i>
-                    </a>
-                    <h5 class="m-0">Settings</h5>
+    <!--Testimonials One Start-->
+    <section class="testimonials_one">
+        <div class="container">
+            <div class="swiper-container" id="testimonials-one__thumb">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/testimonials/testimonial-1-1.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/testimonials/testimonial-1-3.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/testimonials/testimonial-1-1.png" alt="">
+                    </div>
                 </div>
-
-                <!-- Settings -->
-                <hr class="mt-0" />
-                <h6 class="text-center">Choose Layouts</h6>
-
-                <div class="p-4">
-                    <div class="mb-2">
-                        <img src="assets/images/layouts/layout-1.jpg" class="img-fluid img-thumbnail" alt="">
-                    </div>
-                    <div class="custom-control custom-switch mb-3">
-                        <input type="checkbox" class="custom-control-input theme-choice" id="light-mode-switch" checked />
-                        <label class="custom-control-label" for="light-mode-switch">Light Mode</label>
-                    </div>
-    
-                    <div class="mb-2">
-                        <img src="assets/images/layouts/layout-2.jpg" class="img-fluid img-thumbnail" alt="">
-                    </div>
-                    <div class="custom-control custom-switch mb-3">
-                        <input type="checkbox" class="custom-control-input theme-choice" id="dark-mode-switch" data-bsStyle="assets/css/bootstrap-dark.min.css" 
-                            data-appStyle="assets/css/app-dark.min.css" />
-                        <label class="custom-control-label" for="dark-mode-switch">Dark Mode</label>
-                    </div>
-    
-                    <div class="mb-2">
-                        <img src="assets/images/layouts/layout-3.jpg" class="img-fluid img-thumbnail" alt="">
-                    </div>
-                    <div class="custom-control custom-switch mb-5">
-                        <input type="checkbox" class="custom-control-input theme-choice" id="rtl-mode-switch" data-appStyle="assets/css/app-rtl.min.css" />
-                        <label class="custom-control-label" for="rtl-mode-switch">RTL Mode</label>
-                    </div>
-
-                    <a href="https://1.envato.market/grNDB" class="btn btn-primary btn-block mt-3" target="_blank"><i class="mdi mdi-cart mr-1"></i> Purchase Now</a>
-
+            </div>
+            <div class="swiper-container" id="testimonials-one__carousel">
+                <div class="testimonials_one_carousel_bg"
+                    style="background-image: url({{config('app.url')}}tolips/assets/images/testimonials/testimonial-1-carousel-img.jpg)"></div>
+                <div class="testimonials_one_quote">
+                    <i class="fas fa-quote-left"></i>
                 </div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <p>This is due to their excellent service, competitive<br> pricing and customer support.
+                            It’s
+                            throughly <br> refresing to get such a personal touch.</p>
+                        <div class="testimonials-one__meta">
+                            <h3>Mike Hardson / <span>Customer</span></h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <p>This is due to their excellent service, competitive<br> pricing and customer support.
+                            It’s
+                            throughly <br> refresing to get such a personal touch.</p>
+                        <div class="testimonials-one__meta">
+                            <h3>Mike Hardson / <span>Customer</span></h3>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <p>This is due to their excellent service, competitive<br> pricing and customer support.
+                            It’s
+                            throughly <br> refresing to get such a personal touch.</p>
+                        <div class="testimonials-one__meta">
+                            <h3>Mike Hardson / <span>Customer</span></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Testimonials One End-->
 
-            </div> <!-- end slimscroll-menu-->
-        </div> --}}
-        <!-- /Right-bar -->
+    <!--How It Works Start-->
+    <section class="how_it_works">
+        <div class="how_it_works_shape_1">
+            <img src="{{config('app.url')}}tolips/assets/images/shapes/how_it_works_shape_1.png" alt="">
+        </div>
+        <div class="container">
+            <div class="block-title text-center">
+                <h4>How It Works</h4>
+                <h2>Follow Easy Steps</h2>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <ul class="how_it_works_single list-unstyled">
+                        <li>
+                            <div class="how_it_works_img">
+                                <img src="{{config('app.url')}}tolips/assets/images/resources/how_it_works_img_1.png" alt="">
+                                <div class="how_it_works_circle">
+                                    <p>01</p>
+                                </div>
+                            </div>
+                            <div class="how_it_works_content">
+                                <h3>Find Real Estate</h3>
+                                <p>Quisqu tell us risus adpis viera bibe um urna.</p>
+                            </div>
+                        </li>
+                        <li class="item-2">
+                            <div class="how_it_works_img">
+                                <img src="{{config('app.url')}}tolips/assets/images/resources/how_it_works_img_2.png" alt="">
+                                <div class="how_it_works_circle">
+                                    <p>02</p>
+                                </div>
+                            </div>
+                            <div class="how_it_works_content">
+                                <h3>Find Real Estate</h3>
+                                <p>Quisqu tell us risus adpis viera bibe um urna.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="how_it_works_img">
+                                <img src="{{config('app.url')}}tolips/assets/images/resources/how_it_works_img_3.png" alt="">
+                                <div class="how_it_works_circle">
+                                    <p>03</p>
+                                </div>
+                            </div>
+                            <div class="how_it_works_content">
+                                <h3>Take Your Keys</h3>
+                                <p>Quisqu tell us risus adpis viera bibe um urna.</p>
+                            </div>
+                        </li>
+                        <li class="item-4">
+                            <div class="how_it_works_img">
+                                <img src="{{config('app.url')}}tolips/assets/images/resources/how_it_works_img_4.png" alt="">
+                                <div class="how_it_works_circle">
+                                    <p>04</p>
+                                </div>
+                            </div>
+                            <div class="how_it_works_content">
+                                <h3>Live Happily</h3>
+                                <p>Quisqu tell us risus adpis viera bibe um urna.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--How It Works End-->
 
-        <!-- Right bar overlay-->
-        {{-- <div class="rightbar-overlay"></div> --}}
+    <!--Blog One Start-->
+    <section class="blog_one">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4">
+                    <div class="blog_one_left">
+                        <div class="block-title text-left">
+                            <h4>Our Blog Posts</h4>
+                            <h2>Latest News <br>& Articles</h2>
+                        </div>
+                        <div class="blog_one_text">
+                            <p>Lorem ipsum onts persp unde omnis iste natus errluptatem acc usantium demque
+                                laudantium totam.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-8">
+                    <div class="blog_one_right">
+                        <div class="blog_one_carousel owl-theme owl-carousel">
+                            <!--Blog One Single-->
+                            <div class="blog_one_single">
+                                <div class="blog_one_image_box">
+                                    <div class="blog_one_img">
+                                        <img src="{{config('app.url')}}tolips/assets/images/blog/blog_1_img_1.jpg" alt="">
+                                    </div>
+                                    <div class="blog_one_date_box">
+                                        <p>20 Nov, 2020</p>
+                                    </div>
+                                </div>
+                                <div class="blog_one_content_box">
+                                    <h3><a href="news-details.html">Save Thousands Selling Your Property</a></h3>
+                                    <ul class="list-unstyled blog-one__meta">
+                                        <li><a href="blog-details.html"><i class="far fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li><span>/</span></li>
+                                        <li><a href="news-details.html"><i class="far fa-comments"></i> 2
+                                                Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--Blog One Single-->
+                            <div class="blog_one_single">
+                                <div class="blog_one_image_box">
+                                    <div class="blog_one_img">
+                                        <img src="{{config('app.url')}}tolips/assets/images/blog/blog_1_img_2.jpg" alt="">
+                                    </div>
+                                    <div class="blog_one_date_box">
+                                        <p>20 Nov, 2020</p>
+                                    </div>
+                                </div>
+                                <div class="blog_one_content_box">
+                                    <h3><a href="news-details.html">Leverage agile frame works to a
+                                            robust</a></h3>
+                                    <ul class="list-unstyled blog-one__meta">
+                                        <li><a href="news-details.html"><i class="far fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li><span>/</span></li>
+                                        <li><a href="news-details.html"><i class="far fa-comments"></i> 2
+                                                Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--Blog One Single-->
+                            <div class="blog_one_single">
+                                <div class="blog_one_image_box">
+                                    <div class="blog_one_img">
+                                        <img src="{{config('app.url')}}tolips/assets/images/blog/blog_1_img_3.jpg" alt="">
+                                    </div>
+                                    <div class="blog_one_date_box">
+                                        <p>20 Nov, 2020</p>
+                                    </div>
+                                </div>
+                                <div class="blog_one_content_box">
+                                    <h3><a href="news-details.html"> Iterative approaches to corporate
+                                            foster</a></h3>
+                                    <ul class="list-unstyled blog-one__meta">
+                                        <li><a href="news-details.html"><i class="far fa-user-circle"></i> Admin</a>
+                                        </li>
+                                        <li><span>/</span></li>
+                                        <li><a href="news-details.html"><i class="far fa-comments"></i> 2
+                                                Comments</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Blog One End-->
 
-        <!-- JAVASCRIPT -->
-        <script src="assets/libs/jquery/jquery.min.js"></script>
-        <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="assets/libs/metismenu/metisMenu.min.js"></script>
-        <script src="assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="assets/libs/node-waves/waves.min.js"></script>
+    <!--Brand One Start-->
+    <div class="brand_one">
+        <div class="container">
+            <div class="thm-swiper__slider swiper-container" data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }, "breakpoints": {
+            "0": {
+                "spaceBetween": 30,
+                "slidesPerView": 2
+            },
+            "375": {
+                "spaceBetween": 30,
+                "slidesPerView": 2
+            },
+            "575": {
+                "spaceBetween": 30,
+                "slidesPerView": 3
+            },
+            "767": {
+                "spaceBetween": 50,
+                "slidesPerView": 4
+            },
+            "991": {
+                "spaceBetween": 50,
+                "slidesPerView": 5
+            },
+            "1199": {
+                "spaceBetween": 100,
+                "slidesPerView": 5
+            }
+        }}'>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_1.png" alt="">
+                    </div><!-- /.swiper-slide -->
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_2.png" alt="">
+                    </div><!-- /.swiper-slide -->
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_3.png" alt="">
+                    </div><!-- /.swiper-slide -->
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_4.png" alt="">
+                    </div><!-- /.swiper-slide -->
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_5.png" alt="">
+                    </div><!-- /.swiper-slide -->
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_1.png" alt="">
+                    </div><!-- /.swiper-slide -->
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_2.png" alt="">
+                    </div><!-- /.swiper-slide -->
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_3.png" alt="">
+                    </div><!-- /.swiper-slide -->
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_4.png" alt="">
+                    </div><!-- /.swiper-slide -->
+                    <div class="swiper-slide">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_5.png" alt="">
+                    </div><!-- /.swiper-slide -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Brand One End-->
 
-        <!-- Peity chart-->
-        <script src="assets/libs/peity/jquery.peity.min.js"></script>
+    @include('front_page.inc.footer')
 
-        <!-- Plugin Js-->
-        <script src="assets/libs/chartist/chartist.min.js"></script>
-        <script src="assets/libs/chartist-plugin-tooltips/chartist-plugin-tooltip.min.js"></script>
 
-        <script src="assets/js/pages/dashboard.init.js"></script>
 
-        <script src="assets/js/app.js"></script>
 
-    </body>
+</div>
 
-</html>
+
+@endsection

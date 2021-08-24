@@ -39,11 +39,11 @@ class FrontPageController extends Controller
         return view('front_page.contact');
     }
 
-    public function store()
+    public function shop()
     {
         # code...
 
-        return view('front_page.store');
+        return view('front_page.shop');
     }
 
     public function listing()

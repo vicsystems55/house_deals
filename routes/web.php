@@ -50,9 +50,11 @@ Route::get('/about', 'FrontPageController@about')->name('about');
 
 Route::get('/contact', 'FrontPageController@contact')->name('contact');
 
-Route::get('/store', 'FrontPageController@store')->name('store');
+Route::get('/shop', 'FrontPageController@shop')->name('shop');
 
 Route::get('/listing', 'FrontPageController@listing')->name('listing');
+
+Route::get('/home', 'FrontPageController@home')->name('home');
 
 // Buyers routes
 
