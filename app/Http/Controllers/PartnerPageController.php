@@ -14,6 +14,8 @@ use App\User;
 
 use App\UserProfile;
 
+use Session;
+
 class PartnerPageController extends Controller
 {
     //
@@ -66,8 +68,40 @@ class PartnerPageController extends Controller
 
     public function create_listing()
     {
-        
-        
-        return view('partner.create_listing');
+
+        # code...
+
+        $user_id = Auth::user()->id;
+
+        // check if session exist with listing code
+
+
+        $listing = Listing::where('listing_code', Session::get('listing_code'))->where('user_id', $user_id)->first();
+
+        if (Session::get('listing_code') && $listing) {
+            # code...
+
+            // dd(Session::get('listing_code'));
+            
+        }else{
+
+           session([
+                'listing_code' => rand(11100,99999)
+            ]);
+
+            $listing = Listing::create([
+                'listing_code' => Session::get('listing_code'),
+                'user_id' => $user_id
+            ]);
+
+            // dd($vehicle_listing);
+
+        }
+
+        // dd($listing);
+
+        return view('agent_dashboard.create_listing',[
+            'listing' => $listing
+        ]);
     }
 }

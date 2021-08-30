@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\PropertyFeature;
 use Illuminate\Http\Request;
 
-class ListingController extends Controller
+class PropertyFeatureController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,6 @@ class ListingController extends Controller
     public function index()
     {
         //
-
-
     }
 
     /**
@@ -36,16 +35,16 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Listing  $listing
+     * @param  \App\PropertyFeature  $propertyFeature
      * @return \Illuminate\Http\Response
      */
-    public function show(Listing $listing)
+    public function show(PropertyFeature $propertyFeature)
     {
         //
     }
@@ -53,10 +52,10 @@ class ListingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Listing  $listing
+     * @param  \App\PropertyFeature  $propertyFeature
      * @return \Illuminate\Http\Response
      */
-    public function edit(Listing $listing)
+    public function edit(PropertyFeature $propertyFeature)
     {
         //
     }
@@ -65,10 +64,10 @@ class ListingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Listing  $listing
+     * @param  \App\PropertyFeature  $propertyFeature
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Listing $listing)
+    public function update(Request $request, PropertyFeature $propertyFeature)
     {
         //
     }
@@ -76,10 +75,10 @@ class ListingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Listing  $listing
+     * @param  \App\PropertyFeature  $propertyFeature
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Listing $listing)
+    public function destroy(PropertyFeature $propertyFeature)
     {
         //
     }

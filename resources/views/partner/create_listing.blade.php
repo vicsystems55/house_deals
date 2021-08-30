@@ -53,6 +53,64 @@
                                 <input type="text" class="form-control" placeholder="What is the value of this property?">
                             </div>
 
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <label for="">Select Features</label>
+                                </div>
+
+                             
+                                <div class="col-md-6 mb-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="features" value="24 hrs electricity">
+                                        <label class="custom-control-label" for="customCheck1">24 hrs electricity</label>
+                                      </div>
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="features" value="Automated Gate Access">
+                                        <label class="custom-control-label" for="customCheck1">Automated Gate Access</label>
+                                      </div>
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="features" value="Home automation">
+                                        <label class="custom-control-label" for="customCheck1">Home automation</label>
+                                      </div>
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="features" value="Internet Infrastructure">
+                                        <label class="custom-control-label" for="customCheck1">Internet Infrastructure</label>
+                                      </div>
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="features" value="Recreation and Sports">
+                                        <label class="custom-control-label" for="customCheck1">Recreation and Sports</label>
+                                      </div>
+                                </div>
+
+                                <div class="col-md-6 mb-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="features" value="Recreation and Sports">
+                                        <label class="custom-control-label" for="customCheck1">Recreation and Sports</label>
+                                      </div>
+                                </div>
+
+                                
+                                <div class="col-md-6 mb-2">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="features" value="Solar">
+                                        <label class="custom-control-label" for="customCheck1">Solar</label>
+                                      </div>
+                                </div>
+                            </div>
+
                             
 
     
@@ -60,6 +118,12 @@
 
                         </div>
                         <div class="col-md-6">
+
+                            <h6>Upload Pix</h6>
+
+                            <uploader-component listingcode="{{Session::get('listing_code')}}" appurl="{{config('app.url')}}"></uploader-component>
+
+
 
 
                         </div>

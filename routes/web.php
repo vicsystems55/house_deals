@@ -112,3 +112,10 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function(){
     Route::get('/listing', 'AdminPageController@listing')->name('admin.listing');
     
 });
+
+
+
+
+// Listing Resource
+
+Route::resource('/listingx', 'ListingController')->middleware('auth');

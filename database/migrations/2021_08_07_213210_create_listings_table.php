@@ -15,6 +15,25 @@ class CreateListingsTable extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('listing_feature_id')->unsigned();
+            $table->string('status')->default('active');
+
+            $table->string('property_name')->nullable();
+            $table->string('location')->nullable();
+
+            $table->double('price',5,2)->nullable();
+            $table->integer('no_units')->unsigned();
+            $table->string('description')->nullable();
+            $table->string('payment_plan')->nullable();
+
+            $table->string('property_type')->nullable();
+            $table->string('unit_area')->nullable();
+            $table->string('total_area')->nullable();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('listing_feature_id')->references('id')->on('listing_features');     
+                   
             $table->timestamps();
         });
     }
