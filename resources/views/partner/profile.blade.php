@@ -35,13 +35,26 @@
                         <p class="alert alert-info">{{ Session::get('update_profile_msg') }}</p>
                         @endif
 
-                        @if($profile_data) 
+                        @if($profile_data ) 
 
-                            @if($profile_data->submitted == 1 )
+                            @if($profile_data->submitted == 1 && $profile_data->admin_verified == 0)
                             <p class="alert alert-info">Profile Submitted Awaiting Admin Verification  <a href="{{route('edit_profile')}}" class="btn btn-sm btn-primary">Edit</a></p>
+                           
+                            @elseif($profile_data->submitted == 1 && $profile_data->admin_verified == 1)
+
+                      
+                            <p class="alert alert-success">Profile Verified by admin. <a href="{{route('partner.create_listing')}}">Proceed to add listings</a>.</p>
+                            
+
                             @endif
 
                         @endif
+
+                    
+
+                      
+
+                 
 
                        
 

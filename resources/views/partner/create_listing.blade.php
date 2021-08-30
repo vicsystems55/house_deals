@@ -31,8 +31,31 @@
                         <div class="col-md-6">
 
                             <div class="form-group">
-                                <input type="text" class="form-control">
+                                <label for="">Name:</label>
+                                <input type="text" class="form-control" placeholder="Property Name">
                             </div>
+
+
+                            <div class="form-group">
+                                <label for="">Description:</label>
+                             <textarea name="description" class="form-control" placeholder="Describe the property" id="" cols="30" rows="5"></textarea>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="">Location:</label>
+                                <input type="text" class="form-control" placeholder="Property location / address">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Worth:</label>
+                                <input type="text" class="form-control" placeholder="What is the value of this property?">
+                            </div>
+
+                            
+
+    
 
 
                         </div>
