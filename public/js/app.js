@@ -2028,7 +2028,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_file_agent__WEBPACK_IMPORTED_
   props: ['appurl', 'listingcode'],
   methods: {
     getPic: function getPic(img) {
-      return this.appurl + 'vehicle_images/' + img;
+      return this.appurl + 'property_images/' + img;
     },
     get_images: function get_images() {
       var _this = this;
@@ -41697,9 +41697,7 @@ var render = function() {
       "div",
       { staticClass: "col-md-6 mx-auto" },
       [
-        _c("h4", { staticClass: "text-center" }, [
-          _vm._v("Upload Vehicle Picture")
-        ]),
+        _c("h4", { staticClass: "text-center" }),
         _vm._v(" "),
         _c("VueFileAgent", {
           ref: "vueFileAgent",
@@ -41743,8 +41741,7 @@ var render = function() {
         _c(
           "button",
           {
-            staticClass:
-              "btn btn-outline-secondary btn-block col-md-6 mx-auto mt-2",
+            staticClass: "btn btn-primary btn-block col-md-12 mx-auto mt-2",
             attrs: { disabled: !_vm.fileRecordsForUpload.length },
             on: {
               click: function($event) {

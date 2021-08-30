@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+
+
 class UserTableSeeder extends Seeder
 {
     /**

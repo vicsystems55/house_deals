@@ -5,8 +5,9 @@
         <meta charset="utf-8" />
         <title>House Dealer</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+        <meta content="House Deals" name="description" />
         <meta content="Themesbrand" name="author" />
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
@@ -29,43 +30,45 @@
     <body data-sidebar="dark">
 
         <!-- Begin page -->
-        <div id="layout-wrapper">
+        <div id="app">
+            <div id="layout-wrapper">
 
-            @include('inc.top_bar')
-
-            <!-- ========== Left Sidebar Start ========== -->
-
-            @if(Auth::user()->role == 'admin')
-
-                @include('inc.sidebar.admin')
-
-            @elseif(Auth::user()->role == 'buyer')
-
-                @include('inc.sidebar.buyer')
-
-            @elseif(Auth::user()->role == 'partner')
-
-                @include('inc.sidebar.partner')
-
-            @endif
-            
-            <!-- Left Sidebar End -->
-
-            <!-- ============================================================== -->
-            <!-- Start right Content here -->
-            <!-- ============================================================== -->
-            <div class="main-content">
-
-               @yield('content')
-                <!-- End Page-content -->
-
-
+                @include('inc.top_bar')
+    
+                <!-- ========== Left Sidebar Start ========== -->
+    
+                @if(Auth::user()->role == 'admin')
+    
+                    @include('inc.sidebar.admin')
+    
+                @elseif(Auth::user()->role == 'buyer')
+    
+                    @include('inc.sidebar.buyer')
+    
+                @elseif(Auth::user()->role == 'partner')
+    
+                    @include('inc.sidebar.partner')
+    
+                @endif
                 
-              @include('inc.footer')
-
+                <!-- Left Sidebar End -->
+    
+                <!-- ============================================================== -->
+                <!-- Start right Content here -->
+                <!-- ============================================================== -->
+                <div class="main-content">
+    
+                   @yield('content')
+                    <!-- End Page-content -->
+    
+    
+                    
+                  @include('inc.footer')
+    
+                </div>
+                <!-- end main content-->
+    
             </div>
-            <!-- end main content-->
-
         </div>
         <!-- END layout-wrapper -->
 
@@ -119,6 +122,13 @@
 
         <!-- Right bar overlay-->
         {{-- <div class="rightbar-overlay"></div> --}}
+
+        <script src="{{asset('js/app.js')}}"></script>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
+
 
         <!-- JAVASCRIPT -->
         <script src="{{config('app.url')}}assets/libs/jquery/jquery.min.js"></script>

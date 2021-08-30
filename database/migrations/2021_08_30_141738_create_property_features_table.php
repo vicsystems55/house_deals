@@ -15,6 +15,8 @@ class CreatePropertyFeaturesTable extends Migration
     {
         Schema::create('property_features', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }

@@ -14,6 +14,8 @@ use App\User;
 
 use App\UserProfile;
 
+use App\PropertyFeature;
+
 use Session;
 
 class PartnerPageController extends Controller
@@ -71,12 +73,16 @@ class PartnerPageController extends Controller
 
         # code...
 
+        $features = PropertyFeature::latest()->get();
+
         $user_id = Auth::user()->id;
 
         // check if session exist with listing code
 
 
         $listing = Listing::where('listing_code', Session::get('listing_code'))->where('user_id', $user_id)->first();
+
+       
 
         if (Session::get('listing_code') && $listing) {
             # code...
@@ -100,8 +106,9 @@ class PartnerPageController extends Controller
 
         // dd($listing);
 
-        return view('agent_dashboard.create_listing',[
-            'listing' => $listing
+        return view('partner.create_listing',[
+            'listing' => $listing,
+            'features' => $features
         ]);
     }
 }

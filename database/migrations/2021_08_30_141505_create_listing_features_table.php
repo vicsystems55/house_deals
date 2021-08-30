@@ -16,11 +16,13 @@ class CreateListingFeaturesTable extends Migration
         Schema::create('listing_features', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('listing_id')->unsigned();
-            $table->bigInteger('listing_id')->unsigned();
+            $table->bigInteger('property_features_id')->unsigned();
+            
+            $table->string('status')->default('active');
             
 
             $table->foreign('listing_id')->references('id')->on('listings'); 
-            $table->foreign('listing_id')->references('id')->on('listings');          
+            $table->foreign('property_features_id')->references('id')->on('property_features');          
             $table->timestamps();
         });
     }

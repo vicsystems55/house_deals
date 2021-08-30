@@ -119,3 +119,9 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function(){
 // Listing Resource
 
 Route::resource('/listingx', 'ListingController')->middleware('auth');
+
+
+Route::post('/upload_pix', 'ListingImageController@store')->name('upload_pix');
+
+
+Route::get('/get_images', 'ListingImageController@get_images')->name('get_images');

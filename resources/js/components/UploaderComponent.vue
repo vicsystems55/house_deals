@@ -20,7 +20,7 @@
 
     <div class="col-md-6 mx-auto">
 
-        <h4 class="text-center">Upload Vehicle Picture</h4>
+        <h4 class="text-center"></h4>
 
     
 
@@ -44,7 +44,7 @@
             v-model="fileRecords"
             @upload="onUpload($event)"
         ></VueFileAgent>
-  <button :disabled="!fileRecordsForUpload.length" class="btn btn-outline-secondary btn-block col-md-6 mx-auto mt-2" @click="uploadFiles()">
+  <button :disabled="!fileRecordsForUpload.length" class="btn btn-primary btn-block col-md-12 mx-auto mt-2" @click="uploadFiles()">
     Upload {{ fileRecordsForUpload.length }} files
   </button>
 
@@ -92,7 +92,7 @@ data(){
     methods: {
 
             getPic(img) {
-              return this.appurl +'vehicle_images/'+img;
+              return this.appurl +'property_images/'+img;
             },
 
               get_images(){
