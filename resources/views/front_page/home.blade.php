@@ -10,21 +10,19 @@
     <!--Banner Three Start-->
     <section class="banner_three">
         <div class="banner_three_home_img">
-            <img src="assets/images/main-slider/slider-3-1.png" alt="">
+            <img src="{{config('app.url')}}assets/images/main-slider/slider-3-1.png" alt="">
         </div>
-        <div class="banner_three_shape_one"></div>
-        <div class="banner_three_shape_two"></div>
-        <div class="banner_three_shape_three"
-            style="background-image: url(assets/images/shapes/banner_three_shape_3.png)"></div>
-        <div class="banner_three_shape_four"
-            style="background-image: url(assets/images/shapes/banner_three_shape_4.png)"></div>
+    
+     
+       
+
         <div class="container">
             <div class="row">
-                <div class="col-xl-12">
+                <div class="col-xl-6">
                     <div class="banner_three_content">
                         <div class="">
-                            <h2>Getting a home is <br> a collaborative process</h2>
-                            <h2 class="font-weight-bold">Let's find it together</h2>
+                            <h2 style="color: #009BB1">Getting a home is <br> a collaborative process</h2>
+                            <h2 style="color: #5C1B9D" class="font-weight-bold ">Let's find it together</h2>
                         </div>
                         <div class="product-tab-box tabs-box">
                             <ul class="tab-btns tab-buttons clearfix list-unstyled">
@@ -77,6 +75,9 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div style="background-image: url({{config('app.url')}}tolips/homepix.png); background-size: cover;" class="col-md-6">
+                   
                 </div>
             </div>
         </div>
@@ -507,207 +508,7 @@
     <!--Two Boxes End-->
 
     <!--Latest Properties Three Start-->
-    <section class="latest_properties three">
-        <div class="container_box">
-            <div class="block-title text-center">
-                <h4>Browse Hot Offers</h4>
-                <h2>Latest Properties</h2>
-            </div>
-            <div class="row">
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="latest_properties_single">
-                        <div class="latest_properties_img_carousel owl-theme owl-carousel">
-                            <div class="latest_properties_img">
-                                <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_1.jpg" alt="">
-                                <div class="latest_properties_icon">
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="sale_btn">For Sale</a>
-                                </div>
-                            </div>
-                            <div class="latest_properties_img">
-                                <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_2.jpg" alt="">
-                                <div class="latest_properties_icon">
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="sale_btn">For Sale</a>
-                                </div>
-                            </div>
-                            <div class="latest_properties_img">
-                                <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_3.jpg" alt="">
-                                <div class="latest_properties_icon">
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="sale_btn">For Sale</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="latest_properties_content">
-                            <div class="latest_properties_top_content">
-                                <h4><a href="listing-details.html">Interior Appartment</a></h4>
-                                <p>80 Broklyn Street, New York. USA</p>
-                                <h3>$86.7600 <span>Sqft</span></h3>
-                            </div>
-                            <div class="latest_properties_bottom_content">
-                                <ul class="list-unstyled">
-                                    <li><span class="icon-bed"></span>4</li>
-                                    <li><span class="icon-shower"></span>2</li>
-                                    <li><span class="icon-square-measument"></span>500 sqft</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="latest_properties_single">
-                        <div class="latest_properties_img_carousel owl-theme owl-carousel">
-                            <div class="latest_properties_img">
-                                <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_2.jpg" alt="">
-                                <div class="latest_properties_icon">
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="featured_btn">Featured</a>
-                                    <a href="#" class="sale_btn">For Rent</a>
-                                </div>
-                            </div>
-                            <div class="latest_properties_img">
-                                <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_2.jpg" alt="">
-                                <div class="latest_properties_icon">
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="featured_btn">Featured</a>
-                                    <a href="#" class="sale_btn">For Rent</a>
-                                </div>
-                            </div>
-                            <div class="latest_properties_img">
-                                <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_3.jpg" alt="">
-                                <div class="latest_properties_icon">
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="featured_btn">Featured</a>
-                                    <a href="#" class="sale_btn">For Rent</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="latest_properties_content">
-                            <div class="latest_properties_top_content">
-                                <h4><a href="listing-details.html">Monall Design House</a></h4>
-                                <p>80 Broklyn Street, New York. USA</p>
-                                <h3>$140.0000 <span>Sqft</span></h3>
-                            </div>
-                            <div class="latest_properties_bottom_content">
-                                <ul class="list-unstyled">
-                                    <li><span class="icon-bed"></span>4</li>
-                                    <li><span class="icon-shower"></span>2</li>
-                                    <li><span class="icon-square-measument"></span>500 sqft</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="latest_properties_single">
-                        <div class="latest_properties_img_carousel owl-theme owl-carousel">
-                            <div class="latest_properties_img">
-                                <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_3.jpg" alt="">
-                                <div class="latest_properties_icon">
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="sale_btn">For Sale</a>
-                                </div>
-                            </div>
-                            <div class="latest_properties_img">
-                                <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_2.jpg" alt="">
-                                <div class="latest_properties_icon">
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="sale_btn">For Sale</a>
-                                </div>
-                            </div>
-                            <div class="latest_properties_img">
-                                <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_3.jpg" alt="">
-                                <div class="latest_properties_icon">
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="sale_btn">For Sale</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="latest_properties_content">
-                            <div class="latest_properties_top_content">
-                                <h4><a href="listing-details.html">Luxury Appartment</a></h4>
-                                <p>80 Broklyn Street, New York. USA</p>
-                                <h3>$900 <span>Monthly</span></h3>
-                            </div>
-                            <div class="latest_properties_bottom_content">
-                                <ul class="list-unstyled">
-                                    <li><span class="icon-bed"></span>4</li>
-                                    <li><span class="icon-shower"></span>2</li>
-                                    <li><span class="icon-square-measument"></span>500 sqft</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <div class="latest_properties_single">
-                        <div class="latest_properties_img_carousel owl-theme owl-carousel">
-                            <div class="latest_properties_img">
-                                <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_4.jpg" alt="">
-                                <div class="latest_properties_icon">
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="sale_btn">For Rent</a>
-                                </div>
-                            </div>
-                            <div class="latest_properties_img">
-                                <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_2.jpg" alt="">
-                                <div class="latest_properties_icon">
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="sale_btn">For Rent</a>
-                                </div>
-                            </div>
-                            <div class="latest_properties_img">
-                                <img src="{{config('app.url')}}tolips/assets/images/resources/latest_properties_img_3.jpg" alt="">
-                                <div class="latest_properties_icon">
-                                    <i class="fa fa-heart"></i>
-                                </div>
-                                <div class="featured_and_sale_btn">
-                                    <a href="#" class="sale_btn">For Rent</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="latest_properties_content">
-                            <div class="latest_properties_top_content">
-                                <h4><a href="listing-details.html">Interior Appartment</a></h4>
-                                <p>80 Broklyn Street, New York. USA</p>
-                                <h3>$86.7600 <span>Sqft</span></h3>
-                            </div>
-                            <div class="latest_properties_bottom_content">
-                                <ul class="list-unstyled">
-                                    <li><span class="icon-bed"></span>4</li>
-                                    <li><span class="icon-shower"></span>2</li>
-                                    <li><span class="icon-square-measument"></span>500 sqft</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  
     <!--Latest Properties Three End-->
 
     <!--Explore Start-->
@@ -784,21 +585,23 @@
 
     <!--CTA One Start-->
     <section class="cta_one">
-        <div class="cta_one_bg" ></div>
-        <div class="container">
+        <div class="p-3"></div>
+        <div class="container py-3">
             <div class="row">
                 <div class="col-xl-12">
-                    <div class="cta_one_inner">
-                        <div class="">
-                            <h2 class="text-center">We Help People and Homes Find Each Other</h2>
+                    <div class="">
+                        <div class=" text-center">
+                            <h2 class="text-center  text-white">Are you a real estate company?</h2>
+                            <p class="text-white text-center px-md-3">Join the cliq of cool real estate partners who earn over 1 Billion Naira in revenue and have access to a wide range of investors who are seeking to invest and buy real estate properties</p>
                         
                         
-                            <a href="listing-1.html" class="thm-btn">Browse Property</a>
+                            <a href="listing-1.html" class="thm-btn text-center">Browse Property</a>
                         
                     </div>
                 </div>
             </div>
         </div>
+        <div class="p-3"></div>
     </section>
     <section class="cta_on bg-white ">
       
