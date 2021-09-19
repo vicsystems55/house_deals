@@ -46,9 +46,9 @@ font-family: 'Inter', sans-serif;
 
 :root {
     --thm-font: 'Inter', sans-serif;
-    --thm-base: #4c7ce3;
+    --thm-base: #5C1B9D;
     --thm-base-rgb: 76, 124, 227;
-    --thm-primary: #62cec5;
+    --thm-primary: #009BB1;
     --thm-primary-rgb: 98, 206, 197;
     --thm-black: #282f44;
     --thm-black-rgb: 40, 47, 68;
@@ -3432,7 +3432,7 @@ li {
     height: 100%;
     width: 100%;
     content: "";
-    background: rgba(40, 47, 68, .95);
+    background: #5C1B9D;
 }
 
 .site_footer_one_top {}

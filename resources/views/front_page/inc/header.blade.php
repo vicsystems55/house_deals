@@ -1,6 +1,6 @@
 <div class="site-header__header-one-wrap clearfix">
 
-    <div class="header_top_one">
+    {{-- <div class="header_top_one">
         <div class="container">
             <div class="header_top_one_inner clearfix">
                 <div class="header_top_one_logo_box float-left">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <header class="main-nav__header-one">
         <div class="container">
