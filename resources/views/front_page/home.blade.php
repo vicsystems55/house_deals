@@ -587,13 +587,16 @@
     <section class="cta_one">
         <div class="p-3"></div>
         <div class="container py-3">
-            <div class="row">
+            <div class="">
                 <div class="col-xl-12">
                     <div class="">
                         <div class=" text-center">
                             <h2 class="text-center  text-white">Are you a real estate company?</h2>
-                            <p class="text-white text-center px-md-3">Join the cliq of cool real estate partners who earn over 1 Billion Naira in revenue and have access to a wide range of investors who are seeking to invest and buy real estate properties</p>
-                        
+
+                            <div class="col-md-6 mx-auto">
+                                <p class="text-white text-center py-5">Join the cliq of cool real estate partners who earn over <span>1 Billion Naira</span> in revenue and have access to a wide range of investors who are seeking to invest and buy real estate properties</p>
+
+                            </div>
                         
                             <a href="listing-1.html" class="thm-btn text-center">Browse Property</a>
                         
