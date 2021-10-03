@@ -102,7 +102,7 @@
             <div class="card-body">
                 <div class="row">
                     
-                    <div class="col-md-5 mx-auto">'
+                    <div class="col-md-5 mx-auto {{$member->admin_verified == 1?'d-none':''}}">
                         <form action="{{route('admin_verify')}}" method="post">
                             @csrf
                             <div class="">
@@ -114,7 +114,7 @@
                         </form>
                     </div>
 
-                    <div class="col-md-5 mx-auto">'
+                    <div class="col-md-5 mx-auto {{$member->admin_verified == 0?'d-none':''}}">
                         <form action="{{route('disapprove_profile')}}" method="post">
                             @csrf
                             <div class="">

@@ -89,7 +89,7 @@
                             <div class="col-md-6 ">
 
                                 <div class="form-group ">
-                                    <input type="text" class="form-control" name="managing_director_name" value="{{$profile_data->managing_director_name??''}}" placeholder="Enter name of Business Owner or Managing Director">
+                                    <input type="text" class="form-control" name="managing_director_name" value="{{$profile_data->managing_director_name??old('managing_director_name')}}" placeholder="Enter name of Business Owner or Managing Director">
                                     
                                     @error('managing_director_name')
                                     <span class="text-danger text-mted" role="alert">

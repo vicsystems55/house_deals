@@ -55,13 +55,15 @@
                                         <td><span class="badge badge-success">pending</span></td>
                                         <td>
                                             <div>
-                                                @if($member->user_profiles)
+                                                {{-- @if($member->user_profiles) --}}
+                                                
+                                                    
                                                 <a href="{{route('admin.member', $member->user_code)}}" class="btn btn-primary btn-sm">view profile</a>
-                                                @else 
+                                                {{-- @else  --}}
 
-                                                <a href="" class="btn btn-danger btn-sm disabled" >Unverified</a>
+                                                {{-- <a href="" class="btn btn-danger btn-sm disabled" >Unverified</a>
 
-                                                @endif
+                                                @endif --}}
 
                         
                                             </div>
