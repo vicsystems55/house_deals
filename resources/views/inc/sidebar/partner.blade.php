@@ -38,9 +38,9 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li><a href="{{route('partner.create_listing')}}">Create Listing</a></li>
                         <li><a href="{{route('partner.listings')}}">All Listings</a></li>
-                        <li><a href="">Published</a></li>
-                        <li><a href="">Submitted</a></li>
-                        <li><a href="">Disapproved</a></li>
+                        <li><a href="{{route('partner.active_listings')}}">Active Listings</a></li>
+                        <li><a href="{{route('partner.pending_listings')}}">Pending Listings</a></li>
+                        <li><a href="{{route('partner.disapproved_listings')}}">Disapproved Listings</a></li>
                     </ul>
                 </li>
 

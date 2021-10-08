@@ -33,6 +33,14 @@ class CreateListingsTable extends Migration
             $table->string('unit_area')->nullable();
             $table->string('total_area')->nullable();
 
+            $table->integer('worth')->nullable();
+
+            $table->integer('discount')->nullable();
+            
+            $table->boolean('published')->default(0);
+            $table->boolean('approved')->default(0);
+            $table->boolean('reserved')->default(0);
+
             $table->foreign('user_id')->references('id')->on('users');
                
 

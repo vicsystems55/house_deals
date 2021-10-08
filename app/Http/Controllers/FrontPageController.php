@@ -52,6 +52,13 @@ class FrontPageController extends Controller
 
         return view('front_page.listing');
     }
+
+    public function details()
+    {
+        # code...
+
+        return view('front_page.details');
+    }
     
 
     

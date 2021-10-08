@@ -47,7 +47,7 @@
                 </li>
 
                 <li>
-                    <a href="r{{route('admin.notifications')}}" class=" waves-effect">
+                    <a href="{{route('admin.notifications')}}" class=" waves-effect">
                         <i class="ti-calendar"></i>
                         <span class="badge badge-pill badge-primary float-right">2</span>
                         <span>Notifications</span>

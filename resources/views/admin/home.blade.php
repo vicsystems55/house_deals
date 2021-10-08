@@ -116,7 +116,7 @@
         </div>
         <!-- end row -->
 
-        <div class="row">
+        <div class="row d-none">
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">

@@ -49,7 +49,7 @@ class PartnerPageController extends Controller
         $notifications = Notification::where('user_id', $user_id)->latest()->get();
         
         
-        return view('partner.notifications',[
+        return view('general.notifications',[
             'notifications' => $notifications
         ]);
     }
@@ -60,6 +60,29 @@ class PartnerPageController extends Controller
         
         return view('partner.listings');
     }
+
+    public function active_listings()
+    {
+        
+        
+        return view('partner.active_listings');
+    }
+
+    public function pending_listings()
+    {
+        
+        
+        return view('partner.pending_listings');
+    }
+
+    public function disapproved_listings()
+    {
+        
+        
+        return view('partner.disapproved_listings');
+    }
+
+    
 
     public function listing()
     {

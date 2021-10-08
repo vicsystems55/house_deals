@@ -26,6 +26,9 @@ class ListingController extends Controller
     public function create()
     {
         //
+        
+
+
     }
 
     /**

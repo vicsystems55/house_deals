@@ -54,6 +54,8 @@ Route::get('/shop', 'FrontPageController@shop')->name('shop');
 
 Route::get('/listing', 'FrontPageController@listing')->name('listing');
 
+Route::get('/details', 'FrontPageController@details')->name('details');
+
 Route::get('/home', 'FrontPageController@home')->name('home');
 
 // Buyers routes
@@ -61,6 +63,8 @@ Route::get('/home', 'FrontPageController@home')->name('home');
 
 
 Route::group(['middleware' => ['buyer'], 'prefix' => 'buyer'], function(){
+
+    
 
     Route::get('/', 'BuyerPageController@home')->name('buyer.home');
 
@@ -85,6 +89,12 @@ Route::group(['middleware' => ['partner'], 'prefix' => 'partner'], function(){
     Route::get('/notifications', 'PartnerPageController@notifications')->name('partner.notifications');
 
     Route::get('/listings', 'PartnerPageController@listings')->name('partner.listings')->middleware('profile_update');
+
+    Route::get('/active_listings', 'PartnerPageController@listings')->name('partner.active_listings')->middleware('profile_update');
+
+    Route::get('/pending_listings', 'PartnerPageController@listings')->name('partner.pending_listings')->middleware('profile_update');
+
+    Route::get('/disapproved_listings', 'PartnerPageController@listings')->name('partner.disapproved_listings')->middleware('profile_update');
 
     Route::get('/listing', 'PartnerPageController@listing')->name('partner.listing')->middleware('profile_update');
 
