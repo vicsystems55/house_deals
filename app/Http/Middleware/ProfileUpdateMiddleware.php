@@ -24,7 +24,7 @@ class ProfileUpdateMiddleware
 
         $profile = UserProfile::where('user_id', $user_id)->first();
 
-        if($profile && $profile->admin_verified == 1){
+        if($profile->admin_verified == 1){
 
             
 

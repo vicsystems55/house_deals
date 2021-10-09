@@ -79,40 +79,12 @@
                     <div class="col-xl-8 col-lg-8">
                         <div class="listing_details_top_right clearfix">
                             <div class="listing_details_top_product_list_box">
-                                <ul class="listing_details_top_product_list list-unstyled">
-                                    <li>
-                                        <div class="icon_box">
-                                            <span class="icon-bed"></span>
-                                        </div>
-                                        <div class="text_box">
-                                            <h5>4</h5>
-                                            <p>Bedrooms</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon_box">
-                                            <span class="icon-shower"></span>
-                                        </div>
-                                        <div class="text_box">
-                                            <h5>2</h5>
-                                            <p>Bathrooms</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon_box">
-                                            <span class="icon-square-measument"></span>
-                                        </div>
-                                        <div class="text_box">
-                                            <h5>500</h5>
-                                            <p>Sqft Size</p>
-                                        </div>
-                                    </li>
-                                </ul>
+                             
                             </div>
                             <div class="listing_details_top_right_btn_box">
-                                <a href="#" class="featured_btn">Featured</a>
-                                <a href="#" class="sale_btn">For Sale</a>
-                                <p>Property ID: <span>8760</span></p>
+                                <div class="col-xl-12">
+                                    <button type="submit" class="thm-btn review_from__btn">Reserve Listing</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -144,7 +116,7 @@
                             </div>
                         </div>
                         <div class="listing_details_bottom_right">
-                            <div class="listing_details_bottom_right_btn">
+                            <div class="listing_details_bottom_right_btn  d-none">
                                 <a href="#"><i class="fas fa-share"></i>Share</a>
                                 <a href="#"><i class="fa fa-heart"></i>Save</a>
                                 <a href="#"><i class="fa fa-envelope"></i>Email</a>
@@ -252,13 +224,7 @@
                                             <div class="reviewer_name">
                                                 <h3>Kevin Martin</h3>
                                             </div>
-                                            <div class="reviewer_rating">
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                            </div>
+                                            
                                         </div>
                                         <p>It has survived not only five centuries, but also the leap into electronic
                                             typesetting unchanged. It was popularised in the sheets containing lorem
@@ -266,28 +232,7 @@
                                     </div>
                                 </div>
                                 <!--Review Two Box Single-->
-                                <div class="review_two_box__single">
-                                    <div class="review_two_box__image">
-                                        <img src="assets/images/resources/review-2-img-2.png" alt="">
-                                    </div>
-                                    <div class="review_two_box__content">
-                                        <div class="review_two_box_title">
-                                            <div class="reviewer_name">
-                                                <h3>Sarah Albert</h3>
-                                            </div>
-                                            <div class="reviewer_rating">
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                                <a href="#"><i class="fas fa-star"></i></a>
-                                            </div>
-                                        </div>
-                                        <p>It has survived not only five centuries, but also the leap into electronic
-                                            typesetting unchanged. It was popularised in the sheets containing lorem
-                                            ipsum is simply free text.</p>
-                                    </div>
-                                </div>
+                               
                             </div>
                             <!--Review Two Box Form-->
                             <div class="review_two_box_form">

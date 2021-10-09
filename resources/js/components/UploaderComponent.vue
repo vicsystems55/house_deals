@@ -3,7 +3,7 @@
 
 
         <div class="row">
-            <div v-for="image in images" :key="image.id" class="col-md-4 p-3">
+            <div v-for="image in images" :key="image.id" class=" p-3">
 
             <div >
                           <img style="height: 230px; width: 230px; object-fit: cover; border-radius: 20px;" class="shadow" :src="getPic(image.img_path)" >

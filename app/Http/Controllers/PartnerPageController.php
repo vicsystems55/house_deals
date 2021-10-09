@@ -16,6 +16,16 @@ use App\UserProfile;
 
 use App\PropertyFeature;
 
+use App\SubscriptionPlanzz;
+
+use App\PartnerSubscription;
+
+use App\Review;
+
+use App\Reservation;
+
+use App\UserWallet;
+
 use Session;
 
 class PartnerPageController extends Controller
@@ -24,9 +34,19 @@ class PartnerPageController extends Controller
 
     public function home()
     {
-        
-        
-        return view('partner.home');
+        $listings = Listing::where('published', 1)->latest()->get();
+
+        $reservations = Reservation::with('listings')->latest()->get();
+
+        $transactions = UserWallet::latest()->get();
+
+        $notifications = Notification::where('user_id', Auth::user()->id)->latest()->get();
+
+        $reviews = Review::latest()->get();
+
+        return view('partner.home', compact([
+            'listings', 'reservations', 'transactions', 'notifications', 'reviews'
+        ]));
     }
 
     public function profile()
@@ -49,37 +69,78 @@ class PartnerPageController extends Controller
         $notifications = Notification::where('user_id', $user_id)->latest()->get();
         
         
-        return view('general.notifications',[
+        return view('partner.notifications',[
             'notifications' => $notifications
         ]);
     }
 
     public function listings()
     {
+        $user_id = Auth::user()->id;
+
+        $listings = Listing::
+        where('user_id', $user_id )
+        ->where('published', 1 )
+        ->latest()->paginate(30);
+
+        // dd($listings);
         
         
-        return view('partner.listings');
+        return view('partner.listings',[
+            'listings' => $listings
+        ]);
     }
 
     public function active_listings()
     {
+        $user_id = Auth::user()->id;
+
+        $listings = Listing::
+        where('user_id', $user_id )
+        ->where('published', 1 )
+        ->latest()->paginate(30);
+
+        // dd($listings);
         
         
-        return view('partner.active_listings');
+        return view('partner.active_listings',[
+            'listings' => $listings
+        ]);
     }
 
     public function pending_listings()
     {
+        $user_id = Auth::user()->id;
+
+        $listings = Listing::
+        where('user_id', $user_id )
+        ->where('published', 1 )
+        ->latest()->paginate(30);
+
+        // dd($listings);
         
         
-        return view('partner.pending_listings');
+        return view('partner.pending_listings',[
+            'listings' => $listings
+        ]);
     }
 
     public function disapproved_listings()
     {
         
+        $user_id = Auth::user()->id;
+
+        $listings = Listing::
+        where('user_id', $user_id )
+        ->where('published', 1 )
+        ->latest()->paginate(30);
+
+        // dd($listings);
         
-        return view('partner.disapproved_listings');
+        
+        return view('partner.disapproved_listings',[
+            'listings' => $listings
+        ]);
     }
 
     
@@ -133,5 +194,96 @@ class PartnerPageController extends Controller
             'listing' => $listing,
             'features' => $features
         ]);
+    }
+
+    public function subscriptions()
+    {
+
+        $user_id = Auth::user()->id;
+
+        
+        $subscription_plans = SubscriptionPlanzz::latest()->get();
+
+        $my_subscriptions =  PartnerSubscription::where('id', $user_id??'')->first();
+
+        return view('partner.subscriptions', compact([
+            'subscription_plans', 'my_subscriptions'
+        ]));
+    }
+
+    public function reservations()
+    {
+
+        $user_id = Auth::user()->id;
+
+        $listings = Reservation::with('listings')->latest()->paginate(30);
+
+        return view('partner.reservations', compact([
+           'listings'
+        ]));
+        
+    }
+
+    public function active_reservations()
+    {
+
+        $user_id = Auth::user()->id;
+
+        $listings = Reservation::with('listings')->latest()->paginate(30);
+
+        return view('partner.active_reservations', compact([
+           'listings'
+        ]));
+        
+    }
+
+    public function resolved_reservations()
+    {
+
+        $user_id = Auth::user()->id;
+
+        $listings = Reservation::with('listings')->latest()->paginate(30);
+
+        return view('partner.resolved_reservations', compact([
+           'listings'
+        ]));
+        
+    }
+
+    public function expired_reservations()
+    {
+
+        $user_id = Auth::user()->id;
+
+        $listings = Reservation::with('listings')->latest()->paginate(30);
+
+        return view('partner.expired_reservations', compact([
+           'listings'
+        ]));
+    }
+
+
+    public function reviews()
+    {
+
+        $user_id = Auth::user()->id;
+
+        $reviews = Review::latest()->get();
+
+        return view('partner.reviews', compact([
+           'reviews'
+        ]));
+        
+    }
+
+    public function review()
+    {
+
+        $user_id = Auth::user()->id;
+
+        return view('partner.review', compact([
+           'reviews'
+        ]));
+        
     }
 }

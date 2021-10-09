@@ -29,6 +29,9 @@
         "vue-file-agent": "^1.7.3",
         "vue-google-autocomplete": "^1.1.1",
         "vue-toastify": "^1.8.0",
-        "vue2-google-maps": "^0.10.7"
+        "vue2-google-maps": "^0.10.7",
+        "vue-paystack": "^2.0.4",
+        "vue-slider-component": "^4.0.0-beta.4"
+        
     }
 }

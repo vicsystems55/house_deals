@@ -88,13 +88,26 @@ Route::group(['middleware' => ['partner'], 'prefix' => 'partner'], function(){
 
     Route::get('/notifications', 'PartnerPageController@notifications')->name('partner.notifications');
 
+    Route::get('/reviews', 'PartnerPageController@reviews')->name('partner.reviews');
+
+    Route::get('/reservations', 'PartnerPageController@reservations')->name('partner.reservations');
+
+    Route::get('/active_reservations', 'PartnerPageController@active_reservations')->name('partner.active_reservations');
+
+
+    Route::get('/resolved_reservations', 'PartnerPageController@resolved_reservations')->name('partner.resolved_reservations');
+
+    Route::get('/expired_reservations', 'PartnerPageController@expired_reservations')->name('partner.expired_reservations');
+
+    Route::get('/subscriptions', 'PartnerPageController@subscriptions')->name('partner.subscriptions');
+
     Route::get('/listings', 'PartnerPageController@listings')->name('partner.listings')->middleware('profile_update');
 
-    Route::get('/active_listings', 'PartnerPageController@listings')->name('partner.active_listings')->middleware('profile_update');
+    Route::get('/active_listings', 'PartnerPageController@active_listings')->name('partner.active_listings')->middleware('profile_update');
 
-    Route::get('/pending_listings', 'PartnerPageController@listings')->name('partner.pending_listings')->middleware('profile_update');
+    Route::get('/pending_listings', 'PartnerPageController@pending_listings')->name('partner.pending_listings')->middleware('profile_update');
 
-    Route::get('/disapproved_listings', 'PartnerPageController@listings')->name('partner.disapproved_listings')->middleware('profile_update');
+    Route::get('/disapproved_listings', 'PartnerPageController@disapproved_listings')->name('partner.disapproved_listings')->middleware('profile_update');
 
     Route::get('/listing', 'PartnerPageController@listing')->name('partner.listing')->middleware('profile_update');
 
@@ -115,9 +128,23 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function(){
 
     Route::get('/listings', 'AdminPageController@listings')->name('admin.listings');
 
+    Route::get('/reservations', 'AdminPageController@reservations')->name('admin.reservations');
+
+    Route::get('/resolved_reservations', 'AdminPageController@resolved_reservations')->name('admin.resolved_reservations');
+
+    Route::get('/expired_reservations', 'AdminPageController@expired_reservations')->name('admin.expired_reservations');
+
+    Route::get('/active_subscriptions', 'AdminPageController@active_subscriptions')->name('admin.active_subscriptions');
+
+    Route::get('/expired_subscriptions', 'AdminPageController@expired_subscriptions')->name('admin.expired_subscriptions');
+
+    Route::get('/subscription_settings', 'AdminPageController@subscription_settings')->name('admin.subscription_settings');
+
     Route::get('/notifications', 'AdminPageController@notifications')->name('admin.notifications');
 
     Route::get('/reviews', 'AdminPageController@reviews')->name('admin.reviews');
+
+    Route::get('/wallet', 'AdminPageController@wallet')->name('admin.wallet');
 
     Route::get('/listing', 'AdminPageController@listing')->name('admin.listing');
     

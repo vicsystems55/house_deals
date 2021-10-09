@@ -84,11 +84,7 @@
                         <div class="header_btn_1">
                             <a href="{{route('login')}}" class="thm-btn">Login</a>
                         </div>
-                        <div class="icon_cart_box">
-                            <a href="#">
-                                <span class="icon-shopping-cart"></span>
-                            </a>
-                        </div>
+                       
                         <div class="icon_search_box">
                             <a href="#" class="main-nav__search search-popup__toggler">
                                 <i class="icon-magnifying-glass"></i>

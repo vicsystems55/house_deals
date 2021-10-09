@@ -9,7 +9,7 @@
         <div class="row align-items-center">
             <div class="col-sm-6">
                 <div class="page-title-box">
-                    <h4 class="font-size-18">All Listings</h4>
+                    <h4 class="font-size-18">Expired Reservations</h4>
                     <ol class="breadcrumb mb-0">
                  
                     </ol>
@@ -29,7 +29,7 @@
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title mb-4">Latest listings</h4>
+                        <h4 class="card-title mb-4">Latest Expired Reservations</h4>
                         <div class="table-responsive">
                             <table class=" {{$listings->count() < 1?'d-none':''}} table table-hover table-centered table-nowrap mb-0">
                                 <thead>
@@ -73,18 +73,7 @@
             
         </div>
 
-        <div style="min-height: 330px;" class="{{$listings->count() < 1?'':'d-none'}}">
-            <div class="p-5"></div>
-            <div style="min-height: 130px;" class="card col-md-3 mx-auto  shadow mt-3">
-                <div class="card-body text-center ">
-                    <h6>No Listings Yet</h6>
-                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-                    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_alyseq4q.json"  background="transparent"  speed="1"  style="width: 150px; height: 150px;"  loop  autoplay></lottie-player>
-                <a href="{{route('partner.create_listing')}}" class="btn btn-primary btn-block mt-3 shadow">Get Started</a>
-
-                </div>
-            </div>
-        </div>
+     
         <!-- end row -->
 
 

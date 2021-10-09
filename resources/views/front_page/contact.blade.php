@@ -24,62 +24,7 @@
 
     <!--Locations Start-->
     <section class="locations">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <!--Locations Single-->
-                    <div class="locations_three_single">
-                        <div class="locations_three_title">
-                            <h3>Austin</h3>
-                            <p>22 Texas West Hills</p>
-                        </div>
-                        <div class="locations_three_contact">
-                            <a href="mailto:needhelp@tolins.com" class="mail_box">needhelp@tolins.com</a>
-                            <a href="tel:888-999-0000" class="number_box">888 999 0000</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <!--Locations Single-->
-                    <div class="locations_three_single">
-                        <div class="locations_three_title">
-                            <h3>Boston</h3>
-                            <p>5 Federal Street Boston</p>
-                        </div>
-                        <div class="locations_three_contact">
-                            <a href="mailto:needhelp@tolins.com" class="mail_box">needhelp@tolins.com</a>
-                            <a href="tel:888-999-0000" class="number_box">888 999 0000</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <!--Locations Single-->
-                    <div class="locations_three_single">
-                        <div class="locations_three_title">
-                            <h3>New York</h3>
-                            <p>8th Broklyn New York</p>
-                        </div>
-                        <div class="locations_three_contact">
-                            <a href="mailto:needhelp@tolins.com" class="mail_box">needhelp@tolins.com</a>
-                            <a href="tel:888-999-0000" class="number_box">888 999 0000</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6">
-                    <!--Locations Single-->
-                    <div class="locations_three_single">
-                        <div class="locations_three_title">
-                            <h3>Baltimore</h3>
-                            <p>3 Lombabr 50 baltimore</p>
-                        </div>
-                        <div class="locations_three_contact">
-                            <a href="mailto:needhelp@tolins.com" class="mail_box">needhelp@tolins.com</a>
-                            <a href="tel:888-999-0000" class="number_box">888 999 0000</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
     </section>
     <!--Locations End-->
 

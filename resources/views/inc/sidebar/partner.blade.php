@@ -45,6 +45,41 @@
                 </li>
 
                 <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ti-email"></i>
+                        <span>Reservations</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="true">
+                        <li><a href="{{route('partner.reservations')}}">All Reservations</a></li>
+
+                        <li><a href="{{route('partner.active_reservations')}}">Active Reservations</a></li>
+
+                        <li><a href="{{route('partner.resolved_reservations')}}">Resolved Reservations</a></li>
+
+                        <li><a href="{{route('partner.expired_reservations')}}">Expired Reservations</a></li>
+                  
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="{{route('partner.reviews')}}" class=" waves-effect">
+                        <i class="ti-calendar"></i>
+                        <span class="badge badge-pill badge-primary float-right"></span>
+                        <span>Reviews</span>
+                    </a>
+                </li>
+
+            
+
+                <li>
+                    <a href="{{route('partner.subscriptions')}}" class=" waves-effect">
+                        <i class="ti-calendar"></i>
+                        <span class="badge badge-pill badge-primary float-right"></span>
+                        <span>Subscription</span>
+                    </a>
+                </li>
+
+                <li>
                     <a href="{{route('partner.notifications')}}" class=" waves-effect">
                         <i class="ti-calendar"></i>
                         <span class="badge badge-pill badge-primary float-right">0</span>

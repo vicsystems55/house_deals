@@ -62,6 +62,12 @@
                 </button>
             </div>
 
+            <?php
+
+                $notifications = \App\Notification::where('user_id', Auth::user()->id)->latest()->get()->take(10);
+
+            ?>
+
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,32 +79,56 @@
                     <div class="p-3">
                         <div class="row align-items-center">
                             <div class="col">
-                                <h5 class="m-0 font-size-16"> Notifications (258) </h5>
+                                <h5 class="m-0 font-size-16"> Notifications ({{$notifications->count()}}) </h5>
                             </div>
                         </div>
                     </div>
                     <div data-simplebar style="max-height: 230px;">
 
+                        @forelse ($notifications as $notification)
+
                         <a href="" class="text-reset notification-item">
                             <div class="media">
                                 <div class="avatar-xs mr-3">
                                     <span class="avatar-title bg-success rounded-circle font-size-16">
-                                        <i class="mdi mdi-cart-outline"></i>
+                                        <i class="mdi mdi-bell"></i>
                                     </span>
                                 </div>
                                 <div class="media-body">
-                                    <h6 class="mt-0 mb-1">Your order is placed</h6>
+                                    <h6 class="mt-0 mb-1">{{$notification->title}}</h6>
                                     <div class="font-size-12 text-muted">
-                                        <p class="mb-1">Dummy text of the printing and typesetting industry.</p>
+                                        <p class="mb-1">{{$notification->body}}</p>
                                     </div>
                                 </div>
                             </div>
                         </a>
+                            
+                        @empty
+
+                        <a href="" class="text-reset notification-item">
+                            <div class="media">
+                                <div class="avatar-xs mr-3">
+                                    <span class="avatar-title bg-success rounded-circle font-size-16">
+                                        <i class="mdi mdi-bell"></i>
+                                    </span>
+                                </div>
+                                <div class="media-body">
+                                    <h6 class="mt-0 mb-1"></h6>
+                                    <div class="font-size-12 text-muted">
+                                        <p class="mb-1">No messages yet...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                            
+                        @endforelse
+
+                  
             
                         
                     </div>
                     <div class="p-2 border-top">
-                        <a class="btn btn-sm btn-link font-size-14 btn-block text-center" href="javascript:void(0)">
+                        <a class="btn btn-sm btn-link font-size-14 btn-block text-center" href="{{route(Auth::user()->role.'.notifications')}}">
                             View all
                         </a>
                     </div>

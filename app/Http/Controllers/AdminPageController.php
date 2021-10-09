@@ -14,6 +14,12 @@ use App\User;
 
 use App\UserProfile;
 
+use App\UserWallet;
+
+use App\Reservation;
+
+use App\Review;
+
 class AdminPageController extends Controller
 {
     //
@@ -22,7 +28,21 @@ class AdminPageController extends Controller
     {
         # code...
 
-        return view('admin.home');
+        $listings = Listing::where('published', 1)->latest()->get();
+
+        $reservations = Reservation::with('listings')->latest()->get();
+
+        $transactions = UserWallet::latest()->get();
+
+        $members = User::where('role', '!=', 'admin')->get();
+
+        $notifications = Notification::where('user_id', Auth::user()->id)->latest()->get();
+
+        $reviews = Review::latest()->get();
+
+        return view('admin.home', compact([
+            'listings', 'reservations', 'transactions', 'members', 'notifications', 'reviews'
+        ]));
     }
 
     public function members()
@@ -78,5 +98,49 @@ class AdminPageController extends Controller
         # code...
 
         return view('admin.reviews');
+    }
+
+    public function reservations()
+    {
+        # code...
+
+        return view('admin.reservations');
+    }
+
+    public function reservation()
+    {
+        # code...
+
+        return view('admin.reservation');
+    }
+
+    public function active_subscriptions()
+    {
+        # code...
+
+        return view('admin.active_subscriptions');
+    }
+
+    public function expired_subscriptions()
+    {
+        # code...
+
+        return view('admin.expired_subscriptions');
+    }
+
+    public function subscription_settings()
+    {
+        # code...
+
+        return view('admin.subscription_settings');
+    }
+
+    public function wallet()
+    {
+        # code...
+
+        $transactions = UserWallet::latest()->paginate(30);
+
+        return view('admin.wallet', compact($transactions));
     }
 }
