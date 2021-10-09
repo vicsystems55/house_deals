@@ -54,7 +54,7 @@
 
                                         <div class="form-group row mb-0 mt-5">
                                             <div class="col-12 text-right">
-                                                <a href="{{route('login')}}" class="btn btn-primary btn-block waves-effect waves-light" type="submit">Back to Login</a>
+                                                <a href="{{route('logout')}}" class="btn btn-primary btn-block waves-effect waves-light" type="submit">Back to Login</a>
                                             </div>
                                         </div>
     

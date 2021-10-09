@@ -18,6 +18,7 @@ class CreateSubscriptionPlanzzsTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->integer('amount');
+            $table->string('type');
             $table->string('sub_type');
             $table->string('status')->default('active');
             $table->timestamps();
