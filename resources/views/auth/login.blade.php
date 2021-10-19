@@ -85,14 +85,10 @@
 
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg @error('password') is-invalid @enderror" password="password" placeholder="Password">
+                                <input type="text" class="form-control  form-control-lg " password="password" placeholder="Password">
 
                                 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                              
 
 
                             </div>
@@ -113,7 +109,7 @@
                         <form action="{{route('register')}}" method="post" class="col-md-12 mx-auto mt-5">
                             @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg @error('email') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Fullname">
+                                <input type="text" class="form-control  form-control-lg @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Fullname">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -123,7 +119,7 @@
 
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg" name="email" value="{{ old('email') }}" placeholder="Email Address">
+                                <input type="text" class="form-control  form-control-lg @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email Address">
                                 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -133,7 +129,7 @@
                                 
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg" name="password" value="{{ old('password') }}" placeholder="Password">
+                                <input type="text" class="form-control  form-control-lg @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" placeholder="Password">
                                 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -143,7 +139,7 @@
 
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg" name="password-confirmation"  placeholder="Confirm Password">
+                                <input type="text" class="form-control  form-control-lg @error('password-confirmation') is-invalid @enderror" name="password-confirmation"  placeholder="Confirm Password">
                                 
                                 @error('password-confirmation')
                                     <span class="invalid-feedback" role="alert">
