@@ -12,7 +12,7 @@
         <div class="container py-5">
             
             <div class="listing_one_content_righ">
-                <form class="listing_one_content_right_form">
+                <form class="d-none listing_one_content_right_form">
                     <div class="row">
                       
                         <div class="col-xl-4 mx-auto">
@@ -30,7 +30,7 @@
                        
                     </div>
                 </form>
-                <div class="listing_one_quantity_and_price-ranger">
+                <div class="d-none listing_one_quantity_and_price-ranger">
                     <div class="row">
                         <div class="col-xl-12">
                        
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="filter_by_tags">
+                <div class="d-none filter_by_tags">
                     <div class="row">
                         <div class="col-xl-4">
                             <div class="single_tags_check__box">
@@ -135,7 +135,7 @@
                 </div>
                 <div class="listings_page_content">
                     <div class="row">
-                        <div class="col-xl-4">
+                        <div class="col-xl-6">
                             <!--Listings Page Content Single-->
                             <div class="listings_page_content_single">
                                 <div class="listings_page_content_carousel owl-theme owl-carousel">

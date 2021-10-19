@@ -145,7 +145,7 @@
                              
                             </div>
                           
-                            <div class="listing_details_amenities">
+                            <div class="d-none listing_details_amenities">
                                 <h3 class="listing_details_amenities_title">Amenities</h3>
                                 <div class="row">
                                     <div class="col-xl-4 col-lg-4 col-md-4">
@@ -176,7 +176,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="d-none row">
                                 <div class="col-xl-12">
                                     <div class="listing_details_video">
                                         <div class="listing_details_video_title">
@@ -212,7 +212,7 @@
                            
                             </div>
                             <!--Review Two Box-->
-                            <div class="review_two_box">
+                            <div class="d-none review_two_box">
                                 <h3 class="review_two_box__title">Property Reviews</h3>
                                 <!--Review Two Box Single-->
                                 <div class="review_two_box__single">
@@ -235,7 +235,7 @@
                                
                             </div>
                             <!--Review Two Box Form-->
-                            <div class="review_two_box_form">
+                            <div class="d-none review_two_box_form">
                                 <h3 class="review_two_box_form__title">Add Review</h3>
                                 <div class="review_two_box_form_rating">
                                     <a href="#"><i class="fas fa-star"></i></a>
