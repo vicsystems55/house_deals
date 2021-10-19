@@ -24,18 +24,23 @@ class ProfileUpdateMiddleware
 
         $profile = UserProfile::where('user_id', $user_id)->first();
 
-        if($profile->admin_verified == 1){
+        if ($profile) {
+            # code...
+            if($profile->admin_verified == 1){
 
             
 
-            return $next($request); 
-
-            
-            }
-
-            else{
-
-                return redirect()->route('profile_incomplete');
-            }
+                return $next($request); 
+    
+                
+                }
+    
+                else{
+    
+                    return redirect()->route('profile_incomplete');
+                }
+        }else{
+            return redirect()->route('profile_incomplete');
+        }
     }
 }

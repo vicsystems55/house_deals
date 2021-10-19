@@ -17,21 +17,21 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
-Route::get('/login', function () {
-    return redirect('/authentication');
-});
+// Route::get('/login', function () {
+//     return redirect('/authentication');
+// });
 
-Route::get('/register', function () {
-    return redirect('/authentication');
-});
+// Route::get('/register', function () {
+//     return redirect('/authentication');
+// });
 
 Route::get('/authentication', function () {
     return view('auth.login');
 });
 
-Route::post('/login', '\App\Http\Controllers\Auth\LoginController@login')->name('login');
+// Route::post('/login', '\App\Http\Controllers\Auth\LoginController@login')->name('login');
 
-Route::post('/register', '\App\Http\Controllers\Auth\RegisterController@register')->name('register');
+// Route::post('/register', '\App\Http\Controllers\Auth\RegisterController@register')->name('register');
 
 
 

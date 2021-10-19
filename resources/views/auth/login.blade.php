@@ -85,12 +85,9 @@
 
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg " password="password" placeholder="Password">
+                                <input type="text" class="form-control  form-control-lg " password="password" name="password" placeholder="Password">
 
                                 
-                              
-
-
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-block btn-lg">LOGIN</button>
@@ -139,7 +136,7 @@
 
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg @error('password-confirmation') is-invalid @enderror" name="password-confirmation"  placeholder="Confirm Password">
+                                <input type="text" class="form-control  form-control-lg @error('password-confirmation') is-invalid @enderror" name="password_confirmation"  placeholder="Confirm Password">
                                 
                                 @error('password-confirmation')
                                     <span class="invalid-feedback" role="alert">
