@@ -29,6 +29,10 @@ Route::get('/authentication', function () {
     return view('auth.login');
 });
 
+Route::post('/login', '\App\Http\Controllers\Auth\LoginController@login')->name('login');
+
+Route::post('/register', '\App\Http\Controllers\Auth\RegisterController@register')->name('register');
+
 
 
 Route::get('/choose', 'ChooseRoleController@index')->name('choose_role');

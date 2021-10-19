@@ -53,13 +53,13 @@
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="tab" href="#home2" role="tab" aria-selected="false">
+                        <a class="nav-link active" data-toggle="tab" href="#home2" role="tab" aria-selected="true">
                             <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
                             <span class="d-none d-sm-block">Login</span> 
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" data-toggle="tab" href="#profile2" role="tab" aria-selected="true">
+                        <a class="nav-link " data-toggle="tab" href="#profile2" role="tab" aria-selected="false">
                             <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
                             <span class="d-none d-sm-block">Register</span> 
                         </a>
@@ -69,12 +69,12 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div class="tab-pane p-1" id="home2" role="tabpanel">
+                    <div class="tab-pane p-1 active" id="home2" role="tabpanel">
                         <div class="p-2"></div>
                         <form action="{{route('login')}}" method="post" class="col-md-12 mx-auto mt-5">
                             @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg" name="email" placeholder="Email Address">
+                                <input  type="text" class="form-control  form-control-lg @error('email') is-invalid @enderror" name="email" placeholder="Email Address">
 
                                 
                                 @error('email')
@@ -85,7 +85,7 @@
 
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg" password="password" placeholder="Password">
+                                <input type="text" class="form-control  form-control-lg @error('password') is-invalid @enderror" password="password" placeholder="Password">
 
                                 
                                 @error('password')
@@ -97,7 +97,7 @@
 
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-primary btn-block btn-lg">LOGIN</button>
+                                <button type="submit" class="btn btn-primary btn-block btn-lg">LOGIN</button>
                             </div>
                         </form>
                         <div class="c">
@@ -108,12 +108,12 @@
                         </div>
                       
                     </div>
-                    <div class="tab-pane p-mb-3 active" id="profile2" role="tabpanel">
+                    <div class="tab-pane p-mb-3 " id="profile2" role="tabpanel">
                       
                         <form action="{{route('register')}}" method="post" class="col-md-12 mx-auto mt-5">
                             @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg" name="name" value="{{ old('name') }}" placeholder="Fullname">
+                                <input type="text" class="form-control  form-control-lg @error('email') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Fullname">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -130,6 +130,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                                
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control  form-control-lg" name="password" value="{{ old('password') }}" placeholder="Password">
@@ -139,6 +140,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+
                             </div>
                             <div class="form-group">
                                 <input type="text" class="form-control  form-control-lg" name="password-confirmation"  placeholder="Confirm Password">
@@ -151,7 +153,7 @@
 
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-primary btn-block btn-lg">REGISTER</button>
+                                <button type="submit" class="btn btn-primary btn-block btn-lg">REGISTER</button>
                             </div>
                         </form>
                         <div class="c">
