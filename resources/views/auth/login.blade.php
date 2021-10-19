@@ -1,109 +1,192 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8" />
-        <title>House Deals</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesbrand" name="author" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>House Deals</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/favicons/site.webmanifest">
 
-        <!-- Bootstrap Css -->
-        <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="{{config('app.url')}}assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
-        <link href="{{config('app.url')}}assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
-
-    </head>
-
-    <body class="account-pages">
-
-        <!-- Begin page -->
-        <div class="accountbg" style="background: url('{{config('app.url')}}assets/images/bg.jpg');background-size: cover;background-position: center;"></div>
-
-        <div class="wrapper-page account-page-full">
-
-            <div class="card shadow-none">
-                <div class="card-block">
-
-                    <div class="account-box">
-
-                        <div class="card-box shadow-none p-4">
-                            <div class="p-2">
-                                <div class="text-center mt-4">
-                                    <a href="index.html"><img src="assets/images/logo-dar.png" height="22" alt="logo"></a>
-                                </div>
-
-                                <h4 class="font-size-18 mt-5 text-center">Welcome Back !</h4>
-                                <p class="text-muted text-center">Sign in to continue to House Deals.</p>
-
-                                @if ($errors->any())
-                                    @foreach ($errors->all() as $error)
-                                        <p class="alert alert-warning">{{$error}}</p>
-                                    @endforeach
-                                @endif
+    <!-- Fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
 
-                              <form method="post"  class="mt-4" action="{{route('login')}}">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="username">Email</label>
-                                    <input type="text" name="email" class="form-control" id="username" placeholder="Enter username">
-                                </div>
+
+    <!-- Css-->
+    <link rel="stylesheet" href="{{config('app.url')}}tolips/assets/css/animate.min.css">
+    <link rel="stylesheet" href="{{config('app.url')}}tolips/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{config('app.url')}}tolips/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{config('app.url')}}tolips/assets/css/owl.theme.default.min.css">
+    <!-- Template styles -->
+    <link rel="stylesheet" href="{{config('app.url')}}tolips/assets/css/style.css">
+    <link rel="stylesheet" href="{{config('app.url')}}tolips/assets/css/responsive.css">
+
+</head>
+
+<body>
+
+
     
-
-                                <div class="form-group">
-                                    <label for="userpassword">Password</label>
-                                    <input type="password" name="password" class="form-control" id="userpassword" placeholder="Enter password">
-                                </div>
-    
-                                <div class="form-group row">
-                                    <div class="col-sm-6">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customControlInline">
-                                            <label class="custom-control-label" for="customControlInline">Remember me</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6 text-right">
-                                        <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
-                                    </div>
-                                </div>
-
-                                <div class="form-group mt-2 mb-0 row">
-                                    <div class="col-12 mt-3">
-                                        <a href=""><i class="mdi mdi-lock"></i> Forgot your password?</a>
-                                    </div>
-                                </div>
-
-                            </form>
-
-                            <div class="mt-5 pt-4 text-center">
-                                <p>Don't have an account ? <a href="{{route('register')}}" class="font-weight-medium text-primary"> Signup now </a> </p>
-                                <p>© <script>document.write(new Date().getFullYear())</script> Developed by vicSystems</p>
-                            </div>
-
-                        </div>
-                        </div>
-                    </div>
-
-                </div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-center py-5">
+                <img src="{{asset('assets/images/logo.png')}}" style="width: 300px;" class="img-fluid " alt="">
             </div>
-
+            <div class="text-center pb-3">
+                <h6 class="font-weight-bold " style="color: #5C1B9D;">Making  it possible for everyone to own a home</h6>
+            </div>
+            <img src="{{asset('assets/images/login_image.png')}}" class="img-fluid" alt="">
+    
         </div>
+        <div style="background-color: #5C1B9D; min-height: 700px;" class="col-md-6 text-white h-100">
+            <h4 style="font-size: 24pt" class="font-weight-bold text-center py-5">WELCOME</h4>
+            <div style="height: 470px;" class="card-bod col-md-8 mx-auto">
+        
+            
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#home2" role="tab" aria-selected="false">
+                            <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
+                            <span class="d-none d-sm-block">Login</span> 
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#profile2" role="tab" aria-selected="true">
+                            <span class="d-block d-sm-none"><i class="far fa-user"></i></span>
+                            <span class="d-none d-sm-block">Register</span> 
+                        </a>
+                    </li>
+              
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane p-1" id="home2" role="tabpanel">
+                        <div class="p-2"></div>
+                        <form action="{{route('login')}}" method="post" class="col-md-12 mx-auto mt-5">
+                            @csrf
+                            <div class="form-group">
+                                <input type="text" class="form-control  form-control-lg" name="email" placeholder="Email Address">
+
+                                
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control  form-control-lg" password="password" placeholder="Password">
+
+                                
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block btn-lg">LOGIN</button>
+                            </div>
+                        </form>
+                        <div class="c">
+                            <a href="" class="">Forgot Password?</a>
+                        </div>
+                        <div class="c">
+                            Don't have an account? <a href="" class="">Register Here.</a>
+                        </div>
+                      
+                    </div>
+                    <div class="tab-pane p-mb-3 active" id="profile2" role="tabpanel">
+                      
+                        <form action="{{route('register')}}" method="post" class="col-md-12 mx-auto mt-5">
+                            @csrf
+                            <div class="form-group">
+                                <input type="text" class="form-control  form-control-lg" name="name" value="{{ old('name') }}" placeholder="Fullname">
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control  form-control-lg" name="email" value="{{ old('email') }}" placeholder="Email Address">
+                                
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control  form-control-lg" name="password" value="{{ old('password') }}" placeholder="Password">
+                                
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control  form-control-lg" name="password-confirmation"  placeholder="Confirm Password">
+                                
+                                @error('password-confirmation')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block btn-lg">REGISTER</button>
+                            </div>
+                        </form>
+                        <div class="c">
+                            <a href="" class="">Forgot Password?</a>
+                        </div>
+                        <div class="c">
+                            Don't have an account? <a href="" class="">Register Here.</a>
+                        </div>
+                      
+                    </div>
+                  
+       
+                </div>
+
+             
+
+            </div>
+            <div class="p-3"></div>
+            <div class="c text-center">
+                By loggin in, I accept House Deals Terms of use and Privacy Policy.
+            </div>
+        </div>
+    </div>
+</div>
 
     
+    
 
-        <!-- JAVASCRIPT -->
-        <script src="{{config('app.url')}}assets/libs/jquery/jquery.min.js"></script>
-        <script src="{{config('app.url')}}assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="{{config('app.url')}}assets/libs/metismenu/metisMenu.min.js"></script>
-        <script src="{{config('app.url')}}assets/libs/simplebar/simplebar.min.js"></script>
-        <script src="{{config('app.url')}}assets/libs/node-waves/waves.min.js"></script>
+   
 
-        <script src="{{config('app.url')}}assets/js/app.js"></script>
 
-    </body>
+    <script src="{{config('app.url')}}tolips/assets/js/jquery.min.js"></script>
+    <script src="{{config('app.url')}}tolips/assets/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
 </html>

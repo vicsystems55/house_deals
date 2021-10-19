@@ -14,11 +14,11 @@
         <link href="{{config('app.url')}}assets/libs/chartist/chartist.min.css" rel="stylesheet">
 
         <!-- Bootstrap Css -->
-        <link href="{{config('app.url')}}assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+        <link href="{{config('app.url')}}assets/css/bootstrap.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
         <!-- Icons Css -->
         <link href="{{config('app.url')}}assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
-        <link href="{{config('app.url')}}assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+        <link href="{{config('app.url')}}assets/css/app.css" id="app-style" rel="stylesheet" type="text/css" />
 
         <link
         rel="stylesheet"

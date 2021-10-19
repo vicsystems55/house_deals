@@ -13,11 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/login');
-});
 
 Auth::routes();
+
+
+Route::get('/login', function () {
+    return redirect('/authentication');
+});
+
+Route::get('/register', function () {
+    return redirect('/authentication');
+});
+
+Route::get('/authentication', function () {
+    return view('auth.login');
+});
+
 
 
 Route::get('/choose', 'ChooseRoleController@index')->name('choose_role');
@@ -159,6 +170,8 @@ Route::resource('/listingx', 'ListingController')->middleware('auth');
 
 
 Route::post('/upload_pix', 'ListingImageController@store')->name('upload_pix');
+
+Route::post('/create_listing', 'ListingImageController@create_listing')->name('create_listing');
 
 
 Route::get('/get_images', 'ListingImageController@get_images')->name('get_images');

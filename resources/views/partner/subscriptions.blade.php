@@ -71,8 +71,8 @@
                             listingid=""
                             userid="" 
                             callback="{{config('app.url')}}reservation_callback" 
-                            email="" 
-                            amount="" 
+                            email="{{Auth::user()->email}}" 
+                            amount="20000" 
                             ></paystack-button>
 
                             </div>
@@ -109,8 +109,8 @@
                             listingid=""
                             userid="" 
                             callback="{{config('app.url')}}reservation_callback" 
-                            email="" 
-                            amount="" 
+                            email="{{Auth::user()->email}}" 
+                            amount="100000" 
                             ></paystack-button>
 
                             </div>

@@ -227,13 +227,13 @@
         </div>
         <!-- end row -->
 
-        <div class="row">
+        <div class=" row">
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title mb-4">Latest Trasaction</h4>
+                        <h4 class="card-title mb-4">Latest Reservations</h4>
                         <div class="table-responsive">
-                            <table class="table table-hover table-centered table-nowrap mb-0">
+                            <table class=" {{$listings->count() < 1?'d-none':''}} table table-hover table-centered table-nowrap mb-0">
                                 <thead>
                                     <tr>
                                         <th scope="col">(#) Id</th>
@@ -244,23 +244,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">#14256</th>
-                                        <td>
-                                            <div>
-                                                <img src="assets/images/users/user-2.jpg" alt=""
-                                                    class="avatar-xs rounded-circle mr-2"> Philip Smead
-                                            </div>
-                                        </td>
-                                        <td>15/1/2018</td>
-                                        <td>$94</td>
-                                        <td><span class="badge badge-success">Delivered</span></td>
-                                        <td>
-                                            <div>
-                                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                   
+                                        @foreach ($listings as $listing)
+
+                                        <tr>
+                                            <th scope="row">#{{$listing->listing_code}}</th>
+                                            <td>
+                                                <div>
+                                                    <img src="assets/images/users/user-2.jpg" alt=""
+                                                        class="avatar-xs rounded-circle mr-2"> {{$listing->property_name}}
+                                                </div>
+                                            </td>
+                                            <td>{{$listing->created_at->diffForHumans()}}</td>
+                                            <td>N {{number_format($listing->worth, 2)}}</td>
+                                            <td><span class="badge badge-success">{{$listing->status}}</span></td>
+                                            <td>
+                                                <div>
+                                                    <a href="{{route('partner.listing', $listing->listing_code)}}" class="btn btn-primary btn-sm">View</a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
                                    
                                 </tbody>
                             </table>
@@ -270,6 +274,7 @@
             </div>
             
         </div>
+
         <!-- end row -->
 
 

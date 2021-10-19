@@ -38,7 +38,7 @@ export default {
         return{
           paystackkey: "pk_test_ea7b39208f5b73d258c1f90cc27b1f5fbf716c01", //paystack public key
           email: this.email, // Customer email
-          amountx: this.amount,
+          amountx: this.amount * 100,
           callback: this.callback +'/'+this.userid +'/'+this.listingid,
           // in kobo
         }

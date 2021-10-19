@@ -25,14 +25,14 @@
 
         <div class="card col-md-12 mx-auto">
             <div class="card-body">
-                <form action="" method="post">
-
+                <form action="{{route('create_listing')}}" method="post">
+                    @csrf
                     <div class="row">
                         <div class="col-md-12">
 
                             <div class="form-group">
                                 <label for="">Name:</label>
-                                <input type="text" class="form-control" placeholder="Property Name">
+                                <input type="text" name="property_name" class="form-control" placeholder="Property Name">
                             </div>
 
 
@@ -50,7 +50,7 @@
 
                             <div class="form-group">
                                 <label for="">Worth:</label>
-                                <input type="text" class="form-control" placeholder="What is the value of this property?">
+                                <input type="text" name="worth" class="form-control" placeholder="What is the value of this property?">
                             </div>
 
                             <div class="row">
@@ -93,6 +93,11 @@
 
 
 
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <button type="submit" class="btn btn-primary ">Submit</button>
                         </div>
                     </div>
                    

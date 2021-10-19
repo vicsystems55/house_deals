@@ -1984,7 +1984,7 @@ __webpack_require__.r(__webpack_exports__);
       //paystack public key
       email: this.email,
       // Customer email
-      amountx: this.amount,
+      amountx: this.amount * 100,
       callback: this.callback + '/' + this.userid + '/' + this.listingid // in kobo
 
     };
