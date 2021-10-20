@@ -61,17 +61,22 @@
                         <div class="main-nav__main-navigation one clearfix">
                             <ul class=" main-nav__navigation-box float-left">
                                 <li class="dropdown ">
-                                    <a href="{{route('home')}}">Home</a>
+                                    <a href="{{route('home')}}">Buy</a>
                                  <!-- /.sub-menu -->
                                 </li>
                                 <li class="dropdown">
-                                    <a href="{{route('about')}}">About</a>
+                                    <a href="{{route('about')}}">Recommended Properties</a>
                                    <!-- /.sub-menu -->
                                 </li>
                                 <li class="dropdown">
-                                    <a href="{{route('shop')}}">Shop</a>
+                                    <a href="{{route('shop')}}">Sold</a>
                                    <!-- /.sub-menu -->
                                 </li>
+                                <li class="dropdown">
+                                    <a href="{{route('contact')}}">Blogs</a>
+                                   <!-- /.sub-menu -->
+                                </li>
+
                                 <li class="dropdown">
                                     <a href="{{route('contact')}}">Contact</a>
                                    <!-- /.sub-menu -->
@@ -82,7 +87,7 @@
                     </div>
                     <div class="main-nav__right main-nav__right_one float-right">
                         <div class="header_btn_1">
-                            <a href="{{route('login')}}" class="thm-btn">Login</a>
+                            <a href="{{route('login')}}" class="thm-btn">Dealer</a>
                         </div>
                        
                         <div class="icon_search_box">

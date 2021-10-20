@@ -35,7 +35,7 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="block-title text-left">
              
-                        <h2>Say <span class="text-primary"> Hello</span> to us</h2>
+                        <h2>Say <span style="color: #5B1B9C;" class=""> Hello</span> to us</h2>
                     </div>
                     <div class="contact_text">
                         <p>Simply fill the feedback form and we will get back to you shortly</p>

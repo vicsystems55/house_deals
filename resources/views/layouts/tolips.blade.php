@@ -65,7 +65,7 @@
             </span>
             <div class="logo-box">
                 <a href="index.html" aria-label="logo image">
-                    <img src="assets/images/resources/logo-2.png" alt="" />
+                    <img style="width: 200px;" src="assets/images/logo_trans.png" alt="" />
                 </a>
             </div>
             <!-- /.logo-box -->
