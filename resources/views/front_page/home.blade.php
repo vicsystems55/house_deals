@@ -114,35 +114,21 @@
         }}'>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_1.png" alt="">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/1.png" alt="">
                     </div><!-- /.swiper-slide -->
                     <div class="swiper-slide">
-                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_2.png" alt="">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/2.png" alt="">
                     </div><!-- /.swiper-slide -->
                     <div class="swiper-slide">
-                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_3.png" alt="">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/3.png" alt="">
                     </div><!-- /.swiper-slide -->
                     <div class="swiper-slide">
-                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_4.png" alt="">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/4.png" alt="">
                     </div><!-- /.swiper-slide -->
                     <div class="swiper-slide">
-                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_5.png" alt="">
+                        <img src="{{config('app.url')}}tolips/assets/images/brand/5.png" alt="">
                     </div><!-- /.swiper-slide -->
-                    <div class="swiper-slide">
-                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_1.png" alt="">
-                    </div><!-- /.swiper-slide -->
-                    <div class="swiper-slide">
-                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_2.png" alt="">
-                    </div><!-- /.swiper-slide -->
-                    <div class="swiper-slide">
-                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_3.png" alt="">
-                    </div><!-- /.swiper-slide -->
-                    <div class="swiper-slide">
-                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_4.png" alt="">
-                    </div><!-- /.swiper-slide -->
-                    <div class="swiper-slide">
-                        <img src="{{config('app.url')}}tolips/assets/images/brand/brand_1_img_5.png" alt="">
-                    </div><!-- /.swiper-slide -->
+                 
                 </div>
             </div>
         </div>

@@ -44,7 +44,7 @@
 <body>
 
     <div class="preloader">
-        <img src="{{config('app.url')}}tolips/assets/images/loader.png" class="preloader__image" alt="">
+        <img src="{{config('app.url')}}tolips/assets/images/logo.png" class="preloader__image" alt="">
     </div>
     
 
