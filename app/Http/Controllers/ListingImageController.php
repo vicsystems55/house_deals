@@ -170,15 +170,22 @@ class ListingImageController extends Controller
             //
         }
     
-        /**
-         * Remove the specified resource from storage.
-         *
-         * @param  \App\Models\Image  $image
-         * @return \Illuminate\Http\Response
-         */
-        public function destroy(Image $image)
+        public function delete_pix(Request $request)            
         {
-            //
+            # code...
+    
+            try {
+                //code...
+    
+                $delete = ListingImage::where('id', $request->img_id)->delete();
+    
+                return $delete;
+                
+            } catch (\Throwable $th) {
+                //throw $th;
+                
+                return $th;
+            }
         }
     
     

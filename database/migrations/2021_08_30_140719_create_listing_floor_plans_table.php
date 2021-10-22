@@ -15,6 +15,10 @@ class CreateListingFloorPlansTable extends Migration
     {
         Schema::create('listing_floor_plans', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('listing_id')->unsigned();
+            $table->string('file_path')->nullable();
+            $table->string('file_type')->nullable();
+            $table->foreign('listing_id')->references('id')->on('listings');
             $table->timestamps();
         });
     }

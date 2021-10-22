@@ -23,6 +23,8 @@ class CreateListingsTable extends Migration
 
             $table->string('property_name')->nullable();
             $table->string('location')->nullable();
+            $table->string('google_map_url')->nullable();
+            
 
             $table->double('price',5,2)->nullable();
             $table->integer('no_units')->unsigned()->default(1);

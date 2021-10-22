@@ -175,7 +175,9 @@ Route::resource('/listingx', 'ListingController')->middleware('auth');
 
 Route::post('/upload_pix', 'ListingImageController@store')->name('upload_pix');
 
-Route::post('/create_listing', 'ListingImageController@create_listing')->name('create_listing');
+Route::post('/create_listing', 'ListingController@create_listing')->name('create_listing');
 
 
 Route::get('/get_images', 'ListingImageController@get_images')->name('get_images');
+
+Route::post('/delete_pix', 'ListingImageController@delete_pix')->name('delete_pix');
