@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Http;
+
 use Auth;
 
 use App\Notification;
@@ -19,6 +21,8 @@ use App\UserWallet;
 use App\Reservation;
 
 use App\Review;
+
+use Response;
 
 class AdminPageController extends Controller
 {
@@ -76,7 +80,28 @@ class AdminPageController extends Controller
     {
         # code...
 
-        return view('admin.listings');
+        $response = Http::get((config('app.url')).'api/listings');
+        
+
+        // dd(json_decode($response));
+
+        // return $response->json();
+
+        // $listings = json_encode($response->getBody());
+        // $listings = json_encode($result, true);
+
+        // $listings = json_decode(
+        //     json_encode(
+        //         $response->json()['data']
+        //     ), FALSE);
+
+            // dd($lis);
+
+
+
+        return view('admin.listings',[
+            'listings' => json_decode($response)
+        ]);
     }
 
     public function listing()

@@ -145,8 +145,10 @@ class PartnerPageController extends Controller
 
     
 
-    public function listing()
+    public function listing($listing_code)
     {
+
+        $listing = Listing::where('listing_code', $listing_code)->first();
         
         
         return view('partner.listing');

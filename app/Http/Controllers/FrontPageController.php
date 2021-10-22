@@ -43,7 +43,11 @@ class FrontPageController extends Controller
     {
         # code...
 
-        return view('front_page.shop');
+        $response = Http::get((config('app.url')).'api/listings');
+
+        return view('front_page.shop',[
+            'listings' => json_decode($response)
+        ]);
     }
 
     public function listing()

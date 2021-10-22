@@ -33,10 +33,6 @@
 
 
 
-
-unit_area
-total_area
-
                 <form action="{{route('create_listing')}}" method="post">
                     @csrf
                     <div class="row">
@@ -80,12 +76,12 @@ total_area
                             
                             <div class="form-group">
                                 <label for="">Unit Sq:</label>
-                                <input type="text" name="unit_area" class="form-control" placeholder="What is the value of this property?">
+                                <input type="number" name="unit_area" class="form-control" placeholder="What is the value of this property?">
                             </div>
 
                             <div class="form-group">
                                 <label for="">Total Area:</label>
-                                <input type="text" name="total_area" class="form-control" placeholder="What is the value of this property?">
+                                <input type="number" name="total_area" class="form-control" placeholder="What is the value of this property?">
                             </div>
 
                             <div class="form-group">
@@ -107,7 +103,7 @@ total_area
                             
                             <div class="form-group">
                                 <label for="">Property Type:</label>
-                                    <select name="payment_plan" id="" class="form-control">
+                                    <select name="property_type" id="" class="form-control">
                                         <option value="Terrace">Terrace</option>
                                         <option value="Semi Detached">Semi Detached</option>
                                         <option value="Full Duplex">Full Duplex</option>

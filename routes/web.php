@@ -124,7 +124,7 @@ Route::group(['middleware' => ['partner'], 'prefix' => 'partner'], function(){
 
     Route::get('/disapproved_listings', 'PartnerPageController@disapproved_listings')->name('partner.disapproved_listings')->middleware('profile_update');
 
-    Route::get('/listing', 'PartnerPageController@listing')->name('partner.listing')->middleware('profile_update');
+    Route::get('/listing/{listing_code}', 'PartnerPageController@listing')->name('partner.listing')->middleware('profile_update');
 
     Route::get('/create_listing', 'PartnerPageController@create_listing')->name('partner.create_listing')->middleware('profile_update');
     

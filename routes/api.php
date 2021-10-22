@@ -17,3 +17,20 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/update_listing', 'ListingController@update_listing');
+
+Route::post('/user_listings', 'ListingController@user_listings');
+
+Route::get('/listings', 'ListingController@listings');
+
+Route::post('/listing_data', 'ListingController@listing_data');
+
+Route::get('/active_listings', 'ListingController@active_listings');
+
+Route::get('/published_listings', 'ListingController@published_listings');
+
+Route::get('/reserved_listings', 'ListingController@reserved_listings');
+
+Route::get('/approved_listings', 'ListingController@approved_listings');
+

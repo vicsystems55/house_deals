@@ -49,12 +49,13 @@
                                             <th scope="row">#{{$listing->listing_code}}</th>
                                             <td>
                                                 <div>
-                                                    <img src="assets/images/users/user-2.jpg" alt=""
-                                                        class="avatar-xs rounded-circle mr-2"> {{$listing->property_name}}
+                                                    {{-- <img src="assets/images/users/user-2.jpg" alt=""
+                                                        class="avatar-xs rounded-circle mr-2"> --}}
+                                                         {{$listing->property_name}}
                                                 </div>
                                             </td>
                                             <td>{{$listing->created_at->diffForHumans()}}</td>
-                                            <td>N {{number_format($listing->worth, 2)}}</td>
+                                            <td>N {{number_format($listing->price, 2)}}</td>
                                             <td><span class="badge badge-success">{{$listing->status}}</span></td>
                                             <td>
                                                 <div>

@@ -75,6 +75,7 @@ class ListingController extends Controller
             'property_type' => $request->property_type,
             'unit_area' => $request->unit_area,
             'total_area' => $request->total_area,
+            'publised' => 1
         ]);
 
         $notification = Notification::create([
@@ -109,6 +110,16 @@ class ListingController extends Controller
         $user_listings = Listing::find($request->user_id)->get();
 
         return $user_listings;
+    }
+
+    public function listings(Request $request)
+    {
+
+        $listings = Listing::latest()
+        ->where('published', 1)
+        ->get();
+
+        return $listings;
     }
 
     public function listing_data(Request $request)
