@@ -104,11 +104,21 @@ class AdminPageController extends Controller
         ]);
     }
 
-    public function listing()
+    public function listing($listing_code)
     {
         # code...
 
-        return view('admin.listing');
+       
+
+        $response = Http::post((config('app.url')).'api/listing_data',[
+            'listing_code' => $listing_code
+        ]);
+
+        // dd(json_decode($response));
+
+        return view('admin.listing',[
+            'listing_data' => json_decode($response)
+        ]);
     }
 
     public function notifications()

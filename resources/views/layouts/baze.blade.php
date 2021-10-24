@@ -13,10 +13,16 @@
 
         <link href="{{config('app.url')}}assets/libs/chartist/chartist.min.css" rel="stylesheet">
 
+        <link href="{{config('app.url')}}assets/libs/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css" /> 
+ 
+        <link href="{{config('app.url')}}assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
+
         <!-- Bootstrap Css -->
         <link href="{{config('app.url')}}assets/css/bootstrap.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+
         <!-- Icons Css -->
         <link href="{{config('app.url')}}assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
         <!-- App Css-->
         <link href="{{config('app.url')}}assets/css/app.css" id="app-style" rel="stylesheet" type="text/css" />
 
@@ -146,7 +152,21 @@
 
         <script src="{{config('app.url')}}assets/js/pages/dashboard.init.js"></script>
 
+        <script src="{{config('app.url')}}assets/libs/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+        <!-- Tour init js-->
+        <script src="{{config('app.url')}}assets/js/pages/lightbox.init.js"></script>
+        <!-- Sweet Alerts js -->
+        <script src="{{config('app.url')}}assets/libs/sweetalert2/sweetalert2.min.js"></script>
+
+        <!-- Sweet alert init js-->
+        <script src="{{config('app.url')}}assets/js/pages/sweet-alerts.init.js"></script>
+
+
+
         <script src="{{config('app.url')}}assets/js/app.js"></script>
+
+
 
     </body>
 

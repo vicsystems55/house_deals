@@ -161,7 +161,7 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function(){
 
     Route::get('/wallet', 'AdminPageController@wallet')->name('admin.wallet');
 
-    Route::get('/listing', 'AdminPageController@listing')->name('admin.listing');
+    Route::get('/listing/{listing_code}', 'AdminPageController@listing')->name('admin.listing');
     
 });
 

@@ -125,7 +125,9 @@ class ListingController extends Controller
     public function listing_data(Request $request)
     {
 
-        $listing_data = Listing::find($request->id)->first();
+        
+
+        $listing_data = Listing::with('images')->where('listing_code', $request->listing_code)->first();
 
 
         return $listing_data;
@@ -174,6 +176,26 @@ class ListingController extends Controller
         ->get();
 
         return $approved_listings;
+    }
+
+    public function approve(Request $request)
+    {
+        
+        $approval = Listing::where('listing_code', $request->listing_code)->update([
+            'approved' => 1,
+        ]);
+
+        return back()->with('verification_msg', $approval);
+    }
+
+    public function disapprove(Request $request)
+    {
+        
+        $disapproval = Listing::where('listing_code', $request->listing_code)->update([
+            'approved' => 0,
+        ]);
+
+        return back()->with('verification_msg', $disapproval);
     }
 
 

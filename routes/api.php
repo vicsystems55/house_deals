@@ -26,6 +26,10 @@ Route::get('/listings', 'ListingController@listings');
 
 Route::post('/listing_data', 'ListingController@listing_data');
 
+Route::post('/approve_listing', 'ListingController@approve')->name('approval');
+
+Route::post('/disapprove_listing', 'ListingController@disapprove')->name('disapproval');
+
 Route::get('/active_listings', 'ListingController@active_listings');
 
 Route::get('/published_listings', 'ListingController@published_listings');

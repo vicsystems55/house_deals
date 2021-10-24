@@ -59,7 +59,7 @@
                                             <td><span class="badge badge-success">{{$listing->status}}</span></td>
                                             <td>
                                                 <div>
-                                                    <a href="{{route('partner.listing', $listing->listing_code)}}" class="btn btn-primary btn-sm">View</a>
+                                                    <a href="{{route('admin.listing', $listing->listing_code)}}" class="btn btn-primary btn-sm">View</a>
                                                 </div>
                                             </td>
                                         </tr>
