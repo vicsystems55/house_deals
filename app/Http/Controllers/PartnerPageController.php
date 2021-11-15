@@ -169,9 +169,14 @@ class PartnerPageController extends Controller
     {
 
         $listing = Listing::where('listing_code', $listing_code)->first();
+
+        $features = PropertyFeature::latest()->get();
         
         
-        return view('partner.listing');
+        return view('partner.listing', [
+            'listing_data' => $listing,
+            'features' => $features
+        ]);
     }
 
     public function create_listing()

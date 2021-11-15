@@ -126,7 +126,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="business_website" value="{{$profile_data->business_website??old('business_website')}}" placeholder="Enter Business Website">
+                                    <input type="text" class="form-control" name="business_website" prefix="https://" value="{{$profile_data->business_website??old('business_website')}}" placeholder="Enter Business Website">
                                     @error('business_website')
                                     <span class="text-danger " role="alert">
                                         <span>{{ $message }}</span>

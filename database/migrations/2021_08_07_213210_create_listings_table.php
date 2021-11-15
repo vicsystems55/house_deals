@@ -26,7 +26,7 @@ class CreateListingsTable extends Migration
             $table->string('google_map_url')->nullable();
             
 
-            $table->double('price',15,2)->nullable();
+            $table->double('price',100,2)->nullable();
             $table->integer('no_units')->unsigned()->default(1);
             $table->string('description')->nullable();
             $table->string('payment_plan')->nullable();
