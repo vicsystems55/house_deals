@@ -119,6 +119,7 @@ class ListingController extends Controller
         with('images')
         ->latest()
         ->where('published', 1)
+        ->where('approved', 1)
         ->get();
 
         return $listings;
