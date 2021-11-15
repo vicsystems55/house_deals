@@ -135,55 +135,46 @@
                 </div>
                 <div class="listings_page_content">
                     <div class="row">
-                        <div class="col-xl-6">
+
+                        @foreach ($listings as $listing)
+
+                            
+                        <div class="col-xl-4">
                             <!--Listings Page Content Single-->
                             <div class="listings_page_content_single">
                                 <div class="listings_page_content_carousel owl-theme owl-carousel">
-                                    <div class="listings_page_content_img_box">
-                                        <div class="listings_page_content_img">
-                                            <img src="assets/images/resources/listing_1_img_1.jpg" alt="">
+                                        @foreach ($listing->images as $image)
+                                        <div class="listings_page_content_img_box">
+                                            <div class="listings_page_content_img">
+                                                <img src="{{asset('property_images')}}/{{$image->img_path}}" alt="">
+                                            </div>
+                                            <div class="listings_page_content_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </div>
+                                            <div class="listings_page_content_btn">
+                                                <a href="#" class="sale_btn">{{$listing->status}}</a>
+                                            </div>
                                         </div>
-                                        <div class="listings_page_content_icon">
-                                            <i class="fa fa-heart"></i>
-                                        </div>
-                                        <div class="listings_page_content_btn">
-                                            <a href="#" class="sale_btn">For Sale</a>
-                                        </div>
-                                    </div>
-                                    <div class="listings_page_content_img_box">
-                                        <div class="listings_page_content_img">
-                                            <img src="assets/images/resources/listing_1_img_2.jpg" alt="">
-                                        </div>
-                                        <div class="listings_page_content_icon">
-                                            <i class="fa fa-heart"></i>
-                                        </div>
-                                        <div class="listings_page_content_btn">
-                                            <a href="#" class="sale_btn">For Sale</a>
-                                        </div>
-                                    </div>
-                                    <div class="listings_page_content_img_box">
-                                        <div class="listings_page_content_img">
-                                            <img src="assets/images/resources/listing_1_img_3.jpg" alt="">
-                                        </div>
-                                        <div class="listings_page_content_icon">
-                                            <i class="fa fa-heart"></i>
-                                        </div>
-                                        <div class="listings_page_content_btn">
-                                            <a href="#" class="sale_btn">For Sale</a>
-                                        </div>
-                                    </div>
+                                        @endforeach
+                                    
+                                    
                                 </div>
                                 <div class="listings_page_bottom_content">
                                     <div class="listings_page_bottom_content_top">
-                                        <h4><a href="listing-details.html">Interior Appartment</a></h4>
-                                        <p>80 Broklyn Street, New York. USA</p>
-                                        <h3>$86.7600 <span>Sqft</span></h3>
+                                        <h4><a href="listing-details.html">{{$listing->property_name}}</a></h4>
+                                        <p>{{$listing->location}}</p>
+                                        <h3>{{$listing->price}}</h3>
                                     </div>
                                    
                                 </div>
                             </div>
                         </div>
-          
+           
+                        @endforeach
+
+
+
+                    
                     
                   
                     </div>

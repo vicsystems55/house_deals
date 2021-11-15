@@ -115,7 +115,9 @@ class ListingController extends Controller
     public function listings(Request $request)
     {
 
-        $listings = Listing::latest()
+        $listings = Listing::
+        with('images')
+        ->latest()
         ->where('published', 1)
         ->get();
 
