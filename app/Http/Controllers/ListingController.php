@@ -75,7 +75,7 @@ class ListingController extends Controller
             'property_type' => $request->property_type,
             'unit_area' => $request->unit_area,
             'total_area' => $request->total_area,
-            'publised' => 1
+            'published' => 1
         ]);
 
         $notification = Notification::create([

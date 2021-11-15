@@ -53,7 +53,7 @@
                                                         class="avatar-xs rounded-circle mr-2"> {{$listing->property_name}}
                                                 </div>
                                             </td>
-                                            <td>{{$listing->created_at->diffForHumans()}}</td>
+                                            <td>{{\Carbon\Carbon::parse($listing->created_at)->diffForHumans()}}</td>
                                             <td>N {{number_format($listing->worth, 2)}}</td>
                                             <td><span class="badge badge-success">{{$listing->status}}</span></td>
                                             <td>

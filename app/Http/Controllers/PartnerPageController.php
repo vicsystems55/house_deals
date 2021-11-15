@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Http;
+
 use Auth;
 
 use App\Notification;
@@ -112,16 +114,25 @@ class PartnerPageController extends Controller
     {
         $user_id = Auth::user()->id;
 
-        $listings = Listing::
-        where('user_id', $user_id )
-        ->where('published', 1 )
-        ->latest()->paginate(30);
+        // $listings = Listing::
+        // where('user_id', $user_id )
+        // ->where('published', 1 )
+        // ->latest()->paginate(30);
 
-        // dd($listings);
+        $listings = Http::post((config('app.url')).'api/user_listings',[
+            'user_id' => Auth::user()->id
+        ]);
+
+    //     dd(collect(json_decode($listings))
+    //     ->where('approved', 0)
+    //     ->where('published', 1)
+    // );
         
         
         return view('partner.pending_listings',[
-            'listings' => $listings
+            'listings' => collect(json_decode($listings))
+                            ->where('approved', 0)
+                            ->where('published', 1)
         ]);
     }
 
@@ -130,16 +141,25 @@ class PartnerPageController extends Controller
         
         $user_id = Auth::user()->id;
 
-        $listings = Listing::
-        where('user_id', $user_id )
-        ->where('published', 1 )
-        ->latest()->paginate(30);
+        // $listings = Listing::
+        // where('user_id', $user_id )
+        // ->where('published', 1 )
+        // ->latest()->paginate(30);
 
-        // dd($listings);
+        $listings = Http::post((config('app.url')).'api/user_listings',[
+            'user_id' => Auth::user()->id
+        ]);
+
+    //     dd(collect(json_decode($listings))
+    //     ->where('approved', 0)
+    //     ->where('published', 1)
+    // );
         
         
         return view('partner.disapproved_listings',[
-            'listings' => $listings
+            'listings' => collect(json_decode($listings))
+                            ->where('approved', 0)
+                            ->where('published', 1)
         ]);
     }
 
