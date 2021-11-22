@@ -56,7 +56,7 @@
                 <!-- Tab panes -->
                 <form action="{{route('login')}}" method="post" class="col-md-12 mx-auto mt-5">
                     @csrf
-                    {{-- <div class="form-group">
+                    <div class="form-group">
                         <input  type="text" class="form-control  form-control-lg @error('email') is-invalid @enderror" name="email" placeholder="Email Address">
 
                         
@@ -66,7 +66,7 @@
                             </span>
                         @enderror
 
-                    </div> --}}
+                    </div>
                     <div class="form-group">
                         <input type="password" class="form-control  form-control-lg " password="password" name="password" placeholder="Password">
 
