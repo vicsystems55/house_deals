@@ -122,7 +122,9 @@ class ListingController extends Controller
         // ->where('approved', 1)
         ->get();
 
-        return $listings;
+        // return $listings;
+
+        dd($listings);
     }
 
     public function listing_data(Request $request)

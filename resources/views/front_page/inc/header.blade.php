@@ -59,7 +59,7 @@
                             <i class="fa fa-bars"></i>
                         </a>
                         <div class="main-nav__main-navigation one clearfix">
-                            <ul class=" main-nav__navigation-box float-left">
+                            <ul class=" main-nav__navigation-box float-right">
                                 <li class="dropdown ">
                                     <a href="{{route('home')}}">Buy</a>
                                  <!-- /.sub-menu -->

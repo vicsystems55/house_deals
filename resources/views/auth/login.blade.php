@@ -85,7 +85,7 @@
 
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg " password="password" name="password" placeholder="Password">
+                                <input type="password" class="form-control  form-control-lg " password="password" name="password" placeholder="Password">
 
                                 
                             </div>
@@ -126,7 +126,7 @@
                                 
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" placeholder="Password">
+                                <input type="password" class="form-control  form-control-lg @error('password') is-invalid @enderror" name="password" value="{{ old('password') }}" placeholder="Password">
                                 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -136,7 +136,7 @@
 
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control  form-control-lg @error('password-confirmation') is-invalid @enderror" name="password_confirmation"  placeholder="Confirm Password">
+                                <input type="password" class="form-control  form-control-lg @error('password-confirmation') is-invalid @enderror" name="password_confirmation"  placeholder="Confirm Password">
                                 
                                 @error('password-confirmation')
                                     <span class="invalid-feedback" role="alert">
