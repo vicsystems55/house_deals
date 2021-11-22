@@ -46,7 +46,7 @@
     
         </div>
         <div style="background-color: #5C1B9D; min-height: 700px;" class="col-md-6 text-white h-100">
-            <h4 style="font-size: 24pt" class="font-weight-bold text-center py-5">WELCOME</h4>
+            <h4 style="font-size: 24pt" class="font-weight-bold text-center py-5">You are being timed out due to inactivity</h4>
             <div style="height: 470px;" class="card-bod col-md-8 mx-auto">
         
             
@@ -56,7 +56,7 @@
                 <!-- Tab panes -->
                 <form action="{{route('login')}}" method="post" class="col-md-12 mx-auto mt-5">
                     @csrf
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <input  type="text" class="form-control  form-control-lg @error('email') is-invalid @enderror" name="email" placeholder="Email Address">
 
                         
@@ -66,14 +66,14 @@
                             </span>
                         @enderror
 
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <input type="password" class="form-control  form-control-lg " password="password" name="password" placeholder="Password">
 
                         
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block btn-lg">LOGIN</button>
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">UNLOCK</button>
                     </div>
                 </form>
 
