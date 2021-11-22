@@ -46,7 +46,7 @@
     
         </div>
         <div style="background-color: #5C1B9D; min-height: 700px;" class="col-md-6 text-white h-100">
-            <h4 style="font-size: 24pt" class="font-weight-bold text-center py-5 mt-5 px-md-5">You are being timed out due to inactivity</h4>
+            <h4 style="font-size: 24pt" class="font-weight-bold text-center py-5 mt-5 px-md-5">You are being timed out <br> due to inactivity</h4>
             <div style="height: 470px;" class="card-bod col-md-8 mx-auto">
         
             
