@@ -80,10 +80,12 @@ class AdminPageController extends Controller
     {
         # code...
 
-        $response = Http::get((config('app.url')).'api/listings');
+        $response = Http::get((config('app.url')).'api/listings',[
+            'user_id' => 2
+        ]);
         
 
-        // dd(json_decode($response));
+        dd($response->object());
 
         // return $response->json();
 
@@ -100,7 +102,7 @@ class AdminPageController extends Controller
 
 
         return view('admin.listings',[
-            'listings' => json_decode($response)
+            'listings' => $response->object()
         ]);
     }
 

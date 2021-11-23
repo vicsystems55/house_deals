@@ -47,7 +47,7 @@ class FrontPageController extends Controller
 
         $response = Http::get((config('app.url')).'api/listings');
 
-        dd($response->object());
+        // dd($response->object());
 
         return view('front_page.shop',[
             'listings' => $response->object()

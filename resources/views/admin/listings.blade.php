@@ -31,7 +31,7 @@
                     <div class="card-body">
                         <h4 class="card-title mb-4">Latest listings</h4>
                         <div class="table-responsive">
-                            <table class=" {{count($listings) < 1?'d-none':''}} table table-hover table-centered table-nowrap mb-0">
+                            <table class=" {{$listings == null?'d-none':''}} table table-hover table-centered table-nowrap mb-0">
                                 <thead>
                                     <tr>
                                         <th scope="col">(#) Id</th>
@@ -43,7 +43,7 @@
                                 </thead>
                                 <tbody>
                                    
-                                        @foreach ($listings as $listing)
+                                        @forelse ($listings as $listing)
 
                                         <tr>
                                             <th scope="row">#{{$listing->listing_code}}</th>
@@ -63,7 +63,10 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        @endforeach
+                                        @empty
+
+
+                                        @endforelse
                                    
                                 </tbody>
                             </table>

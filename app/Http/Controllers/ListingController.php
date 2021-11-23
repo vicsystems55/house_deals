@@ -119,12 +119,13 @@ class ListingController extends Controller
         with('images')
         ->latest()
         ->where('published', 1)
+        ->orWhere('user_id', $request->user_id)
         // ->where('approved', 1)
         ->get();
 
-        // return $listings;
+        return $listings;
 
-        dd($listings);
+     
     }
 
     public function listing_data(Request $request)
