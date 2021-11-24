@@ -152,7 +152,7 @@
                                                 <i class="fa fa-heart"></i>
                                             </div>
                                             <div class="listings_page_content_btn">
-                                                <a href="#" class="sale_btn">{{$listing->status}}</a>
+                                                <a href="{{route('details',$listing->listing_code)}}" class="sale_btn">{{$listing->status}}</a>
                                             </div>
                                         </div>
                                         @endforeach
@@ -161,9 +161,9 @@
                                 </div>
                                 <div class="listings_page_bottom_content">
                                     <div class="listings_page_bottom_content_top">
-                                        <h4><a href="listing-details.html">{{$listing->property_name}}</a></h4>
+                                        <h4><a href="{{route('details',$listing->listing_code)}}">{{$listing->property_name}}</a></h4>
                                         <p>{{$listing->location}}</p>
-                                        <h3>{{$listing->price}}</h3>
+                                        <h3>NGN {{number_format($listing->price,2)}}</h3>
                                     </div>
                                    
                                 </div>

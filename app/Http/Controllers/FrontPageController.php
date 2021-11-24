@@ -61,11 +61,17 @@ class FrontPageController extends Controller
         return view('front_page.listing');
     }
 
-    public function details()
+    public function details($listing_code)
     {
         # code...
 
-        return view('front_page.details');
+        $listing_data = Listing::with('images')->where('listing_code', $listing_code)->first();
+
+        // dd($listing_data->images);
+
+        return view('front_page.details',[
+            'listing_data' => $listing_data
+        ]);
     }
     
 

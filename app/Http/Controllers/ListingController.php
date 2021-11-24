@@ -107,23 +107,107 @@ class ListingController extends Controller
     public function user_listings(Request $request)
     {
 
-        $user_listings = Listing::find($request->user_id)->get();
+        
 
-        return $user_listings;
+
+        if ($request->category == 'published') {
+            # code...
+            $user_listings = Listing::find($request->user_id)->where('published', 1)->get();
+
+            return $user_listings;
+
+        }elseif($request->category == 'reserved'){
+
+            $user_listings = Listing::find($request->user_id)->where('reserved', 1)->get();
+
+            return $user_listings;
+
+        }elseif($request->category == 'approved'){
+
+            $user_listings = Listing::find($request->user_id)->where('approved', 1)->get();
+
+            return $user_listings;
+
+        }elseif($request->user_id){
+
+            $user_listings = Listing::where('user_id', $request->user_id)->get();
+
+            return $user_listings;
+
+        }else{
+
+            return response('no user found!', 404);
+        }
+
+
     }
 
     public function listings(Request $request)
     {
 
-        $listings = Listing::
-        with('images')
-        ->latest()
-        ->where('published', 1)
-        ->orWhere('user_id', $request->user_id)
-        // ->where('approved', 1)
-        ->get();
+        // return $request->all();
+        
 
-        return $listings;
+
+        if ($request->category == 'published') {
+            
+
+                # code...
+                $listings = Listing::
+                with('images')
+                ->latest()
+                ->where('published', 1)
+                // ->where('user_id', $user)
+                // ->where('approved', 1)
+                ->get();
+
+                return $listings;
+
+
+        }elseif($request->category == 'reserved'){
+
+             # code...
+             $listings = Listing::
+             with('images')
+             ->latest()
+             ->where('reserved', 1)
+             // ->where('user_id', $user)
+             // ->where('approved', 1)
+             ->get();
+ 
+             return $listings;
+
+        }elseif($request->category == 'approved'){
+
+            # code...
+            $listings = Listing::
+            with('images')
+            ->latest()
+            ->where('approved', 1)
+            // ->where('user_id', $user)
+            // ->where('approved', 1)
+            ->get();
+
+            return $listings;
+
+        }else{
+
+            # code...
+            $listings = Listing::
+            with('images')
+            ->latest()
+            ->get();
+
+            return $listings;
+
+        }
+
+      
+
+
+      
+
+  
 
      
     }

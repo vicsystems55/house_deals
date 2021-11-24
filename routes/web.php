@@ -69,7 +69,7 @@ Route::get('/shop', 'FrontPageController@shop')->name('shop');
 
 Route::get('/listing', 'FrontPageController@listing')->name('listing');
 
-Route::get('/details', 'FrontPageController@details')->name('details');
+Route::get('/details/{listing_code}', 'FrontPageController@details')->name('details');
 
 Route::get('/home', 'FrontPageController@home')->name('home');
 

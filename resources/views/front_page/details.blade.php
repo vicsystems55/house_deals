@@ -70,9 +70,9 @@
                     <div class="col-xl-4 col-lg-4">
                         <div class="listing_details_top_left">
                             <div class="listing_details_top_title">
-                                <h3>Monall Design House</h3>
-                                <p>80 Broklyn Street, New York. USA</p>
-                                <h4>$86.000</h4>
+                                <h3>{{$listing_data->property_name}}</h3>
+                                <p>{{$listing_data->description}}</p>
+                                <h4>{{number_format($listing_data->price,2)}}</h4>
                             </div>
                         </div>
                     </div>

@@ -20,7 +20,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/update_listing', 'ListingController@update_listing');
 
-Route::post('/user_listings', 'ListingController@user_listings');
+Route::get('/user_listings', 'ListingController@user_listings');
+
+Route::get('/all_listings', 'ListingController@all_listings');
 
 Route::get('/listings', 'ListingController@listings');
 
