@@ -22,42 +22,26 @@
                         "items": 4
                     }
                 }}'>
-                    <div class="item">
-                        <!--Listings Details Main Image Box Single-->
-                        <div class="listings_details_main_image_box_single">
-                            <div class="listings_details_main_image_box__img">
-                                <a href="{{config('app.url')}}assets/images/resources/listings_details_img-1.jpg" class="img-popup"><img
-                                        src="{{config('app.url')}}assets/images/resources/listings_details_img-1.jpg" alt=""></a>
-                            </div>
+
+                @foreach ($listing_data->images as $image)
+
+                <div class="item">
+                    <!--Listings Details Main Image Box Single-->
+                    <div class="listings_details_main_image_box_single">
+                        <div class="listings_details_main_image_box__img">
+                            <a href="{{config('app.url')}}property_images/{{$image->img_path}}" class="img-popup">
+                                <img style="object-fit: cover;" src="{{config('app.url')}}property_images/{{$image->img_path}}" alt="">
+                            </a>
                         </div>
                     </div>
-                    <div class="item">
-                        <!--Listings Details Main Image Box Single-->
-                        <div class="listings_details_main_image_box_single">
-                            <div class="listings_details_main_image_box__img">
-                                <a href="{{config('app.url')}}assets/images/resources/listings_details_img-2.jpg" class="img-popup"><img
-                                        src="{{config('app.url')}}assets/images/resources/listings_details_img-2.jpg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <!--Listings Details Main Image Box Single-->
-                        <div class="listings_details_main_image_box_single">
-                            <div class="listings_details_main_image_box__img">
-                                <a href="{{config('app.url')}}assets/images/resources/listings_details_img-3.jpg" class="img-popup"><img
-                                        src="{{config('app.url')}}assets/images/resources/listings_details_img-3.jpg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <!--Listings Details Main Image Box Single-->
-                        <div class="listings_details_main_image_box_single">
-                            <div class="listings_details_main_image_box__img">
-                                <a href="{{config('app.url')}}assets/images/resources/listings_details_img-4.jpg" class="img-popup"><img
-                                        src="{{config('app.url')}}assets/images/resources/listings_details_img-4.jpg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                    
+                @endforeach
+
+              
+                    
+                    
+                
                 </div>
             </div>
         </section>
