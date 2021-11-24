@@ -30,7 +30,7 @@
                     <div class="listings_details_main_image_box_single">
                         <div class="listings_details_main_image_box__img">
                             <a href="{{config('app.url')}}property_images/{{$image->img_path}}" class="img-popup">
-                                <img style="object-fit: cover;" src="{{config('app.url')}}property_images/{{$image->img_path}}" alt="">
+                                <img style="object-fit: cover; height: 400px;" src="{{config('app.url')}}property_images/{{$image->img_path}}" alt="">
                             </a>
                         </div>
                     </div>
@@ -67,7 +67,36 @@
                             </div>
                             <div class="listing_details_top_right_btn_box">
                                 <div class="col-xl-12">
-                                    <button type="submit" class="thm-btn review_from__btn">Reserve Listing</button>
+                                    <!-- Button trigger modal -->
+                                       
+                                        
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                    <div class="modal-body">
+
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" >
+                                                        </div>
+                                                        
+                                                    
+                                                    </div>
+                                                <div class="modal-footer">
+                                                
+                                                    <button type="submit" class="thm-btn review_from__btn" >Submit</button>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+
+                                    <button type="submit" class="thm-btn review_from__btn" data-toggle="modal" data-target="#exampleModal">Reserve Listing</button>
                                 </div>
                             </div>
                         </div>
