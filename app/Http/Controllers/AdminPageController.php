@@ -24,6 +24,8 @@ use App\Review;
 
 use Response;
 
+use Carbon\Carbon;
+
 class AdminPageController extends Controller
 {
     //
@@ -85,7 +87,7 @@ class AdminPageController extends Controller
         ]);
         
 
-        dd($response->object());
+        // dd($response->object());
 
         // return $response->json();
 
@@ -141,7 +143,11 @@ class AdminPageController extends Controller
     {
         # code...
 
-        return view('admin.reservations');
+        $reservations = Reservation::latest()->paginate(50);
+
+        return view('admin.reservations',[
+            'reservations' => $reservations
+        ]);
     }
 
     public function reservation()

@@ -54,6 +54,9 @@
                     <div class="col-xl-4 col-lg-4">
                         <div class="listing_details_top_left">
                             <div class="listing_details_top_title">
+                                @if(Session::has('reservation_msg'))
+                                <p class="alert alert-info shadow">{{ Session::get('reservation_msg') }}</p>
+                                @endif
                                 <h3>{{$listing_data->property_name}}</h3>
                                 <p>{{$listing_data->description}}</p>
                                 <h4>{{number_format($listing_data->price,2)}}</h4>
@@ -80,18 +83,33 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                                 </div>
-                                                    <div class="modal-body">
-
+                                                    <div class="modal-body col-md-9 mx-auto">
+                                                <form method="post" action="{{route('reserve_listing')}}">
+                                                    @csrf
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" >
+                                                            <input type="text" class="form-control" name="name" placeholder="Fullname">
                                                         </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="email" placeholder="Email">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="phone" placeholder="Phone">
+                                                        </div>
+
+                                                        <input type="hidden" name="listing_id" value="{{$listing_data->id}}">
                                                         
+                                                       
+
+                                                       
+
                                                     
                                                     </div>
                                                 <div class="modal-footer">
                                                 
                                                     <button type="submit" class="thm-btn review_from__btn" >Submit</button>
                                                 </div>
+
+                                            </form>
                                             </div>
                                             </div>
                                         </div>
@@ -144,6 +162,9 @@
         <!--Listing Details Start-->
         <section class="listing_details">
             <div class="container">
+
+             
+
                 <div class="row">
                     <div class="col-xl-8 col-lg-7">
                         <div class="listing_details_left">

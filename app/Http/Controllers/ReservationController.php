@@ -3,6 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Reservation;
+
+use App\User;
+
+use Carabon\Carbon;
+
+use Auth;
+
+use Illuminate\Support\Facades\Hash;
+
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -12,9 +21,45 @@ class ReservationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function create_reservation(Request $request)
     {
         //
+
+        $reservation_code = 'HD-'.rand(101, 9999).'-RESERVE';
+
+        $regCode = "HD" .rand(11000,99999);
+
+        $new_user = User::create([
+  
+            'email' => $request->email,
+            'name' => $request->name,
+            'role' => 'buyer',
+            'user_code' => $regCode,
+            'password' => Hash::make($request->phone),
+            
+            
+        ]);
+
+
+
+        $reservation = Reservation::create([
+            
+            'listing_id' => $request->listing_id,
+            'user_id' => $new_user->id??Auth::user()->id,
+            'reservation_code' => $reservation_code,
+            'reserver_email' => $request->email,
+            'reserver_name' => $request->name,
+            'reserver_phone' => $request->phone,
+            'expiry_date' => \Carbon\Carbon::now()->addDays(7)
+        ]);
+
+
+
+
+
+        // return $reservation;
+
+        return back()->with('reservation_msg', 'Property Reserved!!');
     }
 
     /**
