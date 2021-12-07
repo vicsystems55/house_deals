@@ -31,29 +31,53 @@ class ReservationController extends Controller
 
         $regCode = "HD" .rand(11000,99999);
 
-        $new_user = User::create([
-  
-            'email' => $request->email,
-            'name' => $request->name,
-            'role' => 'buyer',
-            'user_code' => $regCode,
-            'password' => Hash::make($request->phone),
+        $registered_user = User::where('email', $request->email)->first();
+
+        if ($registered_user) {
+            # code...
+
             
-            
-        ]);
+            $reservation = Reservation::create([
+                
+                'listing_id' => $request->listing_id,
+                'user_id' => $registered_user->id,
+                'reservation_code' => $reservation_code,
+                'reserver_email' => $registered_user->email,
+                'reserver_name' => $registered_user->name,
+                'reserver_phone' => $request->phone,
+                'expiry_date' => \Carbon\Carbon::now()->addDays(7)
+            ]);
+
+
+            return back()->with('reserve_msg', 'Property Reserved, You already have an account');
 
 
 
-        $reservation = Reservation::create([
-            
-            'listing_id' => $request->listing_id,
-            'user_id' => $new_user->id??Auth::user()->id,
-            'reservation_code' => $reservation_code,
-            'reserver_email' => $request->email,
-            'reserver_name' => $request->name,
-            'reserver_phone' => $request->phone,
-            'expiry_date' => \Carbon\Carbon::now()->addDays(7)
-        ]);
+        }else{
+
+                $new_user = User::create([
+        
+                    'email' => $request->email,
+                    'name' => $request->name,
+                    'role' => 'buyer',
+                    'user_code' => $regCode,
+                    'password' => Hash::make($request->phone),
+                    
+                    
+                ]);
+
+                $reservation = Reservation::create([
+                    
+                    'listing_id' => $request->listing_id,
+                    'user_id' => $new_user->id??Auth::user()->id,
+                    'reservation_code' => $reservation_code,
+                    'reserver_email' => $request->email,
+                    'reserver_name' => $request->name,
+                    'reserver_phone' => $request->phone,
+                    'expiry_date' => \Carbon\Carbon::now()->addDays(7)
+                ]);
+
+    }
 
         // dd($reservation);
 
