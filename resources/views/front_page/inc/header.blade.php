@@ -65,17 +65,17 @@
                                  <!-- /.sub-menu -->
                                 </li>
                                 <li class="dropdown">
-                                    <a href="{{route('about')}}">Recommended Properties</a>
+                                    <a href="{{route('shop')}}">Recommended Properties</a>
                                    <!-- /.sub-menu -->
                                 </li>
                                 <li class="dropdown">
                                     <a href="{{route('shop')}}">Sold</a>
                                    <!-- /.sub-menu -->
                                 </li>
-                                <li class="dropdown">
+                                {{-- <li class="dropdown">
                                     <a href="{{route('contact')}}">Blogs</a>
                                    <!-- /.sub-menu -->
-                                </li>
+                                </li> --}}
 
                                 <li class="dropdown">
                                     <a href="{{route('contact')}}">Contact</a>
