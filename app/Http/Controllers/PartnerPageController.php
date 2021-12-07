@@ -30,17 +30,19 @@ use App\UserWallet;
 
 use Session;
 
+
 class PartnerPageController extends Controller
 {
     //
 
     public function home()
     {
-        $listings = Listing::where('published', 1)->latest()->get();
+        $listings = Listing::where('published', 1)->where('user_id', Auth::user()->id)->latest()->get();
 
-  
+        // dd($listings->pluck('id'));
 
-        $reservations = Reservation::with('listings')->latest()->get();
+
+        $reservations = Reservation::with('listings')->wherein('listing_id',$listings->pluck('id'))->latest()->get();
 
         // dd($reservations);
 
