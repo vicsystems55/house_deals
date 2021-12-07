@@ -181,3 +181,5 @@ Route::post('/create_listing', 'ListingController@create_listing')->name('create
 Route::get('/get_images', 'ListingImageController@get_images')->name('get_images');
 
 Route::post('/delete_pix', 'ListingImageController@delete_pix')->name('delete_pix');
+
+Route::post('/reserve_listing', 'ReservationController@create_reservation')->name('create_reserve_listing');

@@ -14,6 +14,13 @@ class Reservation extends Model
     {
         
 
-        return $this->hasMany('App\Listing', 'listing_id', 'id');
+        return $this->belongsTo('App\Listing', 'listing_id', 'id');
+    }
+
+    public function users()
+    {
+        
+
+        return $this->belongsTo('App\User', 'user_id', 'id');
     }
 }

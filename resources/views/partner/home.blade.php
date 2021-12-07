@@ -238,7 +238,7 @@
 
                             <li class="feed-item">
                                 <div class="feed-item-list">
-                                    <span class="date">{{$notification->created_at->format('M, d')}}</span>
+                                    <span class="date">{{$notification->created_at}}</span>
                                     <span class="activity-text">{{$notification->body}}</span>
                                 </div>
                             </li>
@@ -335,12 +335,12 @@
                                                     class="avatar-xs rounded-circle mr-2"> 
                                             </div>
                                         </td>
-                                        <td>{{$reservation->created_at->diffForHumans('D M, Y')}}</td>
-                                        <td>{{number_format($reseration->listings->worth, 2)}}</td>
+                                        <td>{{$reservation->created_at}}</td>
+                                        <td>{{number_format($reservation->listings->worth, 2)}}</td>
                                         <td><span class="badge badge-success">{{$reservation->status}}</span></td>
                                         <td>
                                             <div>
-                                                <a href="{{route('partner.reservation', $reservation->reservation_code)}}" class="btn btn-primary btn-sm">View</a>
+                                                <a href="" class="btn btn-primary btn-sm">View</a>
                                             </div>
                                         </td>
                                     </tr>

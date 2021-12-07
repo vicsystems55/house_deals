@@ -40,7 +40,7 @@ Route::get('/reserved_listings', 'ListingController@reserved_listings');
 
 Route::get('/approved_listings', 'ListingController@approved_listings');
 
-Route::post('/reserve_listing', 'ReservationController@create_reservation')->name('reserve_listing');
+
 
 
 

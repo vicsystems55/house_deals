@@ -6,13 +6,15 @@ use App\Reservation;
 
 use App\User;
 
-use Carabon\Carbon;
+use Carbon\Carbon;
 
 use Auth;
 
 use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
+
+use Session;
 
 class ReservationController extends Controller
 {
@@ -53,13 +55,15 @@ class ReservationController extends Controller
             'expiry_date' => \Carbon\Carbon::now()->addDays(7)
         ]);
 
+        // dd($reservation);
+
 
 
 
 
         // return $reservation;
 
-        return back()->with('reservation_msg', 'Property Reserved!!');
+        return back()->with('reserve_msg', 'Property Reserved');
     }
 
     /**

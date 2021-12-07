@@ -16,4 +16,11 @@ class Listing extends Model
         return $this->hasMany('App\ListingImage', 'listing_id', 'id');
 
     }
+
+    public function reservations()
+    {
+            
+        return $this->hasMany('App\Reservation', 'listing_id', 'id');
+
+    }
 }

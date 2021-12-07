@@ -54,9 +54,11 @@
                     <div class="col-xl-4 col-lg-4">
                         <div class="listing_details_top_left">
                             <div class="listing_details_top_title">
-                                @if(Session::has('reservation_msg'))
-                                <p class="alert alert-info shadow">{{ Session::get('reservation_msg') }}</p>
+                               
+                                @if(Session::has('reserve_msg'))
+                                <p class="alert alert-info">{{ Session::get('reserve_msg') }}</p>
                                 @endif
+
                                 <h3>{{$listing_data->property_name}}</h3>
                                 <p>{{$listing_data->description}}</p>
                                 <h4>{{number_format($listing_data->price,2)}}</h4>
@@ -76,16 +78,17 @@
                                         <!-- Modal -->
                                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog">
-                                            <div class="modal-content">
+                                            <div class="modal-content col-md-10 mx-auto">
                                                 <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                                <h5 class="modal-title" id="exampleModalLabel">Reserve Property</h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                                 </div>
-                                                    <div class="modal-body col-md-9 mx-auto">
-                                                <form method="post" action="{{route('reserve_listing')}}">
-                                                    @csrf
+                                                    <div class="modal-body col-md-12 mx-auto">
+                                                        
+                                                        <form method="post" action="{{route('create_reserve_listing')}}">
+                                                         @csrf
                                                         <div class="form-group">
                                                             <input type="text" class="form-control" name="name" placeholder="Fullname">
                                                         </div>
@@ -99,17 +102,16 @@
                                                         <input type="hidden" name="listing_id" value="{{$listing_data->id}}">
                                                         
                                                        
-
+                                               
+                                                            <button type="submit" class="thm-btn review_from__btn btn-block" >Submit</button>
+                                                       
+        
+                                                    </form>
                                                        
 
                                                     
                                                     </div>
-                                                <div class="modal-footer">
-                                                
-                                                    <button type="submit" class="thm-btn review_from__btn" >Submit</button>
-                                                </div>
-
-                                            </form>
+                                               
                                             </div>
                                             </div>
                                         </div>
@@ -162,7 +164,7 @@
         <!--Listing Details Start-->
         <section class="listing_details">
             <div class="container">
-
+                {{Session::get('codex')}}
              
 
                 <div class="row">

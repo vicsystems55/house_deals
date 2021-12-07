@@ -38,7 +38,11 @@ class PartnerPageController extends Controller
     {
         $listings = Listing::where('published', 1)->latest()->get();
 
+  
+
         $reservations = Reservation::with('listings')->latest()->get();
+
+        // dd($reservations);
 
         $transactions = UserWallet::latest()->get();
 
