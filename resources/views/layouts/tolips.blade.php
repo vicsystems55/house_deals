@@ -74,11 +74,11 @@
             <ul class="mobile-nav__contact list-unstyled">
                 <li>
                     <i class="icon-message"></i>
-                    <a href="mailto:needhelp@polimark.com">needhelp@tolins.com</a>
+                    <a href="mailto:needhelp@polimark.com">support@housedeals.com</a>
                 </li>
                 <li>
                     <i class="icon-phone-call"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
+                    <a href="tel:666-888-0000">+234 809 000 1000</a>
                 </li>
             </ul><!-- /.mobile-nav__contact -->
             <div class="mobile-nav__top">

@@ -90,10 +90,10 @@
                                                         <form method="post" action="{{route('create_reserve_listing')}}">
                                                          @csrf
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" name="name" value="{{Auth::user()->name}}" placeholder="Fullname">
+                                                            <input type="text" class="form-control" name="name" value="{{(Auth::user()->name)??''}}" placeholder="Fullname">
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" name="email" value="{{Auth::user()->email}}" placeholder="Email">
+                                                            <input type="text" class="form-control" name="email" value="{{(Auth::user()->email)??''}}" placeholder="Email">
                                                         </div>
                                                         <div class="form-group">
                                                             <input type="text" class="form-control" name="phone" placeholder="Phone" required>
