@@ -174,6 +174,8 @@ class PartnerPageController extends Controller
     public function listing($listing_code)
     {
 
+        
+
         $listing = Listing::where('listing_code', $listing_code)->first();
 
         $features = PropertyFeature::latest()->get();
@@ -249,7 +251,11 @@ class PartnerPageController extends Controller
 
         $user_id = Auth::user()->id;
 
-        $listings = Reservation::with('listings')->latest()->paginate(30);
+        $listings = Reservation::with('listings')->with('users')->latest()->paginate(30);
+
+
+
+        // dd($listings);
 
         return view('partner.reservations', compact([
            'listings'

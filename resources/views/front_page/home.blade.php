@@ -18,7 +18,7 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-xl-6">
+                <div class="col-xl-8">
                     <div class="banner_three_content">
                         <div class="">
                             <h2 style="color: #009BB1">Getting a home is <br> a collaborative process</h2>
@@ -27,26 +27,70 @@
                         <div class="product-tab-box tabs-box">
                             <ul class="tab-btns tab-buttons clearfix list-unstyled">
                                 <li data-tab="#desc" class="tab-btn active-btn"><span>Buy</span></li>
-                                <li data-tab="#addi__info" class="tab-btn"><span>Sale</span></li>
-                                <li data-tab="#review" class="tab-btn"><span>Rent</span></li>
+                                <li data-tab="#addi__info" class="tab-btn d-none"><span>Sale</span></li>
+                                <li data-tab="#review" class="tab-btn d-none"><span>Rent</span></li>
                             </ul>
-                            <div class="tabs-content">
-                                <div class="tab active-tab" id="desc">
-                                    <form class="banner_one_search_form" action="/listing-1.html">
-                                        <div class="banner_one_search_form_input_box">
-                                            <input type="text"
-                                                placeholder="Search for city, property, agent and more...">
-                                            <button type="submit" class="thm-btn banner_one_search_btn">Search
-                                                Property</button>
-                                            <div class="banner_one_search_icon">
-                                                <a href="#"><span class="icon-magnifying-glass"></span></a>
+                            <div class="tabs-content  ">
+                                <div class="tab active-tab   " id="desc">
+
+                                  <div class="card shadow ">
+                                      <div class="card-body container">
+                                        <form action="{{route('search_listings')}}" class="row " style="font-size: 70%;">
+                                           
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="">House Type</label>
+                                                    <select name="house_type" id="" class="form-control">
+                                                        <option value="">Duplex</option>
+                                                        <option value="">Bungalow</option>
+                                                        <option value="">Terrace</option>
+                                                    </select>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </form>
+    
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="">Number of rooms</label>
+                                                    <input type="number" name="no_of_rooms" class="form-control" >
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="">Country</label>
+                                                    <select name="country" id="" class="form-control">
+                                                        <option value="Nigeria">Nigeria</option>
+                                                       
+                                                    </select>
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    <label for="">City/Street</label>
+                                                    <input type="text" name="city" id="" class="form-control" placeholder="Enter city name">
+                                                </div>
+                                            </div>
+    
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                 
+                                                    <button type="submit" class="btn btn-primary mt-4 bt-lg btn-block">Search</button>
+                                                </div>
+                                               
+                                            </div>
+                                            
+                                           
+                                        </form>
+                                      </div>
+                                  </div>
+                                   
                                 </div>
 
                                 <div class="tab" id="addi__info">
-                                    <form class="banner_one_search_form" action="/listing-1.html">
+
+                                  
+                                    <form class="banner_one_search_form d-none" action="/listing-1.html">
                                         <div class="banner_one_search_form_input_box">
                                             <input type="text"
                                                 placeholder="Search for city, property, agent and more...">
@@ -60,7 +104,9 @@
                                 </div>
 
                                 <div class="tab" id="review">
-                                    <form class="banner_one_search_form" action="/listing-1.html">
+
+                                 
+                                    <form class="banner_one_search_form d-none" action="/listing-1.html">
                                         <div class="banner_one_search_form_input_box">
                                             <input type="text"
                                                 placeholder="Search for city, property, agent and more...">
@@ -76,7 +122,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="background-image: url({{config('app.url')}}tolips/homepix.png); background-size: cover;" class="col-md-6">
+                <div style="background-image: url({{config('app.url')}}tolips/homepix.png); background-size: cover;" class="col-md-4">
                    
                 </div>
             </div>

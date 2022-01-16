@@ -288,5 +288,22 @@ class ListingController extends Controller
         return back()->with('verification_msg', $disapproval);
     }
 
+    public function search_listings()
+    {
+
+        $listings = Listing::
+                with('images')
+                ->latest()
+                ->where('published', 1)
+                // ->where('user_id', $user)
+                // ->where('approved', 1)
+                ->get();
+        
+        
+        return view('front_page.search_results',[
+            'listings' => $listings
+        ]);
+    }
+
 
 }

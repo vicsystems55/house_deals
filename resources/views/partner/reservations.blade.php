@@ -49,8 +49,8 @@
                                             <th scope="row">#{{$listing->listing_code}}</th>
                                             <td>
                                                 <div>
-                                                    <img src="assets/images/users/user-2.jpg" alt=""
-                                                        class="avatar-xs rounded-circle mr-2"> {{$listing->property_name}}
+                                                    <img src="{{config('app.url')}}avatar/{{$listing->users->avatar}}" alt=""
+                                                        class="avatar-xs rounded-circle mr-2"> {{$listing->reserver_name}}
                                                 </div>
                                             </td>
                                             <td>{{$listing->created_at->diffForHumans()}}</td>
@@ -58,7 +58,7 @@
                                             <td><span class="badge badge-success">{{$listing->status}}</span></td>
                                             <td>
                                                 <div>
-                                                    <a href="{{route('partner.listing', $listing->listing_code)}}" class="btn btn-primary btn-sm">View</a>
+                                                    <a href="{{route('partner.listing', $listing->listings->listing_code)}}" class="btn btn-primary btn-sm">View</a>
                                                 </div>
                                             </td>
                                         </tr>

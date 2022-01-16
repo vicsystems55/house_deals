@@ -166,7 +166,7 @@
             </div>
             <div class="p-3"></div>
             <div class="c text-center">
-                By loggin in, I accept House Deals Terms of use and Privacy Policy.
+                By login in, I accept House Deals Terms of use and Privacy Policy.
             </div>
         </div>
     </div>
